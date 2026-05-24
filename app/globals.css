@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 43 23% 93%;
+  --foreground: 0 0% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 13%;
+  --primary: 158 100% 23%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 155 26% 92%;
+  --secondary-foreground: 156 31% 17%;
+  --muted: 40 14% 89%;
+  --muted-foreground: 0 0% 38%;
+  --accent: 12 83% 87%;
+  --accent-foreground: 156 31% 17%;
+  --destructive: 4 82% 43%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 35 12% 82%;
+  --input: 35 12% 82%;
+  --ring: 157 100% 19%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #f2f0eb;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: Inter, Manrope, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: #d4e9e2;
+  color: #1e3932;
+}
+
+.product-photo {
+  background:
+    radial-gradient(circle at 52% 16%, rgba(255, 255, 255, 0.96) 0 4%, transparent 4.5%),
+    radial-gradient(circle at 42% 31%, rgba(166, 215, 117, 0.95) 0 3%, transparent 3.5%),
+    radial-gradient(circle at 64% 36%, rgba(122, 195, 91, 0.9) 0 4%, transparent 4.6%),
+    linear-gradient(180deg, rgba(255,255,255,0.82) 0 22%, rgba(237, 255, 238, 0.92) 22% 33%, rgba(209, 234, 176, 0.9) 33% 58%, rgba(248, 255, 252, 0.95) 58% 100%);
+}
+
+.glass-shine {
+  background: linear-gradient(100deg, rgba(255,255,255,0.72), rgba(255,255,255,0.1) 34%, rgba(255,255,255,0.38) 64%, rgba(255,255,255,0.08));
+}
