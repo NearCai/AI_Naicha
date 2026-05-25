@@ -33,7 +33,7 @@ import csv
 import json
 import sys
 from collections import defaultdict
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -201,7 +201,7 @@ def write_instructions(schedule: list[dict], path: Path, design_id: str) -> None
         by_pan_sess[(row["panelist_id"], row["session"])].append(row)
 
     lines = [f"# Panel Tasting Schedule — {design_id}",
-             "", f"_Generated {datetime.now(UTC).isoformat()}_",
+             "", f"_Generated {datetime.now(timezone.utc).isoformat()}_",
              "",
              "**Instructions**: Each panelist rates the listed cups in the GIVEN ORDER. ",
              "Between cups: rinse mouth with plain water (5 min rest); ",
@@ -259,7 +259,7 @@ def main():
         print(f"loaded {[len(g) for g in group_recipes]} recipes from A/B/C lists")
 
     if args.design_id == "auto":
-        args.design_id = datetime.now(UTC).strftime("%Y%m%dT%H%M")
+        args.design_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
 

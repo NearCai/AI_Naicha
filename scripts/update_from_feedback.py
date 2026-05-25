@@ -30,7 +30,7 @@ import json
 import subprocess
 import sys
 from collections import defaultdict
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import duckdb
@@ -241,7 +241,7 @@ def main():
         "session": args.session,
         "feedback_db": args.feedback_db,
         "args": vars(args),
-        "started_at": datetime.now(UTC).isoformat(),
+        "started_at": datetime.now(timezone.utc).isoformat(),
         "n_recipes": len(pairs),
         "liking_stats": {"mean": float(np.mean(likings)),
                          "std": float(np.std(likings)),
@@ -293,7 +293,7 @@ def main():
         print(f"      wrote {overrides_path}")
 
     # ----- Stage 4: audit trail -----
-    audit["finished_at"] = datetime.now(UTC).isoformat()
+    audit["finished_at"] = datetime.now(timezone.utc).isoformat()
     audit_path.write_text(
         json.dumps(audit, ensure_ascii=False, indent=2, default=str),
         encoding="utf-8",

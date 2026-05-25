@@ -18,7 +18,7 @@ Tips:
 from __future__ import annotations
 
 import sys
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import typer
@@ -154,7 +154,7 @@ def _collect_one(*, default_source: str) -> ReviewRecord | None:
         customization_raw=customization,
         rating=rating,
         source_url=source_url,
-        scraped_at=datetime.now(UTC),
+        scraped_at=datetime.now(timezone.utc),
         metadata={"manual": True},
     )
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import hashlib
 from collections.abc import Iterable, Iterator
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from typing import Protocol
 
 from pydantic import BaseModel, Field
@@ -25,7 +25,7 @@ class ReviewRecord(BaseModel):
     rating: float | None = None                   # 1-5 if available
     user_id_hashed: str | None = None             # never store real user ids
     source_url: str | None = None
-    scraped_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    scraped_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     metadata: dict = Field(default_factory=dict)
 
 

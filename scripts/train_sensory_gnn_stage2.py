@@ -27,7 +27,7 @@ import json
 import sys
 import time
 from collections import defaultdict
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 try:
@@ -275,7 +275,7 @@ def main():
         "trainable_params": n_trainable,
         "initial_zero_shot_pearson": initial_r,
         "epochs": [],
-        "started_at": datetime.now(UTC).isoformat(),
+        "started_at": datetime.now(timezone.utc).isoformat(),
     }
 
     best_val_loss = float("inf")
@@ -347,7 +347,7 @@ def main():
         "model_arch": arch,
         "core_dims": list(CORE_DIMS),
         "categories": list(CATEGORIES),
-        "saved_at": datetime.now(UTC).isoformat(),
+        "saved_at": datetime.now(timezone.utc).isoformat(),
         "stage": "stage2_final",
         "session_id": args.session_id,
         "base_model": args.base_model,
@@ -360,7 +360,7 @@ def main():
             "categories": list(CATEGORIES),
             "best_epoch": best_epoch,
             "best_val_loss": best_val_loss,
-            "saved_at": datetime.now(UTC).isoformat(),
+            "saved_at": datetime.now(timezone.utc).isoformat(),
             "stage": "stage2_best",
             "session_id": args.session_id,
             "base_model": args.base_model,

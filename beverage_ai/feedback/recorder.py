@@ -5,7 +5,7 @@ Per 技术方案书 §3.7 + v1 实现方案 §6.11.
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -60,7 +60,7 @@ class FeedbackRecorder:
                 json.dumps(predicted, ensure_ascii=False, default=_json_default),
                 None,
                 json.dumps(context or {}, ensure_ascii=False, default=_json_default),
-                datetime.now(UTC),
+                datetime.now(timezone.utc),
             ],
         )
 
@@ -90,7 +90,7 @@ class FeedbackRecorder:
             [
                 session_id, recipe_id, panelist_id, dimension,
                 int(score), int(cup_order), int(block),
-                datetime.now(UTC),
+                datetime.now(timezone.utc),
             ],
         )
 

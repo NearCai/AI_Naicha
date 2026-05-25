@@ -28,7 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import duckdb
@@ -483,7 +483,7 @@ def main():
     print("\n[4/4] Writing report ...")
     results = {
         "session": args.session,
-        "timestamp": datetime.now(UTC).isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "n_rows": int(len(df)),
         "n_panelists": int(df["panelist_id"].nunique()),
         "n_recipes": int(df["recipe_id"].nunique()),

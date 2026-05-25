@@ -15,7 +15,7 @@ import argparse
 import json
 import sys
 import time
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -212,7 +212,7 @@ def main():
             "baseline": list(baseline_train.columns),
             "recipe": list(recipe_train.columns),
         },
-        "trained_at": datetime.now(UTC).isoformat(),
+        "trained_at": datetime.now(timezone.utc).isoformat(),
         "args": vars(args),
         "test_metrics": {
             "spearman_baseline": round(spearman_baseline, 3),

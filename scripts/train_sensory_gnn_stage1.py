@@ -35,7 +35,7 @@ import json
 import sys
 import time
 from collections import Counter
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 # ----- imports that may fail without [ml] extras -----
@@ -388,7 +388,7 @@ def main():
         "args": vars(args), "epochs": [], "device": str(device),
         "gpu": gpu_name if is_gpu else None,
         "n_train": len(train_graphs), "n_val": len(val_graphs),
-        "tag": args.tag, "started_at": datetime.now(UTC).isoformat(),
+        "tag": args.tag, "started_at": datetime.now(timezone.utc).isoformat(),
     }
     t0 = time.time()
     best_val_loss = float("inf")
@@ -512,7 +512,7 @@ def main():
         "model_arch": {"node_in_dim": NODE_FEAT_DIM, "hidden": 64, "heads": 4},
         "core_dims": list(CORE_DIMS),
         "categories": list(CATEGORIES),
-        "saved_at": datetime.now(UTC).isoformat(),
+        "saved_at": datetime.now(timezone.utc).isoformat(),
         "tag": args.tag,
     }, model_path)
     print(f"      wrote {model_path}  (final state)")
@@ -525,7 +525,7 @@ def main():
             "categories": list(CATEGORIES),
             "best_epoch": best_epoch,
             "best_val_loss": best_val_loss,
-            "saved_at": datetime.now(UTC).isoformat(),
+            "saved_at": datetime.now(timezone.utc).isoformat(),
             "tag": args.tag,
         }, best_path)
         print(f"      wrote {best_path}  (best @ epoch {best_epoch}, val={best_val_loss:.4f})")
