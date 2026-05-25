@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "beverage_ai"
+version = "0.1.0"
+description = "Closed-loop AI system for new-style tea drink R&D (v1)"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "beverage_ai team" }]
+
+dependencies = [
+    # Data and schema
+    "pydantic>=2.5",
+    "pyyaml>=6.0",
+    "pandas>=2.2",
+    "numpy>=1.26,<2.0",
+    "pyarrow>=14",
+    "duckdb>=0.9",
+
+    # Optimization
+    "pymoo>=0.6.1",
+
+    # Statistics
+    "scipy>=1.11",
+
+    # CLI and logging
+    "typer>=0.9",
+    "loguru>=0.7",
+]
+
+[project.optional-dependencies]
+ml = [
+    "torch>=2.1",
+    "torch-geometric>=2.4",
+    "lightgbm>=4.1",
+    "scikit-learn>=1.4",
+    "statsmodels>=0.14",
+]
+llm = [
+    "anthropic>=0.8",
+]
+demo = [
+    "gradio>=4.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "hypothesis>=6.92",
+    "ruff>=0.1.6",
+]
+scrape = [
+    "playwright>=1.40",
+    "beautifulsoup4>=4.12",
+    "selectolax>=0.3",
+    "httpx>=0.25",
+    "tenacity>=8.2",
+]
+hf = [
+    "datasets>=2.14",
+    "huggingface-hub>=0.20",
+]
+all = [
+    "beverage_ai[ml,llm,demo,dev,scrape,hf]",
+]
+
+[project.scripts]
+beverage-ai = "beverage_ai.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["beverage_ai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM"]
+ignore = ["E501"]

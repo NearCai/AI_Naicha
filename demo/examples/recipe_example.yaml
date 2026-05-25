@@ -1,0 +1,21 @@
+# Example recipe — 500ml 桂花乌龙厚乳茶 with taro balls
+# Matches §E.7 worked example in the technical proposal
+recipe_id: example_001
+style: 奶茶
+cup_volume_ml: 500
+sugar_level: 五分
+ingredients:
+  tea_osmanthus_oolong: 250.0
+  dairy_thick_milk: 125.0
+  sweet_cane_sugar: 13.0
+  topping_taro_ball: 35.0
+  flavor_dried_osmanthus: 0.5
+  aux_pure_water: 25.0
+  aux_ice_cube: 85.0
+process:
+  extraction_temp_c: 95
+  extraction_time_s: 240
+  shake_count: 12
+  serving_temp_c: 4
+metadata:
+  source: "技术方案书 §E.7"

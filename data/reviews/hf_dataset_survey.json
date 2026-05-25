@@ -1,0 +1,189 @@
+[
+  {
+    "id": "XiangPan/waimai_10k",
+    "status": "USABLE",
+    "columns": [
+      "label",
+      "text"
+    ],
+    "first_sample": "很快，好吃，味道足，量大",
+    "error": null,
+    "elapsed": 10.2
+  },
+  {
+    "id": "Setiaku/Chinese-Reviews",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'Setiaku/Chinese-Reviews' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.26
+  },
+  {
+    "id": "luozhouyang/seamew-ChnSentiCorp",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'luozhouyang/seamew-ChnSentiCorp' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.27
+  },
+  {
+    "id": "liyucheng/chinese_metaphor",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'liyucheng/chinese_metaphor' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.26
+  },
+  {
+    "id": "BAAI/COIG",
+    "status": "DEPRECATED_SCRIPT",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset scripts are no longer supported, but found COIG.py",
+    "elapsed": 0.87
+  },
+  {
+    "id": "BAAI/IndustryCorpus_food_drink",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'BAAI/IndustryCorpus_food_drink' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.26
+  },
+  {
+    "id": "MMInstruction/M3IT",
+    "status": "DEPRECATED_SCRIPT",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset scripts are no longer supported, but found M3IT.py",
+    "elapsed": 1.87
+  },
+  {
+    "id": "shibing624/sharegpt_gpt4",
+    "status": "USABLE",
+    "columns": [
+      "conversations"
+    ],
+    "first_sample": null,
+    "error": null,
+    "elapsed": 6.77
+  },
+  {
+    "id": "wangrui6/Zhihu-KOL",
+    "status": "USABLE",
+    "columns": [
+      "INSTRUCTION",
+      "RESPONSE",
+      "SOURCE",
+      "METADATA"
+    ],
+    "first_sample": null,
+    "error": null,
+    "elapsed": 9.54
+  },
+  {
+    "id": "kz919/multi_task_chinese_data",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'kz919/multi_task_chinese_data' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.27
+  },
+  {
+    "id": "shibing624/snli-zh",
+    "status": "DEPRECATED_SCRIPT",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset scripts are no longer supported, but found snli-zh.py",
+    "elapsed": 1.82
+  },
+  {
+    "id": "fnlp/sharegpt-deepseek-chinese",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'fnlp/sharegpt-deepseek-chinese' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.26
+  },
+  {
+    "id": "DUOMO/Aya",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'DUOMO/Aya' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.26
+  },
+  {
+    "id": "OpenGVLab/MMPR-v1.2",
+    "status": "FAIL",
+    "columns": null,
+    "first_sample": null,
+    "error": "Couldn't cast\nimage: string\nquestion: string\nchosen: string\nrejected: string\nanswer_gt: string\nimage_wh: list<item: list<item: int64>>\n  child 0, item: list<item: int64>\n      child 0, item: int64\nto\n{'image': Value('string'), 'question': Value('stri",
+    "elapsed": 12.75
+  },
+  {
+    "id": "GoodBaiBai88/medical_chinese",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'GoodBaiBai88/medical_chinese' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.3
+  },
+  {
+    "id": "BAAI/Aquila-tts-train-zh",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'BAAI/Aquila-tts-train-zh' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.27
+  },
+  {
+    "id": "uitnlp/SemEval-2020-Task-7",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'uitnlp/SemEval-2020-Task-7' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.27
+  },
+  {
+    "id": "BAAI/COIG-PC",
+    "status": "GATED",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'BAAI/COIG-PC' is a gated dataset on the Hub. You must be authenticated to access it.",
+    "elapsed": 0.88
+  },
+  {
+    "id": "BAAI/COIG-PC-Lite",
+    "status": "USABLE",
+    "columns": [
+      "instruction",
+      "input",
+      "output",
+      "split",
+      "task_name_in_eng",
+      "task_type",
+      "domain",
+      "other"
+    ],
+    "first_sample": "浙江在线杭州4月25日讯（记者 施宇翔 通讯员 方英）毒贩很“时髦”，用微信交易毒品。没料想警方也很“潮”，将计就计，一举将其擒获。记者从杭州江干区公安分局了解到，经过一个多月的侦查工作，江干区禁毒专案组抓获吸贩毒人员5名，缴获“冰毒”400余克，毒资30000余元，扣押汽车一辆。黑龙江籍男子钱某长期落脚于宾馆、单身公寓，经常变换住址。他有一辆车，经常半夜驾车来往于杭州主城区的各大宾馆和单身公寓，",
+    "error": null,
+    "elapsed": 10.21
+  },
+  {
+    "id": "wenge-research/wbpc-en-zh-300k",
+    "status": "NOT_FOUND",
+    "columns": null,
+    "first_sample": null,
+    "error": "Dataset 'wenge-research/wbpc-en-zh-300k' doesn't exist on the Hub or cannot be accessed.",
+    "elapsed": 0.26
+  },
+  {
+    "id": "Salesforce/wikitext",
+    "status": "FAIL",
+    "columns": null,
+    "first_sample": null,
+    "error": "Config name is missing.\nPlease pick one among the available configs: ['wikitext-103-raw-v1', 'wikitext-103-v1', 'wikitext-2-raw-v1', 'wikitext-2-v1']\nExample of usage:\n\t`load_dataset('Salesforce/wikitext', 'wikitext-103-raw-v1')`",
+    "elapsed": 3.68
+  }
+]

@@ -1,0 +1,278 @@
+{
+  "session": "s_demo_w1",
+  "timestamp": "2026-05-25T03:13:49.443829+00:00",
+  "n_rows": 1050,
+  "n_panelists": 35,
+  "n_recipes": 21,
+  "dimensions": [
+    "喜爱度",
+    "奶香",
+    "甜度",
+    "苦度",
+    "茶香"
+  ],
+  "group_counts": {
+    "A": 7,
+    "B": 7,
+    "C": 7
+  },
+  "per_dim_summary": {
+    "甜度": {
+      "n": 210,
+      "mean": 4.271428571428571,
+      "std": 0.9164330985184627
+    },
+    "苦度": {
+      "n": 210,
+      "mean": 2.433333333333333,
+      "std": 0.9869159993599574
+    },
+    "茶香": {
+      "n": 210,
+      "mean": 2.7,
+      "std": 0.8474560862851939
+    },
+    "奶香": {
+      "n": 210,
+      "mean": 1.9857142857142858,
+      "std": 1.0692687275688297
+    },
+    "喜爱度": {
+      "n": 210,
+      "mean": 3.119047619047619,
+      "std": 0.7947910848361183
+    }
+  },
+  "wilcoxon_a_vs_b": {
+    "甜度": {
+      "status": "ok",
+      "n_paired": 29,
+      "mean_a": 4.53735632183908,
+      "mean_b": 3.839080459770115,
+      "mean_diff": 0.6982758620689654,
+      "std_diff": 0.8746920640411411,
+      "wilcoxon_W": 331.5,
+      "p_value_onesided": 0.00030137333517718214,
+      "significant_at_alpha": true,
+      "cohens_d": 0.7983105035192386,
+      "rank_biserial_r": 0.753968253968254
+    },
+    "苦度": {
+      "status": "ok",
+      "n_paired": 29,
+      "mean_a": 2.42816091954023,
+      "mean_b": 2.3275862068965516,
+      "mean_diff": 0.10057471264367815,
+      "std_diff": 0.6855145610887461,
+      "wilcoxon_W": 144.0,
+      "p_value_onesided": 0.28362033584487445,
+      "significant_at_alpha": false,
+      "cohens_d": 0.1467141886584344,
+      "rank_biserial_r": 0.1383399209486166
+    },
+    "茶香": {
+      "status": "ok",
+      "n_paired": 29,
+      "mean_a": 2.7959770114942533,
+      "mean_b": 2.7586206896551726,
+      "mean_diff": 0.03735632183908046,
+      "std_diff": 0.7920068839439208,
+      "wilcoxon_W": 196.0,
+      "p_value_onesided": 0.4329756457633849,
+      "significant_at_alpha": false,
+      "cohens_d": 0.04716666306365783,
+      "rank_biserial_r": 0.037037037037037035
+    },
+    "奶香": {
+      "status": "ok",
+      "n_paired": 29,
+      "mean_a": 2.341954022988506,
+      "mean_b": 1.663793103448276,
+      "mean_diff": 0.67816091954023,
+      "std_diff": 1.0440981474143343,
+      "wilcoxon_W": 334.5,
+      "p_value_onesided": 0.001349946086717632,
+      "significant_at_alpha": true,
+      "cohens_d": 0.6495183630194798,
+      "rank_biserial_r": 0.6477832512315271
+    },
+    "喜爱度": {
+      "status": "ok",
+      "n_paired": 29,
+      "mean_a": 3.479885057471264,
+      "mean_b": 3.160919540229885,
+      "mean_diff": 0.3189655172413794,
+      "std_diff": 0.866903861061899,
+      "wilcoxon_W": 218.5,
+      "p_value_onesided": 0.024989400256648697,
+      "significant_at_alpha": false,
+      "cohens_d": 0.3679364362856431,
+      "rank_biserial_r": 0.45666666666666667
+    }
+  },
+  "tost_a_vs_c": {
+    "甜度": {
+      "status": "ok",
+      "n_paired": 30,
+      "mean_diff": 0.12333333333333334,
+      "equiv_bound": 0.5,
+      "p_low_bound": 5.30767439711477e-05,
+      "p_high_bound": 0.005596055597902882,
+      "equivalent_at_alpha_0_05": true
+    },
+    "苦度": {
+      "status": "ok",
+      "n_paired": 30,
+      "mean_diff": 0.13333333333333336,
+      "equiv_bound": 0.5,
+      "p_low_bound": 0.001909889670699938,
+      "p_high_bound": 0.03949738158816533,
+      "equivalent_at_alpha_0_05": true
+    },
+    "茶香": {
+      "status": "ok",
+      "n_paired": 30,
+      "mean_diff": 0.26222222222222225,
+      "equiv_bound": 0.5,
+      "p_low_bound": 1.106873100953365e-07,
+      "p_high_bound": 0.02233800380042219,
+      "equivalent_at_alpha_0_05": true
+    },
+    "奶香": {
+      "status": "ok",
+      "n_paired": 30,
+      "mean_diff": 0.535,
+      "equiv_bound": 0.5,
+      "p_low_bound": 5.022317509650875e-07,
+      "p_high_bound": 0.5818883339963878,
+      "equivalent_at_alpha_0_05": false
+    },
+    "喜爱度": {
+      "status": "ok",
+      "n_paired": 30,
+      "mean_diff": 0.6166666666666667,
+      "equiv_bound": 0.5,
+      "p_low_bound": 9.727272121118347e-08,
+      "p_high_bound": 0.7576670068691689,
+      "equivalent_at_alpha_0_05": false
+    }
+  },
+  "friedman": {
+    "status": "ok",
+    "n_panelists": 35,
+    "n_dims": 5,
+    "dims": [
+      "甜度",
+      "苦度",
+      "茶香",
+      "奶香",
+      "喜爱度"
+    ],
+    "chi2": 118.49779086892492,
+    "p_value": 1.1181002464160708e-24,
+    "alpha_bonferroni": 0.008333333333333333,
+    "significant": true
+  },
+  "mixed_effects": {
+    "甜度": {
+      "status": "ok",
+      "n_obs": 210,
+      "n_panelists": 35,
+      "n_groups": 3,
+      "fixed_effects": {
+        "group[T.B]": -0.614285715819766,
+        "group[T.C]": -0.07142857189349884
+      },
+      "p_values": {
+        "group[T.B]": 3.798855463448347e-05,
+        "group[T.C]": 0.6306088088710271
+      },
+      "loglikelihood": -273.2613845813937,
+      "panelist_variance": 4.0504768385280675e-09
+    },
+    "苦度": {
+      "status": "ok",
+      "n_obs": 210,
+      "n_panelists": 35,
+      "n_groups": 3,
+      "fixed_effects": {
+        "group[T.B]": -0.0853359380713634,
+        "group[T.C]": -0.0244564619125495
+      },
+      "p_values": {
+        "group[T.B]": 0.6067998543567378,
+        "group[T.C]": 0.8842890770053408
+      },
+      "loglikelihood": -297.354087437736,
+      "panelist_variance": 0.05454936604338464
+    },
+    "茶香": {
+      "status": "ok",
+      "n_obs": 210,
+      "n_panelists": 35,
+      "n_groups": 3,
+      "fixed_effects": {
+        "group[T.B]": -0.11111801862997354,
+        "group[T.C]": -0.22653617623479888
+      },
+      "p_values": {
+        "group[T.B]": 0.39296212966456956,
+        "group[T.C]": 0.08039358904316575
+      },
+      "loglikelihood": -253.87728068230365,
+      "panelist_variance": 0.1905609812013705
+    },
+    "奶香": {
+      "status": "ok",
+      "n_obs": 210,
+      "n_panelists": 35,
+      "n_groups": 3,
+      "fixed_effects": {
+        "group[T.B]": -0.6788379583040045,
+        "group[T.C]": -0.543565786441689
+      },
+      "p_values": {
+        "group[T.B]": 9.317423335853031e-05,
+        "group[T.C]": 0.0017819764377903992
+      },
+      "loglikelihood": -306.5380118358936,
+      "panelist_variance": 0.04632615210018445
+    },
+    "喜爱度": {
+      "status": "ok",
+      "n_obs": 210,
+      "n_panelists": 35,
+      "n_groups": 3,
+      "fixed_effects": {
+        "group[T.B]": -0.2561022378666346,
+        "group[T.C]": -0.4693256545249552
+      },
+      "p_values": {
+        "group[T.B]": 0.037432500335396655,
+        "group[T.C]": 0.00013614254370673424
+      },
+      "loglikelihood": -240.7820827135114,
+      "panelist_variance": 0.12694606531656474
+    }
+  },
+  "power_analysis": {
+    "effect_size": 0.5,
+    "alpha": 0.05,
+    "power": 0.8,
+    "n_required_paired": 25,
+    "note": "paired Wilcoxon needs ~15% more per Lehmann (1975)"
+  },
+  "config": {
+    "session": "s_demo_w1",
+    "feedback_db": "data/feedback.duckdb",
+    "group_map": "data/feedback/demo_group_map.yaml",
+    "auto_group": false,
+    "out_dir": "data/feedback",
+    "equiv_bound": 0.5,
+    "planned_effect_size": 0.5
+  },
+  "stats_libs": {
+    "scipy_available": true,
+    "statsmodels_available": true
+  }
+}

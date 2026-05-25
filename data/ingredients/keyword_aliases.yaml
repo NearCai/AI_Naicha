@@ -1,0 +1,85 @@
+# Chinese keyword → English flavor_descriptors mapping.
+# Used by RecipeGenerator to translate LLM-Planner keywords (Chinese) into
+# matches against ingredient flavor_descriptors (English).
+#
+# Scoring during ingredient picking (see _score_ingredient_for_keywords):
+#   - name_zh substring match    × 3   (strongest)
+#   - notes_zh substring match   × 2
+#   - descriptor mapped match    × 1   (via this file)
+#
+# Keep this file extensible: add new keywords as the LLM Planner output evolves.
+
+# ===== Generic sensory groups =====
+花香:   [floral, fragrant, aromatic, jasmine, rose, osmanthus]
+果香:   [fruity, berry, tropical, citrus, juicy]
+茶香:   [malty, robust, smoky, grassy, vegetal, complex, brisk]
+奶香:   [milky, creamy, dairy, smooth, rich]
+咖啡香: [coffee, roasted, intense]
+清爽:   [refreshing, fresh, light, bright, brisk, cooling, low_acid]
+微甜:   [mild_sweet, slight_sweet, sweet]
+浓郁:   [rich, dense, intense, robust, full_body]
+顺滑:   [smooth, creamy, silky]
+咸:     [salty, savory, mineral]
+咸甜:   [salty, sweet, savory]
+苦:     [bitter, dark, intense, roasted]
+酸:     [sour, tart, citrus]
+回甘:   [sweet_aftertaste, mellow, lingering, rich_aftertaste]
+醇厚:   [rich, dense, complex, mellow]
+香气:   [fragrant, aromatic, floral]
+
+# ===== Specific botanicals / flavors =====
+桂花:   [osmanthus, floral]
+茉莉:   [jasmine, floral]
+玫瑰:   [rose, floral, romantic]
+薰衣草: [lavender, herbal, floral]
+薄荷:   [mint, cooling, fresh]
+香草:   [vanilla, sweet, aromatic]
+椰:     [coconut, tropical]
+椰香:   [coconut, tropical]
+焦糖:   [caramelized, caramel]
+海盐:   [salty, mineral]
+肉桂:   [cinnamon, warm, sweet_spice]
+姜:     [pungent, warm, spicy]
+抹茶:   [grassy, umami, intense_green]
+可可:   [chocolate, dark, intense]
+巧克力: [chocolate, dark, sweet]
+蜂蜜:   [honey, floral, mellow]
+
+# ===== Milk-style modifiers =====
+厚乳:     [creamy, rich, thick, dense, milky]
+鲜奶:     [milky, creamy, fresh, smooth]
+奶盖:     [salty, creamy, foamy, savory]
+燕麦:     [grain, oat, smooth]
+燕麦奶:   [grain, oat, smooth]
+咖啡师版: [creamy, foamable]
+低脂:     [light_creamy, thin]
+脱脂:     [thin, light_creamy, watery]
+
+# ===== Coffee-style modifiers =====
+咖啡:   [coffee, bitter, roasted, intense]
+冷萃:   [smooth, chocolate, low_acid]
+浓缩:   [bitter, intense, roasted]
+
+# ===== Fruit (each fruit name itself usually matches via name_zh, but
+#       these help when the keyword is a fruit category) =====
+鲜果:   [fruity, juicy, fresh]
+浆果:   [berry, sweet, tart]
+柑橘:   [citrus, sour, sweet]
+热带:   [tropical, sweet, juicy]
+柠檬:   [citrus, sour, sharp]
+百香果: [tropical, sour, aromatic]
+草莓:   [berry, sweet]
+蓝莓:   [berry, sweet, slight_tart]
+芒果:   [tropical, sweet, juicy]
+葡萄:   [sweet, juicy]
+桃:     [sweet, juicy, fragrant]
+凤梨:   [tropical, sour, juicy]
+菠萝:   [tropical, sour, juicy]
+
+# ===== Brand-style / mood keywords =====
+低负担: [refreshing, light, fresh]
+轻盈:   [light, fresh, refreshing]
+解腻:   [refreshing, light, citrus]
+温润:   [smooth, mellow, mild]
+暖身:   [warm, rich, cinnamon]
+养生:   [herbal, mild, mellow]

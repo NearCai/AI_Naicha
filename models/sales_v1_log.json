@@ -1,0 +1,156 @@
+{
+  "feature_columns": {
+    "baseline": [
+      "brand_CoCo都可",
+      "brand_一点点",
+      "brand_书亦烧仙草",
+      "brand_古茗",
+      "brand_喜茶",
+      "brand_奈雪",
+      "brand_茶百道",
+      "brand_茶颜悦色",
+      "brand_蜜雪冰城",
+      "brand_霸王茶姬",
+      "season_autumn",
+      "season_spring",
+      "season_summer",
+      "season_winter",
+      "city_tier_一线",
+      "city_tier_三线",
+      "city_tier_二线",
+      "recipe_style_冰沙",
+      "recipe_style_咖啡奶茶",
+      "recipe_style_奶茶",
+      "recipe_style_果茶",
+      "recipe_style_特调",
+      "recipe_style_纯茶",
+      "price_cny",
+      "launch_year",
+      "marketing_联名",
+      "marketing_限定",
+      "marketing_明星",
+      "marketing_包装"
+    ],
+    "recipe": [
+      "recipe_cup_volume_ml",
+      "recipe_n_ingredients",
+      "recipe_total_mass_g",
+      "recipe_calorie_kcal",
+      "recipe_sugar_g",
+      "recipe_fat_g",
+      "recipe_caffeine_mg",
+      "recipe_sodium_mg",
+      "recipe_n_topping",
+      "recipe_has_dairy",
+      "recipe_has_alt_milk",
+      "recipe_has_coffee",
+      "recipe_has_fruit",
+      "recipe_sugar_level_ord"
+    ]
+  },
+  "trained_at": "2026-05-25T02:43:01.557811+00:00",
+  "args": {
+    "data": "data/products/synthetic_skus_v1.parquet",
+    "out_dir": "models",
+    "k_folds": 5,
+    "test_frac": 0.2,
+    "seed": 42,
+    "n_estimators_baseline": 300,
+    "n_estimators_recipe": 500
+  },
+  "test_metrics": {
+    "spearman_baseline": 0.742,
+    "spearman_full": 0.759,
+    "recipe_contrib_delta": 0.017,
+    "mae": 7.12,
+    "rmse": 9.24,
+    "ndcg_at_10": 0.937,
+    "ndcg_at_50": 0.932
+  },
+  "top_features": {
+    "baseline": [
+      {
+        "feature": "price_cny",
+        "importance": 2343
+      },
+      {
+        "feature": "launch_year",
+        "importance": 797
+      },
+      {
+        "feature": "city_tier_一线",
+        "importance": 575
+      },
+      {
+        "feature": "marketing_限定",
+        "importance": 415
+      },
+      {
+        "feature": "recipe_style_奶茶",
+        "importance": 391
+      },
+      {
+        "feature": "season_summer",
+        "importance": 330
+      },
+      {
+        "feature": "recipe_style_果茶",
+        "importance": 319
+      },
+      {
+        "feature": "season_winter",
+        "importance": 314
+      },
+      {
+        "feature": "city_tier_二线",
+        "importance": 303
+      },
+      {
+        "feature": "season_autumn",
+        "importance": 287
+      }
+    ],
+    "recipe": [
+      {
+        "feature": "recipe_total_mass_g",
+        "importance": 2713
+      },
+      {
+        "feature": "recipe_calorie_kcal",
+        "importance": 2568
+      },
+      {
+        "feature": "recipe_caffeine_mg",
+        "importance": 2382
+      },
+      {
+        "feature": "recipe_sugar_g",
+        "importance": 2104
+      },
+      {
+        "feature": "recipe_fat_g",
+        "importance": 1813
+      },
+      {
+        "feature": "recipe_sodium_mg",
+        "importance": 1791
+      },
+      {
+        "feature": "recipe_n_ingredients",
+        "importance": 967
+      },
+      {
+        "feature": "recipe_sugar_level_ord",
+        "importance": 383
+      },
+      {
+        "feature": "recipe_n_topping",
+        "importance": 82
+      },
+      {
+        "feature": "recipe_has_dairy",
+        "importance": 60
+      }
+    ]
+  }
+}

@@ -1,0 +1,1192 @@
+# Ingredient vocabulary v1 — complete enrichment
+# Per 技术方案书 §附录 D + §D.4 enrichment schema
+# Coverage: 219 entries across 11 categories
+# Nutrition values per 100g/100ml of ingredient as-served/as-purchased
+# Sources cited: china_food_composition_v6 (CFC v6), usda_fdc, industry_estimate,
+#                supplier_spec_v2025 (representative supplier specs)
+
+# =============================================================================
+# TEA BASE (tea_) — 40 entries
+# =============================================================================
+
+# ----- Black teas -----
+- {id: tea_assam, name_zh: 阿萨姆红茶, name_en: Assam Black Tea, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 42, sodium_mg: 1},
+   flavor_descriptors: [malty, robust, full_body], source: china_food_composition_v6}
+
+- {id: tea_ceylon, name_zh: 锡兰红茶, name_en: Ceylon Black Tea, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 40, sodium_mg: 1},
+   flavor_descriptors: [bright, citrus, brisk], source: usda_fdc}
+
+- {id: tea_dianhong, name_zh: 滇红, name_en: Yunnan Black Tea, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 38, sodium_mg: 1},
+   flavor_descriptors: [honey, smooth, sweet_aftertaste], source: china_food_composition_v6}
+
+- {id: tea_lapsang, name_zh: 正山小种, name_en: Lapsang Souchong, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 35, sodium_mg: 1},
+   flavor_descriptors: [smoky, pine, robust], source: industry_estimate}
+
+- {id: tea_keemun, name_zh: 祁门红茶, name_en: Keemun Black Tea, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 36, sodium_mg: 1},
+   flavor_descriptors: [floral, orchid, fruity], source: china_food_composition_v6}
+
+- {id: tea_yingde, name_zh: 英德红茶, name_en: Yingde Black Tea, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 38, sodium_mg: 1},
+   flavor_descriptors: [malty, sweet, smooth], source: industry_estimate}
+
+- {id: tea_earlgrey, name_zh: 伯爵红茶, name_en: Earl Grey, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 40, sodium_mg: 1},
+   flavor_descriptors: [bergamot, citrus, aromatic], notes_zh: "添加佛手柑油", source: industry_estimate}
+
+- {id: tea_uva, name_zh: 乌瓦, name_en: Ceylon Uva, category: tea_base, subcategory: black,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 42, sodium_mg: 1},
+   flavor_descriptors: [menthol, brisk, eucalyptus], source: industry_estimate}
+
+# ----- Green teas -----
+- {id: tea_longjing, name_zh: 龙井, name_en: Long Jing Dragon Well, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 22, sodium_mg: 1},
+   flavor_descriptors: [nutty, vegetal, mellow, fresh], source: china_food_composition_v6}
+
+- {id: tea_biluochun, name_zh: 碧螺春, name_en: Bi Luo Chun, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 20, sodium_mg: 1},
+   flavor_descriptors: [floral, fruity, delicate], source: china_food_composition_v6}
+
+- {id: tea_maofeng, name_zh: 黄山毛峰, name_en: Huang Shan Mao Feng, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 18, sodium_mg: 1},
+   flavor_descriptors: [chestnut, fresh, mellow], source: china_food_composition_v6}
+
+- {id: tea_maojian, name_zh: 信阳毛尖, name_en: Xin Yang Mao Jian, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 20, sodium_mg: 1},
+   flavor_descriptors: [grassy, fresh, bright], source: china_food_composition_v6}
+
+- {id: tea_gyokuro, name_zh: 玉露, name_en: Gyokuro, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: premium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 30, sodium_mg: 2},
+   flavor_descriptors: [umami, sweet, marine, mellow], source: usda_fdc}
+
+- {id: tea_jasmine_green, name_zh: 茉莉绿茶, name_en: Jasmine Green Tea, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 18, sodium_mg: 1},
+   flavor_descriptors: [floral, fresh, slight_bitter], source: china_food_composition_v6}
+
+- {id: tea_matcha, name_zh: 抹茶, name_en: Matcha Powder, category: tea_base, subcategory: green_powder,
+   default_form: powder_g, typical_serving_g: 2, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 324, sugar_g: 1, fat_g: 5, caffeine_mg: 3200, sodium_mg: 17},
+   flavor_descriptors: [grassy, umami, intense], source: usda_fdc}
+
+- {id: tea_sencha, name_zh: 蒸青煎茶, name_en: Sencha, category: tea_base, subcategory: green,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 25, sodium_mg: 1},
+   flavor_descriptors: [grassy, marine, bright], source: usda_fdc}
+
+# ----- Oolong teas -----
+- {id: tea_tieguanyin, name_zh: 铁观音, name_en: Tie Guan Yin, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 28, sodium_mg: 1},
+   flavor_descriptors: [orchid, floral, smooth, rich_aftertaste], source: china_food_composition_v6}
+
+- {id: tea_dahongpao, name_zh: 大红袍, name_en: Da Hong Pao, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 32, sodium_mg: 1},
+   flavor_descriptors: [roasted, mineral, dark, complex], source: china_food_composition_v6}
+
+- {id: tea_dancong, name_zh: 凤凰单丛, name_en: Phoenix Dan Cong, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 30, sodium_mg: 1},
+   flavor_descriptors: [honey_orchid, fruity, aromatic, complex],
+   notes_zh: "含蜜兰香 / 鸭屎香 / 八仙等多种香型", source: industry_estimate}
+
+- {id: tea_dongding, name_zh: 冻顶乌龙, name_en: Dong Ding Oolong, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 26, sodium_mg: 1},
+   flavor_descriptors: [roasted, sweet, smooth], source: industry_estimate}
+
+- {id: tea_jinxuan, name_zh: 金萱乌龙, name_en: Jin Xuan Oolong, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 25, sodium_mg: 1},
+   flavor_descriptors: [milky, floral, smooth],
+   notes_zh: "台湾选育品种, 茶汤带天然奶香, 适合奶基配方", source: supplier_spec_v2025}
+
+- {id: tea_sijichun, name_zh: 四季春, name_en: Si Ji Chun, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 27, sodium_mg: 1},
+   flavor_descriptors: [floral, brisk, light], source: industry_estimate}
+
+- {id: tea_osmanthus_oolong, name_zh: 桂花乌龙, name_en: Osmanthus Oolong, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 28, sodium_mg: 1},
+   flavor_descriptors: [floral, sweet, aromatic], source: supplier_spec_v2025}
+
+- {id: tea_highmtn_oolong, name_zh: 高山乌龙, name_en: High Mountain Oolong, category: tea_base, subcategory: oolong,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 30, sodium_mg: 1},
+   flavor_descriptors: [floral, sweet, complex, crisp], source: industry_estimate}
+
+# ----- Pu'er & White teas -----
+- {id: tea_pu_raw, name_zh: 生普, name_en: Raw Pu'er, category: tea_base, subcategory: puer,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 35, sodium_mg: 1},
+   flavor_descriptors: [grassy, astringent, complex, ageing_potential], source: china_food_composition_v6}
+
+- {id: tea_pu_ripe, name_zh: 熟普, name_en: Ripe Pu'er, category: tea_base, subcategory: puer,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 32, sodium_mg: 1},
+   flavor_descriptors: [earthy, mellow, dark, smooth], source: china_food_composition_v6}
+
+- {id: tea_baihao, name_zh: 白毫银针, name_en: Bai Hao Yin Zhen, category: tea_base, subcategory: white,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: premium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 25, sodium_mg: 1},
+   flavor_descriptors: [delicate, sweet, fresh, hay], source: china_food_composition_v6}
+
+- {id: tea_baimudan, name_zh: 白牡丹, name_en: Bai Mu Dan, category: tea_base, subcategory: white,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 22, sodium_mg: 1},
+   flavor_descriptors: [floral, mellow, soft, slight_sweet], source: china_food_composition_v6}
+
+- {id: tea_shoumei, name_zh: 寿眉, name_en: Shou Mei, category: tea_base, subcategory: white,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 18, sodium_mg: 1},
+   flavor_descriptors: [woody, mellow, sweet], source: china_food_composition_v6}
+
+# ----- Scented / floral / herbal teas -----
+- {id: tea_jasmine, name_zh: 茉莉花茶, name_en: Jasmine Tea, category: tea_base, subcategory: scented,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 22, sodium_mg: 1},
+   flavor_descriptors: [floral, refreshing, sweet], source: china_food_composition_v6}
+
+- {id: tea_rose, name_zh: 玫瑰花茶, name_en: Rose Tea, category: tea_base, subcategory: floral,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [floral, romantic, sweet], source: industry_estimate}
+
+- {id: tea_osmanthus, name_zh: 桂花茶, name_en: Osmanthus Tea, category: tea_base, subcategory: floral,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [floral, sweet, peachy], source: industry_estimate}
+
+- {id: tea_hibiscus, name_zh: 洛神花茶, name_en: Hibiscus Tea, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [tart, fruity, cranberry_like], source: usda_fdc}
+
+- {id: tea_chrysanthemum, name_zh: 菊花茶, name_en: Chrysanthemum Tea, category: tea_base, subcategory: floral,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [floral, slight_bitter, cooling], source: china_food_composition_v6}
+
+- {id: tea_mint, name_zh: 薄荷茶, name_en: Mint Tea, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [mint, fresh, cooling], source: usda_fdc}
+
+- {id: tea_barley, name_zh: 大麦茶, name_en: Barley Tea, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [gluten], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [toasted, nutty, smooth], source: china_food_composition_v6}
+
+- {id: tea_buckwheat, name_zh: 荞麦茶, name_en: Buckwheat Tea, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [toasted, nutty, grain], source: industry_estimate}
+
+- {id: tea_cassia, name_zh: 决明子, name_en: Cassia Seed Tea, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [roasted, slight_bitter, herbal], source: industry_estimate}
+
+- {id: tea_lemongrass, name_zh: 柠檬草, name_en: Lemongrass, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 2, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [citrus, herbal, lemon], source: industry_estimate}
+
+- {id: tea_luohanguo, name_zh: 罗汉果茶, name_en: Luo Han Guo Tea, category: tea_base, subcategory: herbal,
+   default_form: brewed_tea_ml, typical_serving_g: 250, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 3, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, fruity, mellow], source: industry_estimate}
+
+# =============================================================================
+# DAIRY BASE (dairy_) — 14 entries
+# =============================================================================
+
+- {id: dairy_whole_milk, name_zh: 全脂鲜奶, name_en: Whole Milk, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [milk], cost_tier: low, supply: stable,
+   shelf_life_days: 7,
+   nutrition_per_100g: {energy_kcal: 61, sugar_g: 4.8, fat_g: 3.3, caffeine_mg: 0, sodium_mg: 43},
+   flavor_descriptors: [creamy, smooth], source: china_food_composition_v6}
+
+- {id: dairy_lowfat_milk, name_zh: 低脂鲜奶, name_en: Low-Fat Milk, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [milk], cost_tier: low, supply: stable,
+   shelf_life_days: 7,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 4.8, fat_g: 2.0, caffeine_mg: 0, sodium_mg: 44},
+   flavor_descriptors: [light_creamy, smooth], source: usda_fdc}
+
+- {id: dairy_skim_milk, name_zh: 脱脂鲜奶, name_en: Skim Milk, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [milk], cost_tier: low, supply: stable,
+   shelf_life_days: 7,
+   nutrition_per_100g: {energy_kcal: 34, sugar_g: 5.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 44},
+   flavor_descriptors: [thin, slight_creamy, watery], source: usda_fdc}
+
+- {id: dairy_thick_milk, name_zh: 厚乳, name_en: Concentrated Thick Milk, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 80, allergens: [milk], cost_tier: medium, supply: stable,
+   shelf_life_days: 14,
+   nutrition_per_100g: {energy_kcal: 125, sugar_g: 7.0, fat_g: 8.0, caffeine_mg: 0, sodium_mg: 50},
+   flavor_descriptors: [creamy, rich, smooth, dense],
+   notes_zh: "乳脂 >=5%, 蛋白 >=3.5%, 高乳含量", source: supplier_spec_v2025}
+
+- {id: dairy_evap_milk, name_zh: 淡奶, name_en: Evaporated Milk, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 50, allergens: [milk], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 134, sugar_g: 10.0, fat_g: 7.6, caffeine_mg: 0, sodium_mg: 105},
+   flavor_descriptors: [creamy, caramelized, rich], source: usda_fdc}
+
+- {id: dairy_condensed, name_zh: 炼乳, name_en: Sweetened Condensed Milk, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 20, allergens: [milk], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 321, sugar_g: 54.0, fat_g: 8.7, caffeine_mg: 0, sodium_mg: 127},
+   flavor_descriptors: [very_sweet, milky, thick, caramel], source: usda_fdc}
+
+- {id: dairy_heavy_cream, name_zh: 重奶油, name_en: Heavy Cream, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 30, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 340, sugar_g: 2.8, fat_g: 36.0, caffeine_mg: 0, sodium_mg: 38},
+   flavor_descriptors: [creamy, rich, fatty], source: usda_fdc}
+
+- {id: dairy_light_cream, name_zh: 淡奶油, name_en: Light Cream, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 30, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 195, sugar_g: 4.0, fat_g: 19.0, caffeine_mg: 0, sodium_mg: 41},
+   flavor_descriptors: [light_creamy, smooth, mild], source: usda_fdc}
+
+- {id: dairy_milk_powder_whole, name_zh: 全脂奶粉, name_en: Whole Milk Powder, category: dairy_base,
+   default_form: powder_g, typical_serving_g: 15, allergens: [milk], cost_tier: low, supply: stable,
+   shelf_life_days: 540,
+   nutrition_per_100g: {energy_kcal: 496, sugar_g: 38.0, fat_g: 26.0, caffeine_mg: 0, sodium_mg: 380},
+   flavor_descriptors: [milky, sweet, mild], source: china_food_composition_v6}
+
+- {id: dairy_milk_powder_skim, name_zh: 脱脂奶粉, name_en: Skim Milk Powder, category: dairy_base,
+   default_form: powder_g, typical_serving_g: 15, allergens: [milk], cost_tier: low, supply: stable,
+   shelf_life_days: 540,
+   nutrition_per_100g: {energy_kcal: 360, sugar_g: 52.0, fat_g: 1.0, caffeine_mg: 0, sodium_mg: 535},
+   flavor_descriptors: [milky, sweet, light], source: china_food_composition_v6}
+
+- {id: dairy_cheese_foam, name_zh: 芝士奶盖, name_en: Cheese Cream Foam, category: dairy_base,
+   default_form: foam_g, typical_serving_g: 50, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 220, sugar_g: 8.0, fat_g: 18.0, caffeine_mg: 0, sodium_mg: 320},
+   flavor_descriptors: [salty, creamy, rich, savory], source: supplier_spec_v2025}
+
+- {id: dairy_seasalt_foam, name_zh: 海盐奶盖, name_en: Sea Salt Cream Foam, category: dairy_base,
+   default_form: foam_g, typical_serving_g: 40, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 6.0, fat_g: 17.0, caffeine_mg: 0, sodium_mg: 480},
+   flavor_descriptors: [salty, creamy, savory], source: supplier_spec_v2025}
+
+- {id: dairy_yogurt, name_zh: 酸奶, name_en: Yogurt, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [milk], cost_tier: low, supply: stable,
+   shelf_life_days: 21,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 4.7, fat_g: 3.0, caffeine_mg: 0, sodium_mg: 36},
+   flavor_descriptors: [tangy, creamy, smooth], source: china_food_composition_v6}
+
+- {id: dairy_greek_yogurt, name_zh: 希腊酸奶, name_en: Greek Yogurt, category: dairy_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [milk], cost_tier: medium, supply: stable,
+   shelf_life_days: 21,
+   nutrition_per_100g: {energy_kcal: 97, sugar_g: 4.0, fat_g: 5.0, caffeine_mg: 0, sodium_mg: 35},
+   flavor_descriptors: [tangy, thick, dense, creamy], source: usda_fdc}
+
+# =============================================================================
+# PLANT-BASED MILK (alt_milk_) — 9 entries
+# =============================================================================
+
+- {id: alt_milk_oat, name_zh: 燕麦奶, name_en: Oat Milk, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [gluten], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 47, sugar_g: 6.7, fat_g: 1.5, caffeine_mg: 0, sodium_mg: 80},
+   flavor_descriptors: [grain, smooth, slight_sweet], source: oatly_spec_v2024}
+
+- {id: alt_milk_oat_barista, name_zh: 燕麦奶咖啡师版, name_en: Oat Milk Barista, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [gluten], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 7.0, fat_g: 3.0, caffeine_mg: 0, sodium_mg: 100},
+   flavor_descriptors: [creamy, grain, foamable],
+   notes_zh: "蛋白含量更高, 易出奶泡", source: oatly_spec_v2024}
+
+- {id: alt_milk_almond, name_zh: 杏仁奶, name_en: Almond Milk, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [nut], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 17, sugar_g: 0.2, fat_g: 1.5, caffeine_mg: 0, sodium_mg: 60},
+   flavor_descriptors: [nutty, light, slight_sweet], source: usda_fdc}
+
+- {id: alt_milk_coconut, name_zh: 椰奶, name_en: Coconut Milk, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 80, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 230, sugar_g: 3.3, fat_g: 24.0, caffeine_mg: 0, sodium_mg: 15},
+   flavor_descriptors: [coconut, tropical, rich, fatty], source: usda_fdc}
+
+- {id: alt_milk_coconut_cream, name_zh: 椰浆, name_en: Coconut Cream, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 60, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 330, sugar_g: 6.0, fat_g: 34.0, caffeine_mg: 0, sodium_mg: 4},
+   flavor_descriptors: [coconut, dense, rich], source: usda_fdc}
+
+- {id: alt_milk_soy, name_zh: 豆奶, name_en: Soy Milk, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [soy], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 54, sugar_g: 1.0, fat_g: 1.8, caffeine_mg: 0, sodium_mg: 51},
+   flavor_descriptors: [beany, light, slight_sweet], source: china_food_composition_v6}
+
+- {id: alt_milk_rice, name_zh: 米奶, name_en: Rice Milk, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 47, sugar_g: 5.3, fat_g: 1.0, caffeine_mg: 0, sodium_mg: 40},
+   flavor_descriptors: [rice, light, slight_sweet], source: usda_fdc}
+
+- {id: alt_milk_cashew, name_zh: 腰果奶, name_en: Cashew Milk, category: alt_milk_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [nut], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 25, sugar_g: 0.5, fat_g: 2.0, caffeine_mg: 0, sodium_mg: 50},
+   flavor_descriptors: [nutty, smooth, mild], source: usda_fdc}
+
+- {id: alt_milk_creamer, name_zh: 植脂末, name_en: Non-Dairy Creamer, category: alt_milk_base,
+   default_form: powder_g, typical_serving_g: 15, allergens: [], cost_tier: low, supply: stable,
+   shelf_life_days: 365,
+   nutrition_per_100g: {energy_kcal: 545, sugar_g: 55.0, fat_g: 35.0, trans_fat_g: 3.5, caffeine_mg: 0, sodium_mg: 180},
+   flavor_descriptors: [milky, sweet, processed],
+   notes_zh: "含氢化植物油, 反式脂肪含量高, 已被多数新式茶饮淘汰", source: industry_estimate}
+
+# =============================================================================
+# COFFEE BASE (coffee_) — 8 entries
+# =============================================================================
+
+- {id: coffee_espresso, name_zh: 意式浓缩, name_en: Espresso, category: coffee_base,
+   default_form: liquid_ml, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 9, sugar_g: 0, fat_g: 0.2, caffeine_mg: 212, sodium_mg: 14},
+   flavor_descriptors: [bitter, intense, roasted], source: usda_fdc}
+
+- {id: coffee_coldbrew, name_zh: 冷萃咖啡, name_en: Cold Brew Coffee, category: coffee_base,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 3, sugar_g: 0, fat_g: 0, caffeine_mg: 153, sodium_mg: 8},
+   flavor_descriptors: [smooth, chocolate, low_acid], source: industry_estimate}
+
+- {id: coffee_americano, name_zh: 美式, name_en: Americano, category: coffee_base,
+   default_form: liquid_ml, typical_serving_g: 200, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 3, sugar_g: 0, fat_g: 0, caffeine_mg: 80, sodium_mg: 5},
+   flavor_descriptors: [bitter, light, watery_espresso], source: usda_fdc}
+
+- {id: coffee_instant, name_zh: 速溶咖啡粉, name_en: Instant Coffee Powder, category: coffee_base,
+   default_form: powder_g, typical_serving_g: 2, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 353, sugar_g: 0, fat_g: 0.5, caffeine_mg: 3142, sodium_mg: 78},
+   flavor_descriptors: [bitter, intense, slight_burnt], source: usda_fdc}
+
+- {id: coffee_concentrate, name_zh: 咖啡液, name_en: Coffee Concentrate, category: coffee_base,
+   default_form: liquid_ml, typical_serving_g: 25, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 8, sugar_g: 0, fat_g: 0.2, caffeine_mg: 180, sodium_mg: 12},
+   flavor_descriptors: [intense, smooth, ready_to_use], source: industry_estimate}
+
+- {id: coffee_drip, name_zh: 挂耳咖啡, name_en: Drip Coffee, category: coffee_base,
+   default_form: liquid_ml, typical_serving_g: 150, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 4, sugar_g: 0, fat_g: 0, caffeine_mg: 60, sodium_mg: 5},
+   flavor_descriptors: [clean, bright, classic], source: usda_fdc}
+
+- {id: coffee_bean_arabica, name_zh: 阿拉比卡咖啡豆, name_en: Arabica Coffee Beans, category: coffee_base,
+   default_form: solid_g, typical_serving_g: 10, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 350, sugar_g: 0, fat_g: 12.0, caffeine_mg: 1200, sodium_mg: 4},
+   flavor_descriptors: [fruity, balanced, complex], source: usda_fdc}
+
+- {id: coffee_bean_robusta, name_zh: 罗布斯塔咖啡豆, name_en: Robusta Coffee Beans, category: coffee_base,
+   default_form: solid_g, typical_serving_g: 10, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 350, sugar_g: 0, fat_g: 10.0, caffeine_mg: 2200, sodium_mg: 4},
+   flavor_descriptors: [bitter, strong, earthy, rubbery], source: usda_fdc}
+
+# =============================================================================
+# SWEETENERS (sweet_) — 19 entries
+# =============================================================================
+
+- {id: sweet_cane_sugar, name_zh: 白砂糖, name_en: Cane Sugar, category: sweetener,
+   default_form: solid_g, typical_serving_g: 13, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 400, sugar_g: 100, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [pure_sweet, neutral], source: china_food_composition_v6}
+
+- {id: sweet_rock_sugar, name_zh: 冰糖, name_en: Rock Sugar, category: sweetener,
+   default_form: solid_g, typical_serving_g: 13, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 400, sugar_g: 100, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [pure_sweet, slow_release, mellow], source: china_food_composition_v6}
+
+- {id: sweet_brown_sugar, name_zh: 红糖, name_en: Brown Sugar, category: sweetener,
+   default_form: solid_g, typical_serving_g: 13, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 389, sugar_g: 97.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 28},
+   flavor_descriptors: [caramelized, molasses, warm], source: china_food_composition_v6}
+
+- {id: sweet_dark_brown, name_zh: 黑糖, name_en: Dark Brown Sugar, category: sweetener,
+   default_form: solid_g, typical_serving_g: 13, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 380, sugar_g: 95.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 30},
+   flavor_descriptors: [molasses, smoky, deep_caramel], source: china_food_composition_v6}
+
+- {id: sweet_powdered_sugar, name_zh: 糖粉, name_en: Powdered Sugar, category: sweetener,
+   default_form: powder_g, typical_serving_g: 10, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 390, sugar_g: 99.5, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [pure_sweet, fine_dissolve], source: usda_fdc}
+
+- {id: sweet_fructose_syrup, name_zh: 果糖糖浆, name_en: Fructose Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 11, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 280, sugar_g: 70.0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [pure_sweet, neutral, quick_release], source: industry_estimate}
+
+- {id: sweet_corn_syrup, name_zh: 玉米糖浆, name_en: Corn Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 13, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 282, sugar_g: 68.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 60},
+   flavor_descriptors: [mild_sweet, smooth, viscous], source: usda_fdc}
+
+- {id: sweet_dark_syrup, name_zh: 黑糖糖浆, name_en: Dark Brown Sugar Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 15, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 280, sugar_g: 70.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 25},
+   flavor_descriptors: [molasses, dark, sweet, viscous], source: industry_estimate}
+
+- {id: sweet_caramel_syrup, name_zh: 焦糖糖浆, name_en: Caramel Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 12, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 300, sugar_g: 65.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 80},
+   flavor_descriptors: [caramelized, buttery, sweet], source: industry_estimate}
+
+- {id: sweet_maple_syrup, name_zh: 枫糖浆, name_en: Maple Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 12, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 260, sugar_g: 60.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 12},
+   flavor_descriptors: [maple, woody, distinctive], source: usda_fdc}
+
+- {id: sweet_agave_syrup, name_zh: 龙舌兰糖浆, name_en: Agave Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 11, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 310, sugar_g: 76.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 4},
+   flavor_descriptors: [mild_sweet, smooth, mellow], source: usda_fdc}
+
+- {id: sweet_osmanthus_honey, name_zh: 桂花蜜, name_en: Osmanthus Honey Syrup, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 12, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 300, sugar_g: 75.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [floral, sweet, osmanthus, honey], source: industry_estimate}
+
+- {id: sweet_honey, name_zh: 蜂蜜, name_en: Honey, category: sweetener,
+   default_form: liquid_ml, typical_serving_g: 14, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 304, sugar_g: 82.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 4},
+   flavor_descriptors: [floral, mellow, viscous], source: china_food_composition_v6}
+
+- {id: sweet_erythritol, name_zh: 赤藓糖醇, name_en: Erythritol, category: sweetener,
+   default_form: solid_g, typical_serving_g: 18, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 20, sugar_g: 0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [cooling, mild_sweet],
+   notes_zh: "代糖, 等甜系数约 0.7", source: industry_estimate}
+
+- {id: sweet_monkfruit, name_zh: 罗汉果糖苷, name_en: Monk Fruit Mogroside, category: sweetener,
+   default_form: powder_g, typical_serving_g: 0.1, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [intense_sweet, clean, slight_aftertaste],
+   notes_zh: "代糖, 等甜系数约 200", source: industry_estimate}
+
+- {id: sweet_stevia, name_zh: 甜菊糖苷, name_en: Stevia, category: sweetener,
+   default_form: powder_g, typical_serving_g: 0.05, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [intense_sweet, herbal_aftertaste, licorice_like],
+   notes_zh: "代糖, 等甜系数约 200, 后味偏草本", source: industry_estimate}
+
+- {id: sweet_allulose, name_zh: 阿洛酮糖, name_en: Allulose, category: sweetener,
+   default_form: solid_g, typical_serving_g: 16, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 16, sugar_g: 0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [pure_sweet, sugar_like, clean],
+   notes_zh: "代糖, 等甜系数约 0.7, 烘焙性能接近蔗糖", source: industry_estimate}
+
+- {id: sweet_maltitol, name_zh: 麦芽糖醇, name_en: Maltitol, category: sweetener,
+   default_form: solid_g, typical_serving_g: 17, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 240, sugar_g: 0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [sweet, slight_cooling],
+   notes_zh: "糖醇, 等甜系数约 0.9, 大剂量可致腹泻", source: industry_estimate}
+
+- {id: sweet_sucralose, name_zh: 三氯蔗糖, name_en: Sucralose, category: sweetener,
+   default_form: solid_g, typical_serving_g: 0.02, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0},
+   flavor_descriptors: [intense_sweet, slight_metallic],
+   notes_zh: "代糖, 等甜系数约 600, 极少用量", source: industry_estimate}
+
+# =============================================================================
+# FRUITS (fruit_) — 45 entries
+# =============================================================================
+
+# ----- Citrus -----
+- {id: fruit_lemon, name_zh: 柠檬, name_en: Lemon, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 20, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 29, sugar_g: 2.5, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [sour, citrus, fresh, bitter], source: china_food_composition_v6}
+
+- {id: fruit_lime, name_zh: 青柠, name_en: Lime, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 20, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 30, sugar_g: 1.7, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [sour, citrus, sharp, tropical], source: usda_fdc}
+
+- {id: fruit_perfume_lemon, name_zh: 香水柠檬, name_en: Perfume Lemon, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 25, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 30, sugar_g: 3.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [floral, citrus, sweet, aromatic],
+   notes_zh: "皮薄香气强, 适合手打", source: industry_estimate}
+
+- {id: fruit_yellow_lemon, name_zh: 黄柠檬, name_en: Yellow Lemon, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 20, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 29, sugar_g: 2.5, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [sour, sweet, classic_citrus], source: usda_fdc}
+
+- {id: fruit_orange, name_zh: 橙子, name_en: Orange, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 60, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 47, sugar_g: 9.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, citrus, juicy], source: china_food_composition_v6}
+
+- {id: fruit_blood_orange, name_zh: 血橙, name_en: Blood Orange, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 60, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 9.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, berry_undertone, citrus, complex], source: industry_estimate}
+
+- {id: fruit_grapefruit, name_zh: 葡萄柚, name_en: Grapefruit, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 42, sugar_g: 7.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [bitter, sour, citrus, slight_sweet], source: china_food_composition_v6}
+
+- {id: fruit_kumquat, name_zh: 金桔, name_en: Kumquat, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 71, sugar_g: 9.0, fat_g: 0.9, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [sweet_skin, sour_flesh, intense_citrus], source: usda_fdc}
+
+- {id: fruit_yougan, name_zh: 油柑, name_en: Phyllanthus emblica, category: fruit, subcategory: citrus,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 7.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [astringent, sweet_aftertaste, sour, unique],
+   notes_zh: "新茶饮热门单品, 涩感强但回甘明显", source: industry_estimate}
+
+# ----- Tropical -----
+- {id: fruit_mango, name_zh: 芒果, name_en: Mango, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 14.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, tropical, juicy], source: china_food_composition_v6}
+
+- {id: fruit_keitt_mango, name_zh: 凯特芒, name_en: Keitt Mango, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 14.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, fragrant, smooth_flesh], source: industry_estimate}
+
+- {id: fruit_green_mango, name_zh: 大青芒, name_en: Green Mango, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 8.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [tangy, less_sweet, crisp], source: industry_estimate}
+
+- {id: fruit_pineapple, name_zh: 菠萝, name_en: Pineapple, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 10.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, tropical, slight_sour, enzymatic], source: china_food_composition_v6}
+
+- {id: fruit_passion, name_zh: 百香果, name_en: Passion Fruit, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 97, sugar_g: 11.0, fat_g: 0.7, caffeine_mg: 0, sodium_mg: 28},
+   flavor_descriptors: [sour, tropical, aromatic, complex], source: usda_fdc}
+
+- {id: fruit_coconut_meat, name_zh: 椰肉, name_en: Coconut Meat, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 354, sugar_g: 6.2, fat_g: 33.0, caffeine_mg: 0, sodium_mg: 20},
+   flavor_descriptors: [coconut, sweet, fatty, chewy], source: usda_fdc}
+
+- {id: fruit_dragon_white, name_zh: 白心火龙果, name_en: White Dragon Fruit, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 60, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 8.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [mild_sweet, refreshing, slight_floral], source: industry_estimate}
+
+- {id: fruit_dragon_red, name_zh: 红心火龙果, name_en: Red Dragon Fruit, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 60, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 55, sugar_g: 9.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, vibrant_color, earthy], source: industry_estimate}
+
+- {id: fruit_sugarapple, name_zh: 释迦, name_en: Sugar Apple, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 94, sugar_g: 13.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 9},
+   flavor_descriptors: [very_sweet, creamy_flesh, unique], source: usda_fdc}
+
+- {id: fruit_guava, name_zh: 芭乐, name_en: Guava, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 68, sugar_g: 9.0, fat_g: 0.9, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [floral, sweet, crisp, mild], source: usda_fdc}
+
+- {id: fruit_durian, name_zh: 榴莲, name_en: Durian, category: fruit, subcategory: tropical,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: premium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 147, sugar_g: 27.0, fat_g: 5.3, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [pungent, very_sweet, custard_like, polarizing], source: usda_fdc}
+
+# ----- Berries -----
+- {id: fruit_strawberry, name_zh: 草莓, name_en: Strawberry, category: fruit, subcategory: berry,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 32, sugar_g: 4.9, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, berry, slight_sour], source: china_food_composition_v6}
+
+- {id: fruit_blueberry, name_zh: 蓝莓, name_en: Blueberry, category: fruit, subcategory: berry,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 57, sugar_g: 10.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, berry, slight_tart], source: usda_fdc}
+
+- {id: fruit_raspberry, name_zh: 树莓, name_en: Raspberry, category: fruit, subcategory: berry,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 52, sugar_g: 4.4, fat_g: 0.7, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [tart, berry, complex], source: usda_fdc}
+
+- {id: fruit_mulberry, name_zh: 桑葚, name_en: Mulberry, category: fruit, subcategory: berry,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 43, sugar_g: 8.1, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [sweet, woodsy, mild_tart], source: usda_fdc}
+
+- {id: fruit_blackcurrant, name_zh: 黑加仑, name_en: Black Currant, category: fruit, subcategory: berry,
+   default_form: fresh_g, typical_serving_g: 25, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 63, sugar_g: 8.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [tart, deep_berry, herbal, complex], source: usda_fdc}
+
+- {id: fruit_cranberry, name_zh: 蔓越莓, name_en: Cranberry, category: fruit, subcategory: berry,
+   default_form: fresh_g, typical_serving_g: 25, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 46, sugar_g: 4.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [tart, bitter, astringent], source: usda_fdc}
+
+# ----- Stone fruits -----
+- {id: fruit_peach, name_zh: 桃子, name_en: Peach, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 39, sugar_g: 8.4, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, juicy, fragrant], source: china_food_composition_v6}
+
+- {id: fruit_yellow_peach, name_zh: 黄桃, name_en: Yellow Peach, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 39, sugar_g: 8.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, firm, dense_flesh], source: china_food_composition_v6}
+
+- {id: fruit_honey_peach, name_zh: 水蜜桃, name_en: Honey Peach, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 40, sugar_g: 9.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [very_sweet, juicy, floral, soft], source: china_food_composition_v6}
+
+- {id: fruit_nectarine, name_zh: 油桃, name_en: Nectarine, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 44, sugar_g: 7.9, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, slightly_tart, firm], source: usda_fdc}
+
+- {id: fruit_cherry, name_zh: 樱桃, name_en: Cherry, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 8.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, slight_tart, juicy], source: china_food_composition_v6}
+
+- {id: fruit_bing_cherry, name_zh: 车厘子, name_en: Bing Cherry, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 30, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 63, sugar_g: 13.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [very_sweet, dark, dense, premium], source: usda_fdc}
+
+- {id: fruit_plum, name_zh: 李子, name_en: Plum, category: fruit, subcategory: stone,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 46, sugar_g: 9.9, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [sweet, sour_skin, juicy], source: china_food_composition_v6}
+
+# ----- Other -----
+- {id: fruit_apple, name_zh: 苹果, name_en: Apple, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 52, sugar_g: 10.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, crisp, mild_tart, fresh], source: china_food_composition_v6}
+
+- {id: fruit_pear, name_zh: 梨, name_en: Pear, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 57, sugar_g: 10.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, juicy, soft, refreshing], source: china_food_composition_v6}
+
+- {id: fruit_grape, name_zh: 葡萄, name_en: Grape, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 67, sugar_g: 16.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [sweet, juicy, slight_tart], source: china_food_composition_v6}
+
+- {id: fruit_shine_muscat, name_zh: 阳光玫瑰, name_en: Shine Muscat, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: high, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 70, sugar_g: 17.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [very_sweet, floral, muscat, crisp], source: industry_estimate}
+
+- {id: fruit_banana, name_zh: 香蕉, name_en: Banana, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 89, sugar_g: 12.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, creamy, soft, mild], source: china_food_composition_v6}
+
+- {id: fruit_kiwi, name_zh: 猕猴桃, name_en: Kiwi, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 61, sugar_g: 9.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 3},
+   flavor_descriptors: [sweet, sour, tropical, slightly_grassy], source: china_food_composition_v6}
+
+- {id: fruit_avocado, name_zh: 牛油果, name_en: Avocado, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 160, sugar_g: 0.7, fat_g: 15.0, caffeine_mg: 0, sodium_mg: 7},
+   flavor_descriptors: [buttery, mild, fatty, neutral], source: usda_fdc}
+
+- {id: fruit_watermelon, name_zh: 西瓜, name_en: Watermelon, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 80, allergens: [], cost_tier: low, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 30, sugar_g: 6.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [sweet, refreshing, watery, light], source: china_food_composition_v6}
+
+- {id: fruit_hami_melon, name_zh: 哈密瓜, name_en: Hami Melon, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 60, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 34, sugar_g: 8.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 16},
+   flavor_descriptors: [sweet, melon, mild, juicy], source: china_food_composition_v6}
+
+- {id: fruit_longan, name_zh: 桂圆, name_en: Longan, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 14.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [very_sweet, floral, slight_musky], source: china_food_composition_v6}
+
+- {id: fruit_lychee, name_zh: 荔枝, name_en: Lychee, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 50, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 66, sugar_g: 15.0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [floral, very_sweet, tropical, fragrant], source: china_food_composition_v6}
+
+- {id: fruit_bayberry, name_zh: 杨梅, name_en: Bayberry, category: fruit, subcategory: other,
+   default_form: fresh_g, typical_serving_g: 40, allergens: [], cost_tier: medium, supply: seasonal,
+   nutrition_per_100g: {energy_kcal: 28, sugar_g: 6.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [tart, sweet, berry, juicy], source: china_food_composition_v6}
+
+# =============================================================================
+# TOPPINGS (topping_) — 31 entries
+# =============================================================================
+
+# ----- Pearls -----
+- {id: topping_brown_pearl, name_zh: 黑糖珍珠, name_en: Brown Sugar Pearls, category: topping, subcategory: pearl,
+   default_form: solid_g, typical_serving_g: 40, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 245, sugar_g: 35.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [chewy, sweet, caramel],
+   notes_zh: "已熟态; 干珍珠泡发系数 2.5", source: industry_estimate}
+
+- {id: topping_white_pearl, name_zh: 白珍珠, name_en: White Pearls, category: topping, subcategory: pearl,
+   default_form: solid_g, typical_serving_g: 40, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 240, sugar_g: 30.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [chewy, mild_sweet, neutral], source: industry_estimate}
+
+- {id: topping_boba, name_zh: 波霸, name_en: Boba (Large Pearls), category: topping, subcategory: pearl,
+   default_form: solid_g, typical_serving_g: 50, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 250, sugar_g: 35.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [very_chewy, sweet, dense], source: industry_estimate}
+
+- {id: topping_crystal_pearl, name_zh: 水晶珍珠, name_en: Crystal Pearls, category: topping, subcategory: pearl,
+   default_form: solid_g, typical_serving_g: 35, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 10.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [bouncy, neutral, low_cal],
+   notes_zh: "蒟蒻基底, 热量极低", source: industry_estimate}
+
+- {id: topping_pop_mango, name_zh: 爆爆珠-芒果, name_en: Popping Boba Mango, category: topping, subcategory: popping,
+   default_form: solid_g, typical_serving_g: 20, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 80, sugar_g: 18.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 30},
+   flavor_descriptors: [popping, mango, sweet], source: industry_estimate}
+
+- {id: topping_pop_grape, name_zh: 爆爆珠-葡萄, name_en: Popping Boba Grape, category: topping, subcategory: popping,
+   default_form: solid_g, typical_serving_g: 20, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 80, sugar_g: 18.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 30},
+   flavor_descriptors: [popping, grape, sweet], source: industry_estimate}
+
+- {id: topping_pop_strawberry, name_zh: 爆爆珠-草莓, name_en: Popping Boba Strawberry, category: topping, subcategory: popping,
+   default_form: solid_g, typical_serving_g: 20, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 80, sugar_g: 18.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 30},
+   flavor_descriptors: [popping, strawberry, sweet], source: industry_estimate}
+
+- {id: topping_pop_lychee, name_zh: 爆爆珠-荔枝, name_en: Popping Boba Lychee, category: topping, subcategory: popping,
+   default_form: solid_g, typical_serving_g: 20, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 80, sugar_g: 18.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 30},
+   flavor_descriptors: [popping, floral, sweet, lychee], source: industry_estimate}
+
+# ----- Taro / root balls and paste -----
+- {id: topping_taro_ball, name_zh: 芋圆, name_en: Taro Ball, category: topping, subcategory: starch_ball,
+   default_form: solid_g, typical_serving_g: 35, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 30.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [chewy, starchy, mild_sweet], source: industry_estimate}
+
+- {id: topping_purple_potato_ball, name_zh: 紫薯圆, name_en: Purple Sweet Potato Ball, category: topping, subcategory: starch_ball,
+   default_form: solid_g, typical_serving_g: 35, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 30.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [chewy, earthy, sweet, vibrant_color], source: industry_estimate}
+
+- {id: topping_potato_ball, name_zh: 地瓜圆, name_en: Sweet Potato Ball, category: topping, subcategory: starch_ball,
+   default_form: solid_g, typical_serving_g: 35, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 32.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [chewy, sweet, golden], source: industry_estimate}
+
+- {id: topping_mixed_ball, name_zh: 五彩芋圆, name_en: Mixed Color Taro Ball, category: topping, subcategory: starch_ball,
+   default_form: solid_g, typical_serving_g: 40, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 30.0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [chewy, varied_color, mild_sweet], source: industry_estimate}
+
+- {id: topping_taro_paste, name_zh: 芋泥, name_en: Taro Paste, category: topping, subcategory: paste,
+   default_form: solid_g, typical_serving_g: 50, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 150, sugar_g: 22.0, fat_g: 3.0, caffeine_mg: 0, sodium_mg: 25},
+   flavor_descriptors: [smooth, earthy, sweet, creamy],
+   notes_zh: "常含奶/糖, 含乳致敏原", source: industry_estimate}
+
+- {id: topping_purple_potato_paste, name_zh: 紫薯泥, name_en: Purple Sweet Potato Paste, category: topping, subcategory: paste,
+   default_form: solid_g, typical_serving_g: 50, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 140, sugar_g: 20.0, fat_g: 2.5, caffeine_mg: 0, sodium_mg: 20},
+   flavor_descriptors: [smooth, earthy, sweet, vibrant], source: industry_estimate}
+
+# ----- Gels / jellies -----
+- {id: topping_grass_jelly, name_zh: 仙草冻, name_en: Grass Jelly, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 60, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 12.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 15},
+   flavor_descriptors: [soft, slight_bitter, herbal, cooling], source: industry_estimate}
+
+- {id: topping_hot_grass_jelly, name_zh: 烧仙草, name_en: Hot Grass Jelly, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 70, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 14.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 20},
+   flavor_descriptors: [soft, herbal, warm, slight_bitter], source: industry_estimate}
+
+- {id: topping_nata_de_coco, name_zh: 椰果, name_en: Nata de Coco, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 30, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 70, sugar_g: 17.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 6},
+   flavor_descriptors: [chewy, neutral, refreshing], source: industry_estimate}
+
+- {id: topping_agar_jelly, name_zh: 寒天冻, name_en: Agar Jelly, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 40, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 30, sugar_g: 6.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [firm, neutral, low_cal], source: industry_estimate}
+
+- {id: topping_konjac, name_zh: 蒟蒻, name_en: Konjac Jelly, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 30, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 8, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 12},
+   flavor_descriptors: [bouncy, neutral, very_low_cal], source: industry_estimate}
+
+- {id: topping_coffee_jelly, name_zh: 咖啡冻, name_en: Coffee Jelly, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 40, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 50, sugar_g: 12.0, fat_g: 0, caffeine_mg: 35, sodium_mg: 8},
+   flavor_descriptors: [bitter, sweet, coffee, firm], source: industry_estimate}
+
+- {id: topping_matcha_jelly, name_zh: 抹茶冻, name_en: Matcha Jelly, category: topping, subcategory: jelly,
+   default_form: solid_g, typical_serving_g: 40, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 60, sugar_g: 13.0, fat_g: 0.2, caffeine_mg: 50, sodium_mg: 8},
+   flavor_descriptors: [grassy, sweet, firm], source: industry_estimate}
+
+# ----- Beans / grains -----
+- {id: topping_red_bean, name_zh: 蜜红豆, name_en: Sweet Red Bean, category: topping, subcategory: bean,
+   default_form: solid_g, typical_serving_g: 25, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 250, sugar_g: 50.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [soft, sweet, earthy], source: china_food_composition_v6}
+
+- {id: topping_sweet_bean, name_zh: 蜜豆, name_en: Sweetened Bean, category: topping, subcategory: bean,
+   default_form: solid_g, typical_serving_g: 25, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 240, sugar_g: 48.0, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [soft, sweet, mellow], source: china_food_composition_v6}
+
+- {id: topping_sago, name_zh: 西米, name_en: Sago, category: topping, subcategory: grain,
+   default_form: solid_g, typical_serving_g: 30, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 100, sugar_g: 20.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [chewy, translucent, mild], source: industry_estimate}
+
+- {id: topping_oats, name_zh: 燕麦, name_en: Cooked Oats, category: topping, subcategory: grain,
+   default_form: solid_g, typical_serving_g: 30, allergens: [gluten], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 150, sugar_g: 5.0, fat_g: 3.0, caffeine_mg: 0, sodium_mg: 4},
+   flavor_descriptors: [grain, soft, nutty], source: usda_fdc}
+
+- {id: topping_black_sesame, name_zh: 黑芝麻, name_en: Black Sesame, category: topping, subcategory: seed,
+   default_form: solid_g, typical_serving_g: 8, allergens: [sesame], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 595, sugar_g: 0.3, fat_g: 50.0, caffeine_mg: 0, sodium_mg: 11},
+   flavor_descriptors: [nutty, dark, rich, fragrant], source: china_food_composition_v6}
+
+# ----- Pudding / popping -----
+- {id: topping_egg_pudding, name_zh: 鸡蛋布丁, name_en: Egg Pudding, category: topping, subcategory: pudding,
+   default_form: solid_g, typical_serving_g: 50, allergens: [egg, milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 150, sugar_g: 17.0, fat_g: 5.0, caffeine_mg: 0, sodium_mg: 95},
+   flavor_descriptors: [smooth, sweet, creamy, eggy], source: industry_estimate}
+
+- {id: topping_caramel_pudding, name_zh: 焦糖布丁, name_en: Caramel Pudding, category: topping, subcategory: pudding,
+   default_form: solid_g, typical_serving_g: 50, allergens: [egg, milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 160, sugar_g: 18.0, fat_g: 5.0, caffeine_mg: 0, sodium_mg: 90},
+   flavor_descriptors: [smooth, caramelized, sweet], source: industry_estimate}
+
+- {id: topping_matcha_pudding, name_zh: 抹茶布丁, name_en: Matcha Pudding, category: topping, subcategory: pudding,
+   default_form: solid_g, typical_serving_g: 50, allergens: [egg, milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 150, sugar_g: 16.0, fat_g: 5.0, caffeine_mg: 30, sodium_mg: 85},
+   flavor_descriptors: [smooth, grassy, sweet], source: industry_estimate}
+
+- {id: topping_crispy_pop, name_zh: 脆啵啵, name_en: Crispy Popping, category: topping, subcategory: popping,
+   default_form: solid_g, typical_serving_g: 20, allergens: [gluten], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 350, sugar_g: 30.0, fat_g: 8.0, caffeine_mg: 0, sodium_mg: 80},
+   flavor_descriptors: [crispy, sweet, contrasting_texture], source: industry_estimate}
+
+- {id: topping_milk_pop, name_zh: 奶啵啵, name_en: Milk Popping, category: topping, subcategory: popping,
+   default_form: solid_g, typical_serving_g: 25, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 18.0, fat_g: 6.0, caffeine_mg: 0, sodium_mg: 50},
+   flavor_descriptors: [milky, sweet, soft_burst], source: industry_estimate}
+
+# =============================================================================
+# FLAVORINGS (flavor_) — 27 entries
+# =============================================================================
+
+# ----- Sauces / jams -----
+- {id: flavor_osmanthus_sauce, name_zh: 桂花酱, name_en: Osmanthus Sauce, category: flavoring, subcategory: sauce,
+   default_form: liquid_ml, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 280, sugar_g: 65.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 12},
+   flavor_descriptors: [floral, sweet, aromatic], source: industry_estimate}
+
+- {id: flavor_rose_sauce, name_zh: 玫瑰酱, name_en: Rose Sauce, category: flavoring, subcategory: sauce,
+   default_form: liquid_ml, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 270, sugar_g: 65.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [floral, romantic, sweet], source: industry_estimate}
+
+- {id: flavor_chocolate_sauce, name_zh: 巧克力酱, name_en: Chocolate Sauce, category: flavoring, subcategory: sauce,
+   default_form: liquid_ml, typical_serving_g: 8, allergens: [milk], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 350, sugar_g: 55.0, fat_g: 12.0, caffeine_mg: 15, sodium_mg: 80},
+   flavor_descriptors: [chocolate, sweet, rich], source: usda_fdc}
+
+- {id: flavor_caramel_sauce, name_zh: 焦糖酱, name_en: Caramel Sauce, category: flavoring, subcategory: sauce,
+   default_form: liquid_ml, typical_serving_g: 8, allergens: [milk], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 320, sugar_g: 70.0, fat_g: 5.0, caffeine_mg: 0, sodium_mg: 200},
+   flavor_descriptors: [caramelized, buttery, sweet], source: usda_fdc}
+
+- {id: flavor_strawberry_jam, name_zh: 草莓酱, name_en: Strawberry Jam, category: flavoring, subcategory: jam,
+   default_form: liquid_ml, typical_serving_g: 8, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 250, sugar_g: 60.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [berry, sweet, fruity], source: china_food_composition_v6}
+
+- {id: flavor_blueberry_jam, name_zh: 蓝莓酱, name_en: Blueberry Jam, category: flavoring, subcategory: jam,
+   default_form: liquid_ml, typical_serving_g: 8, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 240, sugar_g: 58.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [berry, sweet, slightly_tart], source: usda_fdc}
+
+- {id: flavor_salted_caramel, name_zh: 海盐焦糖酱, name_en: Salted Caramel Sauce, category: flavoring, subcategory: sauce,
+   default_form: liquid_ml, typical_serving_g: 8, allergens: [milk], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 320, sugar_g: 65.0, fat_g: 5.0, caffeine_mg: 0, sodium_mg: 800},
+   flavor_descriptors: [salty, caramelized, sweet, complex], source: industry_estimate}
+
+# ----- Powders -----
+- {id: flavor_matcha_powder, name_zh: 抹茶粉, name_en: Matcha Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 2, allergens: [], cost_tier: high, supply: stable,
+   nutrition_per_100g: {energy_kcal: 324, sugar_g: 1.0, fat_g: 5.0, caffeine_mg: 3200, sodium_mg: 17},
+   flavor_descriptors: [grassy, umami, intense_green], source: usda_fdc}
+
+- {id: flavor_matcha_stone, name_zh: 石臼抹茶, name_en: Stone-Ground Matcha, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 2, allergens: [], cost_tier: premium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 324, sugar_g: 1.0, fat_g: 5.0, caffeine_mg: 3500, sodium_mg: 17},
+   flavor_descriptors: [umami, vivid_green, smooth, premium], source: supplier_spec_v2025}
+
+- {id: flavor_cocoa_powder, name_zh: 可可粉, name_en: Cocoa Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 3, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 228, sugar_g: 1.7, fat_g: 14.0, caffeine_mg: 230, sodium_mg: 21},
+   flavor_descriptors: [bitter, chocolate, intense, dark], source: usda_fdc}
+
+- {id: flavor_chocolate_powder, name_zh: 巧克力粉, name_en: Chocolate Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 5, allergens: [milk], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 380, sugar_g: 55.0, fat_g: 10.0, caffeine_mg: 30, sodium_mg: 80},
+   flavor_descriptors: [chocolate, sweet, milky], source: industry_estimate}
+
+- {id: flavor_cinnamon_powder, name_zh: 肉桂粉, name_en: Cinnamon Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 0.5, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 247, sugar_g: 2.2, fat_g: 1.2, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [warm, woody, sweet_spice], source: usda_fdc}
+
+- {id: flavor_ginger_powder, name_zh: 姜粉, name_en: Ginger Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 0.5, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 335, sugar_g: 3.4, fat_g: 4.2, caffeine_mg: 0, sodium_mg: 27},
+   flavor_descriptors: [pungent, warm, spicy], source: usda_fdc}
+
+- {id: flavor_vanilla_powder, name_zh: 香草粉, name_en: Vanilla Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 0.5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 300, sugar_g: 12.0, fat_g: 1.0, caffeine_mg: 0, sodium_mg: 9},
+   flavor_descriptors: [vanilla, sweet, aromatic], source: industry_estimate}
+
+- {id: flavor_coconut_milk_powder, name_zh: 椰浆粉, name_en: Coconut Milk Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 650, sugar_g: 25.0, fat_g: 60.0, caffeine_mg: 0, sodium_mg: 35},
+   flavor_descriptors: [coconut, sweet, dense, fatty], source: industry_estimate}
+
+- {id: flavor_purple_potato_powder, name_zh: 紫薯粉, name_en: Purple Sweet Potato Powder, category: flavoring, subcategory: powder,
+   default_form: powder_g, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 350, sugar_g: 12.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 50},
+   flavor_descriptors: [earthy, vibrant_color, mild_sweet], source: industry_estimate}
+
+# ----- Extracts / essences -----
+- {id: flavor_vanilla_extract, name_zh: 香草精, name_en: Vanilla Extract, category: flavoring, subcategory: extract,
+   default_form: liquid_ml, typical_serving_g: 0.5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 280, sugar_g: 13.0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 9},
+   flavor_descriptors: [vanilla, alcohol_undertone, intense], source: usda_fdc}
+
+- {id: flavor_almond_extract, name_zh: 杏仁精, name_en: Almond Extract, category: flavoring, subcategory: extract,
+   default_form: liquid_ml, typical_serving_g: 0.3, allergens: [nut], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 260, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [almond, intense, bitter_undertone], source: usda_fdc}
+
+- {id: flavor_rose_water, name_zh: 玫瑰水, name_en: Rose Water, category: flavoring, subcategory: extract,
+   default_form: liquid_ml, typical_serving_g: 2, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [floral, rose, delicate], source: industry_estimate}
+
+- {id: flavor_osmanthus_essence, name_zh: 桂花精, name_en: Osmanthus Essence, category: flavoring, subcategory: extract,
+   default_form: liquid_ml, typical_serving_g: 0.5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 40.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [floral, sweet, osmanthus, intense], source: industry_estimate}
+
+- {id: flavor_mint_essence, name_zh: 薄荷精油, name_en: Mint Essence, category: flavoring, subcategory: extract,
+   default_form: liquid_ml, typical_serving_g: 0.1, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [intense_mint, cooling, sharp], source: industry_estimate}
+
+# ----- Salts / seasonings -----
+- {id: flavor_sea_salt, name_zh: 海盐, name_en: Sea Salt, category: flavoring, subcategory: salt,
+   default_form: solid_g, typical_serving_g: 0.3, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 38000},
+   flavor_descriptors: [salty, mineral], source: usda_fdc}
+
+- {id: flavor_cream_salt, name_zh: 奶盖盐, name_en: Cream Topping Salt, category: flavoring, subcategory: salt,
+   default_form: solid_g, typical_serving_g: 0.5, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 38000},
+   flavor_descriptors: [salty, fine_grain, balanced], source: industry_estimate}
+
+- {id: flavor_rose_salt, name_zh: 玫瑰盐, name_en: Himalayan Rose Salt, category: flavoring, subcategory: salt,
+   default_form: solid_g, typical_serving_g: 0.3, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 38000},
+   flavor_descriptors: [salty, mineral, pink_color], source: industry_estimate}
+
+# ----- Dried botanicals -----
+- {id: flavor_dried_osmanthus, name_zh: 干桂花, name_en: Dried Osmanthus, category: flavoring, subcategory: dried_flower,
+   default_form: solid_g, typical_serving_g: 0.5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 250, sugar_g: 50.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 10},
+   flavor_descriptors: [floral, fragrant, sweet], source: industry_estimate}
+
+- {id: flavor_dried_rose, name_zh: 干玫瑰花瓣, name_en: Dried Rose Petals, category: flavoring, subcategory: dried_flower,
+   default_form: solid_g, typical_serving_g: 0.3, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 40.0, fat_g: 0, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [floral, romantic, mild_aromatic], source: industry_estimate}
+
+- {id: flavor_dried_lavender, name_zh: 干薰衣草, name_en: Dried Lavender, category: flavoring, subcategory: dried_flower,
+   default_form: solid_g, typical_serving_g: 0.3, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 220, sugar_g: 35.0, fat_g: 0.5, caffeine_mg: 0, sodium_mg: 8},
+   flavor_descriptors: [floral, herbal, intense, distinctive], source: industry_estimate}
+
+# =============================================================================
+# AUXILIARY (aux_) — 10 entries
+# =============================================================================
+
+- {id: aux_ice_cube, name_zh: 冰块, name_en: Ice Cube, category: auxiliary,
+   default_form: solid_g, typical_serving_g: 85, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [cold, neutral], source: trivial}
+
+- {id: aux_crushed_ice, name_zh: 碎冰, name_en: Crushed Ice, category: auxiliary,
+   default_form: solid_g, typical_serving_g: 90, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [cold, neutral, quick_chill], source: trivial}
+
+- {id: aux_smoothie_ice, name_zh: 冰沙, name_en: Smoothie Ice, category: auxiliary,
+   default_form: solid_g, typical_serving_g: 200, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [cold, fine_texture, blendable], source: trivial}
+
+- {id: aux_shake_ice, name_zh: 雪克冰, name_en: Shake Ice, category: auxiliary,
+   default_form: solid_g, typical_serving_g: 100, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [cold, medium_grain], source: trivial}
+
+- {id: aux_pure_water, name_zh: 纯净水, name_en: Pure Water, category: auxiliary,
+   default_form: liquid_ml, typical_serving_g: 50, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 0},
+   flavor_descriptors: [neutral], source: trivial}
+
+- {id: aux_soda_water, name_zh: 苏打水, name_en: Soda Water, category: auxiliary,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 20},
+   flavor_descriptors: [fizzy, slight_mineral], source: usda_fdc}
+
+- {id: aux_sparkling_water, name_zh: 气泡水, name_en: Sparkling Water, category: auxiliary,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 0, sugar_g: 0, fat_g: 0, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [fizzy, light], source: usda_fdc}
+
+- {id: aux_coconut_water, name_zh: 椰子水, name_en: Coconut Water, category: auxiliary,
+   default_form: liquid_ml, typical_serving_g: 100, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 19, sugar_g: 2.6, fat_g: 0.2, caffeine_mg: 0, sodium_mg: 105},
+   flavor_descriptors: [tropical, mild_sweet, refreshing, mineral], source: usda_fdc}
+
+- {id: aux_milk_ice, name_zh: 牛奶冰块, name_en: Milk Ice Cube, category: auxiliary,
+   default_form: solid_g, typical_serving_g: 80, allergens: [milk], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 61, sugar_g: 4.8, fat_g: 3.3, caffeine_mg: 0, sodium_mg: 43},
+   flavor_descriptors: [cold, creamy_slow_release], source: industry_estimate}
+
+- {id: aux_tea_ice, name_zh: 茶冰块, name_en: Tea Ice Cube, category: auxiliary,
+   default_form: solid_g, typical_serving_g: 80, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 1, sugar_g: 0, fat_g: 0, caffeine_mg: 20, sodium_mg: 1},
+   flavor_descriptors: [cold, tea_undertone], source: industry_estimate}
+
+# =============================================================================
+# GELS (gel_) — 8 entries
+# =============================================================================
+
+- {id: gel_agar, name_zh: 寒天粉, name_en: Agar Powder, category: gel,
+   default_form: powder_g, typical_serving_g: 2, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 306, sugar_g: 0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 102},
+   flavor_descriptors: [neutral, gelling], source: usda_fdc}
+
+- {id: gel_gelatin, name_zh: 明胶粉, name_en: Gelatin Powder, category: gel,
+   default_form: powder_g, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 335, sugar_g: 0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 196},
+   flavor_descriptors: [neutral, protein, gelling], source: usda_fdc}
+
+- {id: gel_fish_gelatin, name_zh: 鱼胶粉, name_en: Fish Gelatin, category: gel,
+   default_form: powder_g, typical_serving_g: 5, allergens: [fish], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 335, sugar_g: 0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 200},
+   flavor_descriptors: [neutral, low_set_temp], source: industry_estimate}
+
+- {id: gel_pectin, name_zh: 果胶, name_en: Pectin, category: gel,
+   default_form: powder_g, typical_serving_g: 3, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 200, sugar_g: 0, fat_g: 0.3, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [neutral, fruit_compatible, gelling], source: usda_fdc}
+
+- {id: gel_carrageenan, name_zh: 卡拉胶, name_en: Carrageenan, category: gel,
+   default_form: powder_g, typical_serving_g: 2, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 240, sugar_g: 0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 80},
+   flavor_descriptors: [neutral, gelling, milk_compatible], source: industry_estimate}
+
+- {id: gel_xanthan, name_zh: 黄原胶, name_en: Xanthan Gum, category: gel,
+   default_form: powder_g, typical_serving_g: 1, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 333, sugar_g: 0, fat_g: 0.4, caffeine_mg: 0, sodium_mg: 100},
+   flavor_descriptors: [neutral, thickening], source: usda_fdc}
+
+- {id: gel_tapioca_starch, name_zh: 木薯粉, name_en: Tapioca Starch, category: gel,
+   default_form: powder_g, typical_serving_g: 5, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 358, sugar_g: 3.3, fat_g: 0, caffeine_mg: 0, sodium_mg: 1},
+   flavor_descriptors: [neutral, thickening, chewy_when_cooked], source: usda_fdc}
+
+- {id: gel_corn_starch, name_zh: 玉米淀粉, name_en: Corn Starch, category: gel,
+   default_form: powder_g, typical_serving_g: 5, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 381, sugar_g: 0, fat_g: 0.1, caffeine_mg: 0, sodium_mg: 9},
+   flavor_descriptors: [neutral, thickening], source: usda_fdc}
+
+# =============================================================================
+# GRAINS / SEEDS (grain_) — 8 entries
+# =============================================================================
+
+- {id: grain_chia, name_zh: 奇亚籽, name_en: Chia Seeds, category: grain,
+   default_form: solid_g, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 486, sugar_g: 0, fat_g: 31.0, caffeine_mg: 0, sodium_mg: 16},
+   flavor_descriptors: [nutty, gel_forming, slight_crunch],
+   notes_zh: "吸水后体积大幅膨胀, cooking_factor 约 8", source: usda_fdc}
+
+- {id: grain_basil_seed, name_zh: 罗勒籽, name_en: Basil Seeds / Sabja, category: grain,
+   default_form: solid_g, typical_serving_g: 5, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 233, sugar_g: 0, fat_g: 14.0, caffeine_mg: 0, sodium_mg: 12},
+   flavor_descriptors: [neutral, gel_forming, popping_texture],
+   notes_zh: "吸水后约 10 倍膨胀, cooking_factor 约 10", source: industry_estimate}
+
+- {id: grain_flax, name_zh: 亚麻籽, name_en: Flax Seeds, category: grain,
+   default_form: solid_g, typical_serving_g: 5, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 534, sugar_g: 1.5, fat_g: 42.0, caffeine_mg: 0, sodium_mg: 30},
+   flavor_descriptors: [nutty, woody, mild], source: usda_fdc}
+
+- {id: grain_rolled_oats, name_zh: 燕麦片, name_en: Rolled Oats, category: grain,
+   default_form: solid_g, typical_serving_g: 20, allergens: [gluten], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 380, sugar_g: 1.0, fat_g: 7.0, caffeine_mg: 0, sodium_mg: 2},
+   flavor_descriptors: [grain, slight_nutty, chewy_when_cooked], source: usda_fdc}
+
+- {id: grain_instant_oats, name_zh: 即食燕麦, name_en: Instant Oats, category: grain,
+   default_form: solid_g, typical_serving_g: 20, allergens: [gluten], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 370, sugar_g: 1.0, fat_g: 7.0, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [grain, soft, quick_cook], source: usda_fdc}
+
+- {id: grain_black_rice, name_zh: 黑米, name_en: Black Rice, category: grain,
+   default_form: solid_g, typical_serving_g: 25, allergens: [], cost_tier: medium, supply: stable,
+   nutrition_per_100g: {energy_kcal: 356, sugar_g: 0, fat_g: 2.8, caffeine_mg: 0, sodium_mg: 4},
+   flavor_descriptors: [nutty, dark, chewy, antioxidant], source: china_food_composition_v6}
+
+- {id: grain_brown_rice, name_zh: 糙米, name_en: Brown Rice, category: grain,
+   default_form: solid_g, typical_serving_g: 25, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 362, sugar_g: 0, fat_g: 2.7, caffeine_mg: 0, sodium_mg: 4},
+   flavor_descriptors: [nutty, chewy, grain], source: china_food_composition_v6}
+
+- {id: grain_millet, name_zh: 小米, name_en: Millet, category: grain,
+   default_form: solid_g, typical_serving_g: 25, allergens: [], cost_tier: low, supply: stable,
+   nutrition_per_100g: {energy_kcal: 378, sugar_g: 0, fat_g: 4.2, caffeine_mg: 0, sodium_mg: 5},
+   flavor_descriptors: [grain, slight_sweet, soft_when_cooked], source: usda_fdc}

@@ -1,0 +1,10 @@
+# Initial Dirichlet alpha for volume partitioning, per §E.5.1
+# Roles order: [tea, milk, fruit, water, coffee, ice]
+# Fit from 100+ reference recipes (placeholder — replace with real fit in Week 2)
+
+纯茶:        [8.0, 0.0, 0.3, 1.0, 0.0, 2.0]
+奶茶:        [3.0, 1.5, 0.2, 0.3, 0.0, 1.5]
+果茶:        [2.0, 0.1, 2.0, 1.0, 0.0, 1.5]
+咖啡奶茶:    [1.0, 1.5, 0.0, 0.3, 1.5, 1.0]
+冰沙:        [1.0, 1.0, 1.0, 0.5, 0.0, 4.0]
+特调:        [1.0, 1.0, 1.0, 1.0, 0.5, 1.5]

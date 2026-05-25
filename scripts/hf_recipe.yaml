@@ -1,0 +1,38 @@
+# Recipe for batch ingestion via:
+#   python scripts/ingest_hf_reviews.py --recipe scripts/hf_recipe.yaml
+#
+# Strategy for waimai_10k: take all 11,987 rows without filter.
+# Tea-drink-specific rows are only ~70 (narrow) / ~359 (broad), so keyword
+# filtering would discard 97% of useful language-transfer signal for
+# GNN Stage 1 pretraining. We tag on-topic rows in metadata downstream.
+
+- dataset: XiangPan/waimai_10k
+  shard: hf_waimai
+  split: train
+  text_column: text
+  rating_column: label
+  # keywords: omitted intentionally — keep all 11,987 rows
+  max_records: 12000
+
+# Zhihu Q&A — filter for tea-related answers using the RESPONSE column.
+# Answers are longer (~300 chars) and more substantive than waimai reviews.
+- dataset: wangrui6/Zhihu-KOL
+  shard: hf_zhihu_tea
+  split: train
+  text_column: RESPONSE
+  keywords: [奶茶, 茶饮, 拿铁, 鲜奶茶, 喜茶, 奈雪, 蜜雪冰城, 茶颜悦色, 霸王茶姬, 古茗, 厚乳, 杨枝甘露, 鸭屎香, 桂花乌龙]
+  max_records: 3000
+
+# ---------------------------------------------------------------------------
+# Datasets we tried and could NOT use (kept here for posterity):
+#
+#   seamew/ChnSentiCorp           — uses deprecated dataset-script format,
+#                                   blocked by datasets 4.x
+#   XiangPan/online_shopping_10_cats — does not exist
+#   tyqiangz/multilingual-sentiments — deprecated script format
+#   kuroneko5943/JD_Reviews          — does not exist
+#   clue                              — HF URI issue under datasets 4.x
+#
+# If you discover newer Chinese review datasets in parquet/json format on
+# huggingface.co/datasets, add them below.
+# ---------------------------------------------------------------------------

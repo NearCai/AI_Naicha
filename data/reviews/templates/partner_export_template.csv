@@ -1,0 +1,4 @@
+source,brand,sku,text,customization_raw,rating,user_id_external,source_url,timestamp
+partner_brandX,喜茶,多肉葡萄,"今天点了多肉葡萄五分糖少冰加芋圆,葡萄味很浓茶味也压得住,会回购",五分糖少冰加芋圆,5,user_abc123,https://internal.brand.com/r/1,2026-05-20 14:32:11
+partner_brandX,喜茶,芝士绿妍,"试了芝士绿妍三分糖,茶味很清新但奶盖偏咸",三分糖,3.5,user_def456,https://internal.brand.com/r/2,2026-05-20 15:01:42
+partner_brandX,喜茶,鸭屎香拿铁,"鸭屎香拿铁太苦了,根本喝不出茶香",,1.5,user_ghi789,https://internal.brand.com/r/3,2026-05-20 16:18:09

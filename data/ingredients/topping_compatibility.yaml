@@ -1,0 +1,70 @@
+# Topping compatibility: pairwise affinity score in [-1, 1]
+# 1.0  = strongly complementary (rich combinatorial value)
+# 0.5  = good pairing (works well)
+# 0.0  = neutral (acceptable)
+# -0.5 = weak / monotone (texture/flavor too similar)
+# -1.0 = conflict (texture clash)
+# Used by RecipeGenerator §E.5.3 when sampling multi-topping combinations
+
+# ===== Strong complements: chewy + popping, chewy + soft =====
+- {pair: [topping_brown_pearl, topping_taro_ball], score: 0.9}
+- {pair: [topping_brown_pearl, topping_pop_mango], score: 0.85}
+- {pair: [topping_brown_pearl, topping_pop_strawberry], score: 0.85}
+- {pair: [topping_brown_pearl, topping_pop_lychee], score: 0.85}
+- {pair: [topping_brown_pearl, topping_pop_grape], score: 0.8}
+- {pair: [topping_boba, topping_taro_paste], score: 0.95}
+- {pair: [topping_boba, topping_purple_potato_paste], score: 0.9}
+- {pair: [topping_taro_ball, topping_red_bean], score: 0.85}
+- {pair: [topping_taro_ball, topping_potato_ball], score: 0.8}
+- {pair: [topping_grass_jelly, topping_red_bean], score: 0.95}
+- {pair: [topping_grass_jelly, topping_taro_ball], score: 0.8}
+- {pair: [topping_grass_jelly, topping_sweet_bean], score: 0.9}
+- {pair: [topping_hot_grass_jelly, topping_red_bean], score: 0.95}
+- {pair: [topping_hot_grass_jelly, topping_taro_ball], score: 0.85}
+- {pair: [topping_hot_grass_jelly, topping_purple_potato_ball], score: 0.85}
+- {pair: [topping_nata_de_coco, topping_brown_pearl], score: 0.7}
+- {pair: [topping_nata_de_coco, topping_pop_mango], score: 0.75}
+- {pair: [topping_purple_potato_ball, topping_mixed_ball], score: 0.7}
+- {pair: [topping_mixed_ball, topping_grass_jelly], score: 0.75}
+
+# ===== Pudding pairings — softer + chewy =====
+- {pair: [topping_egg_pudding, topping_red_bean], score: 0.6}
+- {pair: [topping_egg_pudding, topping_brown_pearl], score: 0.65}
+- {pair: [topping_caramel_pudding, topping_brown_pearl], score: 0.7}
+- {pair: [topping_matcha_pudding, topping_red_bean], score: 0.7}
+- {pair: [topping_matcha_pudding, topping_taro_ball], score: 0.6}
+
+# ===== Crispy contrast =====
+- {pair: [topping_crispy_pop, topping_grass_jelly], score: 0.8}
+- {pair: [topping_crispy_pop, topping_red_bean], score: 0.7}
+- {pair: [topping_milk_pop, topping_taro_paste], score: 0.7}
+
+# ===== Acceptable / neutral combos =====
+- {pair: [topping_brown_pearl, topping_red_bean], score: 0.5}
+- {pair: [topping_nata_de_coco, topping_grass_jelly], score: 0.4}
+- {pair: [topping_sago, topping_red_bean], score: 0.5}
+- {pair: [topping_sago, topping_taro_paste], score: 0.6}
+- {pair: [topping_konjac, topping_pop_mango], score: 0.4}
+- {pair: [topping_konjac, topping_nata_de_coco], score: 0.3}
+- {pair: [topping_coffee_jelly, topping_brown_pearl], score: 0.6}
+- {pair: [topping_matcha_jelly, topping_red_bean], score: 0.7}
+- {pair: [topping_agar_jelly, topping_brown_pearl], score: 0.4}
+- {pair: [topping_oats, topping_brown_pearl], score: 0.3}
+- {pair: [topping_black_sesame, topping_brown_pearl], score: 0.4}
+- {pair: [topping_black_sesame, topping_taro_paste], score: 0.55}
+
+# ===== Monotonous / weak (too similar) =====
+- {pair: [topping_egg_pudding, topping_grass_jelly], score: -0.3}
+- {pair: [topping_egg_pudding, topping_caramel_pudding], score: -0.5}
+- {pair: [topping_caramel_pudding, topping_matcha_pudding], score: -0.4}
+- {pair: [topping_white_pearl, topping_brown_pearl], score: -0.4}
+- {pair: [topping_taro_ball, topping_purple_potato_ball], score: -0.2}
+- {pair: [topping_taro_ball, topping_potato_ball], score: -0.2}
+- {pair: [topping_pop_mango, topping_pop_strawberry], score: -0.4}
+- {pair: [topping_pop_mango, topping_pop_lychee], score: -0.3}
+- {pair: [topping_pop_grape, topping_pop_strawberry], score: -0.3}
+- {pair: [topping_pop_grape, topping_pop_lychee], score: -0.3}
+- {pair: [topping_taro_paste, topping_purple_potato_paste], score: -0.5}
+
+# ===== Bean-bean monotony =====
+- {pair: [topping_red_bean, topping_sweet_bean], score: -0.5}

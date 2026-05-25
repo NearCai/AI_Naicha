@@ -1,0 +1,842 @@
+# Market intelligence: 新茶饮 brands + SKU sales proxies (v1, 2024-2025 vintage)
+#
+# Per 技术方案书 §3.3.2 销量端 + v1 实现方案 §5 数据资产清单 (sku_features_v1.parquet 的 yaml 版).
+#
+# Provenance levels (data_sources[].type):
+#   ipo_prospectus      Listed company prospectus / 上市公司招股书 (HIGH confidence)
+#   annual_report       Annual / interim report / 年报中期 (HIGH)
+#   press_release       Brand official press release / 品牌官方新闻 (HIGH on its own claim)
+#   industry_report     Third-party industry research / 艾瑞CBNData等行业报告 (MEDIUM)
+#   news_media          News article / 媒体报道 (LOW-MEDIUM, often citing other source)
+#   estimated           Calculated / derived from other public data (LOW, flagged)
+#
+# Coverage as of this vintage (2024 H2 — 2025):
+#   - 10 brands (top 9 by store count + 茶颜悦色 regional)
+#   - 54 SKUs (招牌 + 当下热销 + 历史经典)
+#   - Industry section: market size, trending flavors, online channel data
+#
+# CRITICAL: Per-SKU actual cup-level sales are private. We use:
+#   - publicly disclosed cup counts from prospectuses / press releases (the few that exist)
+#   - signature/招牌 flag for SKUs known to be brand staples but no cup data
+#   - relative price tier
+#   - launch year (rough)
+#
+# If you scrape per-SKU social engagement (大众点评 推荐数, 小红书 笔记数), add fields
+# in the proxies block (e.g., dianping_recommends_n, xhs_notes_n) and source them.
+
+# =============================================================================
+# 行业级数据 (industry)
+# =============================================================================
+industry:
+  market_size_cny_2024: 354_700_000_000   # 3547 亿元
+  market_growth_rate_2024: 0.064          # 6.4% YoY (down from CAGR 24.9% in 2017-2022)
+  total_stores_china_2025_09: 415_000     # 41.5 万家全国 (含所有现制茶饮)
+  net_store_change_yoy_2024_2025: -39_000 # -3.9 万 (洗牌期, 新开 11.8 万 - 闭店 15.7 万)
+
+  top_flavor_3yr:           # 过去 3 年茶饮 Top 10 风味
+    - 茉莉绿茶
+    - 柠檬
+    - 玫瑰
+    - 桂花
+    - 桃子
+    - 橙子
+    - 龙井
+    - 黑糖
+    - 西瓜
+    - 芒果
+
+  fastest_growing_flavor_1yr:   # 过去 1 年增速 Top 风味
+    - 芭乐
+    - 车厘子
+    - 黄皮
+    - 陈皮
+    - 桑葚
+    - 话梅
+    - 龙眼
+    - 树莓
+    - 蔓越莓
+    - 石榴
+
+  coffee_top_flavor_3yr:
+    - 椰子
+    - 巧克力
+    - 橙子
+    - 荔枝
+    - 开心果
+    - 焦糖
+    - 燕麦
+    - 芝士
+    - 山茶花
+    - 碧根果
+
+  source_industry_report:
+    cite: "解码40万家门店混战:2025最全现制茶饮行业研究报告 / KERRY&饿了么 2025现制饮品风味图谱"
+    type: industry_report
+    year: 2025
+    note: |
+      Industry size from 36氪 / 投中网 industry report citations. Trending flavor
+      lists from KERRY × 饿了么 2025 风味图谱报告.
+
+# =============================================================================
+# 品牌级数据 (brands)
+# =============================================================================
+brands:
+
+  - brand_id: mixue
+    brand_name_zh: 蜜雪冰城
+    brand_name_en: Mixue Bingcheng
+    tier: budget
+    avg_price_cny: 6.0
+    stores_total: 53014               # 截至 2025-06-30 全球
+    stores_year: 2025
+    listed: true
+    listing: "HK 2503"
+    revenue_cny_h1_2025: 14_870_000_000   # 148.75 亿
+    net_profit_cny_h1_2025: 2_720_000_000  # 27.2 亿
+    total_cups_2024_q1_q3: 7_100_000_000   # 71 亿杯 (前 9 个月)
+    atv_cny_2024: 11.4                # average transaction value
+    sku_count_typical: 50
+    positioning: [budget, mass_market, sinking_market, supply_chain]
+    notes_zh: |
+      门店数全球最大;招股书披露前 5 大畅销款占总杯量 41.2%;
+      柠檬水年销 10 亿杯,占 2025 H1 收入约 13%.
+    data_sources:
+      - {cite: "蜜雪集团港股招股书+2025 中期报告", type: ipo_prospectus, year: 2025,
+         url: "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0827/2025082700284_c.pdf"}
+      - {cite: "新京报:蜜雪集团 2025 半年报", type: annual_report, year: 2025,
+         url: "https://www.bjnews.com.cn/detail/1756297826129174.html"}
+
+  - brand_id: guming
+    brand_name_zh: 古茗
+    brand_name_en: Guming
+    tier: mid
+    avg_price_cny: 14.0
+    stores_total: 11179               # 2025 H1 破万
+    stores_year: 2025
+    listed: true
+    listing: "HK 1364"
+    revenue_cny_2024_q1_q3: 6_441_000_000    # 64.41 亿
+    adjusted_profit_cny_2024_q1_q3: 1_149_000_000  # 11.49 亿
+    gmv_cny_2024_q1_q3: 16_600_000_000   # 166 亿
+    total_cups_2024_q1_q3: 990_000_000   # 9.9 亿杯前 9 个月
+    quarterly_repurchase_rate: 0.53      # 2023 平均季度复购率
+    members_total: 135_000_000           # 1.35 亿小程序会员
+    members_active_quarterly: 43_000_000  # 4300 万季度活跃
+    single_store_margin_2023: 0.202       # 20.2% 加盟商利润率
+    sku_count_typical: 60
+    category_mix_by_cups:                # 出杯量分品类
+      果茶: 0.41
+      奶茶: 0.47
+      咖啡及其他: 0.12
+    positioning: [mid_tier, fruit_tea_strong, supply_chain_cold]
+    notes_zh: 第二个门店破万的茶饮品牌, 冷链供应链护城河, 下沉市场龙头.
+    data_sources:
+      - {cite: "古茗更新招股书 2024 Q1-Q3", type: ipo_prospectus, year: 2024,
+         url: "http://www.news.cn/food/20241216/8b7044ead5624583a4ca2a09031f764b/c.html"}
+      - {cite: "东方财富证券:古茗深度研究报告", type: industry_report, year: 2025,
+         url: "https://pdf.dfcfw.com/pdf/H3_AP202506141690697538_1.pdf"}
+
+  - brand_id: chabaidao
+    brand_name_zh: 茶百道
+    brand_name_en: Chabaidao
+    tier: mid
+    avg_price_cny: 16.0
+    stores_total: 8444
+    stores_year: 2025
+    listed: true
+    listing: "HK 2555"
+    revenue_cny_2023: 16_900_000_000     # 169 亿 (零售额)
+    total_cups_2023: 1_016_000_000        # 10.16 亿杯
+    sku_count_typical: 68                 # 月均 SKU
+    classic_sku_share_revenue_2023: 0.322  # Top 5 经典占总销售额
+    classic_sku_share_cups_2023: 0.3488   # Top 5 经典占总杯量
+    classic_atv_cny: 13.9                 # Top 5 均价
+    positioning: [mid_tier, fruit_tea_classics, milk_tea_classics]
+    notes_zh: 经典 SKU 销量强;杨枝甘露 1 年 9240 万杯, 茉莉奶绿 1.11 亿杯.
+    data_sources:
+      - {cite: "茶百道招股书 (港股 2555)", type: ipo_prospectus, year: 2024,
+         url: "https://reportify-1252068037.cos.ap-beijing.myqcloud.com/media/production/n_35286079_6fafb1412258af3b68896d368b48b94d.pdf"}
+      - {cite: "华泰研究:茶百道港股深度", type: industry_report, year: 2025,
+         url: "https://pdf.dfcfw.com/pdf/H3_AP202501061641815270_1.pdf"}
+
+  - brand_id: shanghai_auntie
+    brand_name_zh: 沪上阿姨
+    brand_name_en: Shanghai Auntie
+    tier: mid
+    avg_price_cny: 14.0
+    stores_total: 9436
+    stores_year: 2025
+    listed: true
+    listing: "HK 2589"
+    gmv_cny_2024: 10_700_000_000        # 107 亿
+    revenue_cny_h1_2025: 1_658_000_000   # 16.58 亿
+    annual_new_skus: 100                  # 每年 100+ 新品
+    coffee_cups_2023: 11_900_000          # 1190 万杯现磨咖啡
+    sinking_market_share: 0.50            # 三线及以下门店 >50%
+    positioning: [grain_tea_pioneer, sinking_market, healthy_grain]
+    notes_zh: 现煮五谷茶赛道开创者;羽衣甘蓝系列上市一年累计近 1 亿杯.
+    data_sources:
+      - {cite: "沪上阿姨港股招股书", type: ipo_prospectus, year: 2025,
+         url: "https://m.mp.oeeee.com/a/BAAFRD0000202412271039363.html"}
+      - {cite: "每经网:沪上阿姨上市 9000 家店", type: news_media, year: 2025,
+         url: "https://www.nbd.com.cn/articles/2025-05-08/3868558.html"}
+
+  - brand_id: chagee
+    brand_name_zh: 霸王茶姬
+    brand_name_en: CHAGEE
+    tier: premium
+    avg_price_cny: 18.0
+    stores_total: 7038                    # 2025 H1 全球
+    stores_year: 2025
+    listed: true
+    listing: "NASDAQ CHA (2025 US IPO)"
+    sku_count_typical: 25
+    top3_sku_share_revenue: 0.65          # Top 3 占 60-70%, 取中值
+    positioning: [premium, oriental_tea_latte, mono_sku_driven]
+    notes_zh: 单品驱动型;伯牙绝弦 1 个 SKU 占重要营收比;轻乳茶品类引领者.
+    data_sources:
+      - {cite: "腾讯新闻:霸王茶姬伯牙绝弦累计 12.5 亿杯", type: press_release, year: 2025,
+         url: "https://view.inews.qq.com/a/20250818A07HGW00"}
+      - {cite: "36 氪:困于伯牙", type: news_media, year: 2025,
+         url: "https://finance.sina.com.cn/jjxw/2025-12-04/doc-infzrepe0535670.shtml"}
+
+  - brand_id: heytea
+    brand_name_zh: 喜茶
+    brand_name_en: HEYTEA
+    tier: premium
+    avg_price_cny: 18.0                  # 降价后
+    stores_total: 4500                    # 估算 (HEYTEA 私有, 含加盟)
+    stores_year: 2025
+    listed: false
+    positioning: [premium, fruit_tea_originator, brand_creator]
+    notes_zh: |
+      私有品牌,具体财务不公开;多肉葡萄是行业里少数累计销量 >1 亿杯的明星 SKU;
+      2024 销冠是平价化的"小奶茉" ¥13;2025 暂停加盟应对价格战.
+    data_sources:
+      - {cite: "CBNData:喜茶 10 周年报告", type: industry_report, year: 2023,
+         url: "https://www.cbndata.com/information/264865"}
+      - {cite: "Foodaily:2025 春节多肉葡萄销量增幅 300%", type: news_media, year: 2025,
+         url: "https://www.foodaily.com/articles/38948"}
+
+  - brand_id: nayuki
+    brand_name_zh: 奈雪的茶
+    brand_name_en: Nayuki
+    tier: premium
+    avg_price_cny: 19.0
+    stores_total: 1700
+    stores_year: 2024
+    listed: true
+    listing: "HK 2150"
+    revenue_cny_2024: 5_000_000_000      # ~50 亿
+    members_total: 103_000_000            # 1.03 亿
+    positioning: [premium, fresh_fruit_tea, healthy_green]
+    notes_zh: |
+      2024 营收近 50 亿,小绿瓶系列 4-9 月销 2000 万杯;首创"霸气芝士葡萄"系列.
+    data_sources:
+      - {cite: "Foodaily:奈雪 2024 年报", type: annual_report, year: 2025,
+         url: "https://www.foodaily.com/articles/39307"}
+
+  - brand_id: shuyi
+    brand_name_zh: 书亦烧仙草
+    brand_name_en: Shuyi Shaoxiancao
+    tier: mid
+    avg_price_cny: 13.0
+    stores_total: 7000                    # 估算 (私有)
+    stores_year: 2024
+    listed: false
+    positioning: [mid_tier, mono_category_driven, plant_based]
+    notes_zh: |
+      烧仙草系列累计 6.8 亿杯,招牌单品占单店 40-50%;
+      橙漫山茶花 1000 万+ 杯,草莓奶云麻薯 3800 万杯.
+    data_sources:
+      - {cite: "界面新闻:书亦烧仙草年销过亿杯", type: news_media, year: 2024,
+         url: "https://www.jiemian.com/article/6118960.html"}
+      - {cite: "书亦官方:草莓奶云麻薯 3800 万杯", type: press_release, year: 2024,
+         url: "https://shuyisxc.com/m/view/index/id/344.html"}
+
+  - brand_id: chayan
+    brand_name_zh: 茶颜悦色
+    brand_name_en: Chayan Yuese
+    tier: premium
+    avg_price_cny: 18.0
+    stores_total: 700                     # 估算 (扩张至 2025)
+    stores_year: 2025
+    listed: false
+    revenue_profit_cny_2024: 450_000_000   # ~4.5 亿利润
+    positioning: [regional_premium, signature_sku_centric, chinese_aesthetic]
+    notes_zh: |
+      长沙起家,2025 开始北方扩张;幽兰拿铁是全美团 2023 全国店均外卖月销 #1;
+      2024 利润约 4.5 亿;现制茶饮 SKU 集中,品类延伸至零食/电商.
+    data_sources:
+      - {cite: "腾讯新闻:茶颜悦色 2024 利润 4.5 亿", type: news_media, year: 2025,
+         url: "https://news.qq.com/rain/a/20250714A07NJW00"}
+
+  - brand_id: cocodc
+    brand_name_zh: CoCo都可
+    brand_name_en: CoCo Tea
+    tier: mid
+    avg_price_cny: 14.0
+    stores_total: 5000                    # 估算 (国内)
+    stores_year: 2024
+    listed: false
+    positioning: [classic, milk_tea_basic, mid_tier]
+    notes_zh: 经典珍珠奶茶代表;百香果双响炮等经典 SKU 长红.
+    data_sources: []
+
+# =============================================================================
+# SKU 级数据 (skus)
+# 字段说明:
+#   sku_id            — 唯一 id, 格式 <brand>_<short_name>
+#   brand_id          — 关联 brands[].brand_id
+#   sku_name_zh       — 中文产品名(以品牌官方为准)
+#   style             — 对齐 RecipeGenerator 的 6 大风格分类
+#   price_cny         — 当前标价(中杯, 若有版本则取主销规格)
+#   launch_year       — 上线年份(若已知)
+#   signature         — 是否品牌招牌
+#   trending_2025     — 是否当下热销
+#   proxies.annual_cups_disclosed       — 品牌官方/招股书披露的杯量
+#   proxies.annual_cups_disclosed_year  — 数据年份
+#   proxies.annual_revenue_disclosed_cny — 销售额(若有)
+#   proxies.signature_share             — 该 SKU 在该品牌中的占比(若有)
+#   data_sources      — 引用列表
+# =============================================================================
+skus:
+
+  # ---------- 蜜雪冰城 (mixue) ----------
+  - sku_id: mixue_lemon_water
+    brand_id: mixue
+    sku_name_zh: 冰鲜柠檬水
+    style: 果茶
+    price_cny: 4.0
+    launch_year: 2010
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 1_100_000_000        # 11 亿杯 2024 Q1-Q3
+      annual_cups_disclosed_year: 2024
+      annual_revenue_disclosed_cny: 4_000_000_000  # 40 亿/年 (10 亿杯 × 4 元, 据新浪财经)
+      market_share_lemon_drink: 0.80              # 现制柠檬水市场占有率 (招股书)
+    data_sources:
+      - {cite: "蜜雪冰城 H 股招股书 2024", type: ipo_prospectus, year: 2024}
+      - {cite: "新浪财经:4 元柠檬水年销 10 亿杯", type: news_media, year: 2025,
+         url: "https://finance.sina.com.cn/roll/2025-06-09/doc-inezmvxq1422031.shtml"}
+    notes_zh: 中国现制饮品行业销量最高的单品.
+
+  - sku_id: mixue_pearl_milk_tea
+    brand_id: mixue
+    sku_name_zh: 珍珠奶茶
+    style: 奶茶
+    price_cny: 7.0
+    launch_year: 2007
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 300_000_000          # 超 3 亿杯 2024 Q1-Q3
+      annual_cups_disclosed_year: 2024
+    data_sources:
+      - {cite: "蜜雪冰城 H 股招股书 2024", type: ipo_prospectus, year: 2024}
+
+  - sku_id: mixue_peach_sijichun
+    brand_id: mixue
+    sku_name_zh: 蜜桃四季春
+    style: 果茶
+    price_cny: 6.0
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 300_000_000
+      annual_cups_disclosed_year: 2024
+    data_sources:
+      - {cite: "蜜雪冰城 H 股招股书 2024", type: ipo_prospectus, year: 2024}
+
+  - sku_id: mixue_passion_full
+    brand_id: mixue
+    sku_name_zh: 满杯百香果
+    style: 果茶
+    price_cny: 7.0
+    signature: true
+    trending_2025: true
+    proxies:
+      top5_inclusion: true
+    data_sources:
+      - {cite: "蜜雪冰城 H 股招股书 2024", type: ipo_prospectus, year: 2024}
+
+  - sku_id: mixue_jasmine_milk_green
+    brand_id: mixue
+    sku_name_zh: 茉莉奶绿
+    style: 奶茶
+    price_cny: 6.0
+    launch_year: 2024
+    trending_2025: true
+    proxies:
+      top5_2025_h1: true
+    notes_zh: 6 元价位的轻乳茶, 业内被视为霸王茶姬伯牙绝弦的平替款.
+    data_sources:
+      - {cite: "新京报:蜜雪 2025 中期报告 Top 5", type: news_media, year: 2025}
+
+  - sku_id: mixue_bangda_orange
+    brand_id: mixue
+    sku_name_zh: 棒打鲜橙
+    style: 果茶
+    price_cny: 7.0
+    signature: true
+    trending_2025: true
+    proxies:
+      top5_2025_h1: true
+    data_sources:
+      - {cite: "新京报:蜜雪 2025 中期报告 Top 5", type: news_media, year: 2025}
+
+  - sku_id: mixue_icecream
+    brand_id: mixue
+    sku_name_zh: 新鲜冰淇淋
+    style: 冰沙
+    price_cny: 3.0
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_units_disclosed: 1_400_000_000   # 14 亿支 2024 Q1-Q3
+      annual_units_disclosed_year: 2024
+    notes_zh: 不是饮品但占非饮品销量第一, 是蜜雪门店爆款.
+    data_sources:
+      - {cite: "蜜雪冰城 H 股招股书 2024", type: ipo_prospectus, year: 2024}
+
+  # ---------- 古茗 (guming) ----------
+  - sku_id: guming_super_a_grape
+    brand_id: guming
+    sku_name_zh: 超A芝士葡萄
+    style: 果茶
+    price_cny: 16.0
+    signature: true
+    trending_2025: true
+    proxies: {}
+    data_sources:
+      - {cite: "古茗官方菜单 & 招股书产品案例", type: ipo_prospectus, year: 2024}
+
+  - sku_id: guming_jasmine_milk_tea
+    brand_id: guming
+    sku_name_zh: 茉莉鲜奶茶
+    style: 奶茶
+    price_cny: 14.0
+    signature: true
+    trending_2025: true
+    proxies: {}
+    data_sources:
+      - {cite: "古茗官方菜单", type: press_release, year: 2024}
+
+  # ---------- 茶百道 (chabaidao) ----------
+  - sku_id: chabaidao_jasmine_milk_green
+    brand_id: chabaidao
+    sku_name_zh: 茉莉奶绿
+    style: 奶茶
+    price_cny: 12.0
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 111_000_000      # 1.11 亿杯 2023
+      annual_cups_disclosed_year: 2023
+      annual_revenue_disclosed_cny: 1_345_000_000  # 13.45 亿
+    notes_zh: 茶百道 2023 销量第一 SKU.
+    data_sources:
+      - {cite: "茶百道港股招股书", type: ipo_prospectus, year: 2024}
+
+  - sku_id: chabaidao_yangzhi_ganlu
+    brand_id: chabaidao
+    sku_name_zh: 杨枝甘露
+    style: 果茶
+    price_cny: 19.0
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 92_400_000       # 9240 万杯 2023
+      annual_cups_disclosed_year: 2023
+      annual_revenue_disclosed_cny: 1_789_000_000  # 17.89 亿
+    notes_zh: 茶百道 2023 销售额最高 SKU (单价高);港式经典.
+    data_sources:
+      - {cite: "茶百道港股招股书", type: ipo_prospectus, year: 2024}
+
+  - sku_id: chabaidao_taro_milk_tea
+    brand_id: chabaidao
+    sku_name_zh: 招牌芋圆奶茶
+    style: 奶茶
+    price_cny: 14.0
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 68_700_000       # 6870 万杯 2023
+      annual_cups_disclosed_year: 2023
+      annual_revenue_disclosed_cny: 1_008_000_000
+    data_sources:
+      - {cite: "茶百道港股招股书", type: ipo_prospectus, year: 2024}
+
+  - sku_id: chabaidao_doumru_yuqilin
+    brand_id: chabaidao
+    sku_name_zh: 豆乳玉麒麟
+    style: 奶茶
+    price_cny: 16.0
+    signature: true
+    proxies:
+      annual_cups_disclosed: 42_800_000
+      annual_cups_disclosed_year: 2023
+      annual_revenue_disclosed_cny: 685_000_000
+    data_sources:
+      - {cite: "茶百道港股招股书", type: ipo_prospectus, year: 2024}
+
+  - sku_id: chabaidao_watermelon_boba
+    brand_id: chabaidao
+    sku_name_zh: 西瓜啵啵
+    style: 果茶
+    price_cny: 15.0
+    signature: true
+    proxies:
+      annual_cups_disclosed: 39_600_000
+      annual_cups_disclosed_year: 2023
+      annual_revenue_disclosed_cny: 594_000_000
+    data_sources:
+      - {cite: "茶百道港股招股书", type: ipo_prospectus, year: 2024}
+
+  # ---------- 沪上阿姨 (shanghai_auntie) ----------
+  - sku_id: aunt_yiwygllxgl
+    brand_id: shanghai_auntie
+    sku_name_zh: 羽衣甘蓝系列
+    style: 果茶
+    price_cny: 15.0
+    launch_year: 2023
+    signature: true
+    trending_2025: true
+    proxies:
+      annual_cups_disclosed: 100_000_000      # 上市一年近 1 亿杯
+      annual_cups_disclosed_year: 2024
+    notes_zh: 健康轻乳茶赛道代表;沪上阿姨核心增长品类.
+    data_sources:
+      - {cite: "沪上阿姨港股招股书", type: ipo_prospectus, year: 2025}
+
+  - sku_id: aunt_wuguzhuzu
+    brand_id: shanghai_auntie
+    sku_name_zh: 现煮五谷茶
+    style: 奶茶
+    price_cny: 16.0
+    launch_year: 2013
+    signature: true
+    proxies: {}
+    notes_zh: 沪上阿姨 2013 年品类开创品 (血糯米 / 红豆 / 燕麦混合).
+    data_sources:
+      - {cite: "观潮新消费:沪上阿姨招股书解读", type: industry_report, year: 2025,
+         url: "https://www.tidesight.com/news/1369495.html"}
+
+  # ---------- 霸王茶姬 (chagee) ----------
+  - sku_id: chagee_boya_jueqian
+    brand_id: chagee
+    sku_name_zh: 伯牙绝弦
+    style: 奶茶
+    price_cny: 17.0
+    launch_year: 2017
+    signature: true
+    trending_2025: true
+    proxies:
+      cumulative_cups_disclosed: 1_250_000_000   # 12.5 亿杯累计 (2022.1-2025.6)
+      cumulative_disclosed_period: "2022-01 to 2025-06"
+      top3_share_revenue_brand: 0.65             # Top 3 占 60-70%, 伯牙是其中之一
+    notes_zh: 现象级单品, 单品累计 12.5 亿杯, 占品牌 Top 3 销售额 60-70% 的核心.
+    data_sources:
+      - {cite: "腾讯新闻 / 新浪财经:伯牙绝弦 12.5 亿杯", type: press_release, year: 2025,
+         url: "https://view.inews.qq.com/a/20250818A07HGW00"}
+
+  - sku_id: chagee_boya_lowcaf
+    brand_id: chagee
+    sku_name_zh: 伯牙绝弦·低因版
+    style: 奶茶
+    price_cny: 18.0
+    launch_year: 2025
+    signature: false
+    trending_2025: true
+    proxies: {}
+    notes_zh: 2025 年伯牙绝弦延伸款.
+    data_sources:
+      - {cite: "新浪财经:霸王茶姬 8 周年新品", type: news_media, year: 2025,
+         url: "https://finance.sina.com.cn/roll/2025-11-17/doc-infxsxyh3694808.shtml"}
+
+  - sku_id: chagee_boya_floral
+    brand_id: chagee
+    sku_name_zh: 伯牙绝弦·花香款
+    style: 奶茶
+    price_cny: 18.0
+    launch_year: 2025
+    trending_2025: true
+    proxies: {}
+    data_sources:
+      - {cite: "新浪财经:霸王茶姬 8 周年新品", type: news_media, year: 2025}
+
+  # ---------- 喜茶 (heytea) ----------
+  - sku_id: heytea_duorou_grape
+    brand_id: heytea
+    sku_name_zh: 多肉葡萄
+    style: 果茶
+    price_cny: 18.0
+    launch_year: 2018
+    signature: true
+    trending_2025: true
+    proxies:
+      cumulative_cups_disclosed: 100_000_000     # 累计 1 亿杯+ (上线 5 年)
+      cumulative_disclosed_period: "2018-2023"
+      special_event_cups_2024_spring_festival: 2_000_000  # 春节单期 200 万杯+
+    notes_zh: |
+      连续 5 年喜茶销冠;原价 ¥26 降至 ¥18;2025 春节销量增幅超 300%;
+      水果茶品类的天花板单品.
+    data_sources:
+      - {cite: "CBNData:喜茶 10 周年报告", type: industry_report, year: 2023,
+         url: "https://www.cbndata.com/information/264865"}
+      - {cite: "Foodaily:2025 春节多肉葡萄涨幅 300%", type: news_media, year: 2025,
+         url: "https://www.foodaily.com/articles/38948"}
+
+  - sku_id: heytea_xiao_naimo
+    brand_id: heytea
+    sku_name_zh: 小奶茉
+    style: 奶茶
+    price_cny: 13.0
+    launch_year: 2024
+    signature: true
+    trending_2025: true
+    proxies:
+      sales_rank_2024: 1                          # 喜茶 2024 年度报告销冠
+    notes_zh: 2024 销冠, 替代了降价后的多肉葡萄;13 元价位代表喜茶平价化战略.
+    data_sources:
+      - {cite: "界面新闻:喜茶降价复盘", type: news_media, year: 2024,
+         url: "https://www.jiemian.com/article/7014408.html"}
+
+  - sku_id: heytea_qilan_apple
+    brand_id: heytea
+    sku_name_zh: 奇兰苹果杏特调
+    style: 特调
+    price_cny: 20.0
+    launch_year: 2025
+    trending_2025: true
+    proxies:
+      sold_out_within_weeks: true
+    notes_zh: 2025 年 10 月上市后两周热销售罄, 茶特调新品类代表.
+    data_sources:
+      - {cite: "东方财富:喜茶 2025 总结", type: press_release, year: 2025,
+         url: "https://caifuhao.eastmoney.com/news/20260125081308599425480"}
+
+  - sku_id: heytea_super_plant_tea
+    brand_id: heytea
+    sku_name_zh: 超级植物茶
+    style: 纯茶
+    price_cny: 18.0
+    launch_year: 2024
+    trending_2025: true
+    proxies:
+      cumulative_cups_disclosed: 37_000_000      # 累计 3700 万杯
+      cumulative_disclosed_period: "上线至 2024 末"
+    notes_zh: 喜茶首创植物功能茶品类.
+    data_sources:
+      - {cite: "Foodaily:喜茶超级植物茶 3700 万杯", type: press_release, year: 2024,
+         url: "https://www.foodaily.com/index.php/articles/38679"}
+
+  # ---------- 奈雪的茶 (nayuki) ----------
+  - sku_id: nayuki_baqi_cheese_grape
+    brand_id: nayuki
+    sku_name_zh: 霸气芝士葡萄
+    style: 果茶
+    price_cny: 28.0
+    launch_year: 2017
+    signature: true
+    proxies: {}
+    notes_zh: 奈雪开创的"霸气"系列招牌, 现仍在售但 2025 重心转向健康线.
+    data_sources:
+      - {cite: "奈雪官网", type: press_release, year: 2024,
+         url: "https://www.naixue.com/"}
+
+  - sku_id: nayuki_baoozang_tea
+    brand_id: nayuki
+    sku_name_zh: 宝藏茶
+    style: 奶茶
+    price_cny: 22.0
+    signature: true
+    proxies: {}
+    notes_zh: 奈雪经典奶茶系列.
+    data_sources:
+      - {cite: "奈雪官网", type: press_release, year: 2024}
+
+  - sku_id: nayuki_xiao_lv_ping
+    brand_id: nayuki
+    sku_name_zh: 小绿瓶系列
+    style: 果茶
+    price_cny: 19.0
+    launch_year: 2024
+    signature: true
+    trending_2025: true
+    proxies:
+      cups_disclosed: 20_000_000                # 2025-04 至 09 销量
+      cups_disclosed_period: "2025-04 to 2025-09"
+    notes_zh: |
+      奈雪 2025 健康线核心产品(每日 500 蔬果瓶);"瘦瘦小绿瓶"等位列销量榜前三.
+    data_sources:
+      - {cite: "Foodaily:奈雪 2024 年报+小绿瓶", type: annual_report, year: 2025,
+         url: "https://www.foodaily.com/articles/39307"}
+
+  - sku_id: nayuki_ngwu_yangmei
+    brand_id: nayuki
+    sku_name_zh: 霸气干酪爆爆冰杨梅
+    style: 果茶
+    price_cny: 23.0
+    launch_year: 2025
+    trending_2025: true
+    proxies:
+      top3_holiday_period: "2025 五一"
+    data_sources:
+      - {cite: "新京报:奈雪新品上市", type: news_media, year: 2025,
+         url: "https://m.bjnews.com.cn/detail/1748501302168161.html"}
+
+  - sku_id: nayuki_nogjm_xshy
+    brand_id: nayuki
+    sku_name_zh: 浓抹干酪香水椰
+    style: 特调
+    price_cny: 25.0
+    launch_year: 2025
+    trending_2025: true
+    proxies:
+      first_day_rank_nationwide: 1              # 上市首日全国销量第一
+      first_3_days_revenue: 120_000             # green 首店 3 天 12 万元
+    data_sources:
+      - {cite: "新浪:奈雪 green 首店", type: news_media, year: 2025,
+         url: "https://news.sina.com.cn/sx/2025-03-21/detail-ineqkzhk3882069.shtml"}
+
+  # ---------- 茶颜悦色 (chayan) ----------
+  - sku_id: chayan_youlan_latte
+    brand_id: chayan
+    sku_name_zh: 幽兰拿铁
+    style: 奶茶
+    price_cny: 17.0
+    signature: true
+    trending_2025: true
+    proxies:
+      meituan_takeout_monthly_rank_2023: 1     # 全年店均外卖月销 #1
+    notes_zh: 茶颜悦色经典招牌, 鲜奶+纯茶+坚果+奶盖.
+    data_sources:
+      - {cite: "36 氪:大单品报告", type: industry_report, year: 2024,
+         url: "https://36kr.com/p/2184728741052544"}
+
+  - sku_id: chayan_shengsheng_oolong
+    brand_id: chayan
+    sku_name_zh: 声声乌龙
+    style: 奶茶
+    price_cny: 17.0
+    signature: true
+    proxies: {}
+    data_sources: []
+
+  - sku_id: chayan_guihua_long
+    brand_id: chayan
+    sku_name_zh: 桂花弄
+    style: 奶茶
+    price_cny: 17.0
+    signature: true
+    proxies: {}
+    data_sources: []
+
+  # ---------- 书亦烧仙草 (shuyi) ----------
+  - sku_id: shuyi_burnt_grass_jelly
+    brand_id: shuyi
+    sku_name_zh: 招牌烧仙草
+    style: 奶茶
+    price_cny: 14.0
+    signature: true
+    trending_2025: true
+    proxies:
+      cumulative_cups_disclosed: 680_000_000   # 烧仙草系列累计 6.8 亿杯
+      cumulative_disclosed_period: "至 2024"
+      single_store_share: 0.45                  # 单店占 40-50%
+      spring_festival_period_cups: 5_000_000   # 春节单期 500 万杯
+    notes_zh: 烧仙草是品牌护城河, 单店销量占比 40-50%, 年销过亿杯.
+    data_sources:
+      - {cite: "界面新闻:书亦烧仙草年销过亿", type: news_media, year: 2024,
+         url: "https://www.jiemian.com/article/6118960.html"}
+
+  - sku_id: shuyi_orange_camellia
+    brand_id: shuyi
+    sku_name_zh: 橙漫山茶花
+    style: 果茶
+    price_cny: 15.0
+    launch_year: 2023
+    trending_2025: true
+    proxies:
+      cumulative_cups_disclosed: 10_000_000     # 累计 1000 万+
+    data_sources:
+      - {cite: "书亦官方", type: press_release, year: 2024,
+         url: "https://shuyisxc.com/m/view/index/id/344.html"}
+
+  - sku_id: shuyi_strawberry_mochi
+    brand_id: shuyi
+    sku_name_zh: 草莓奶云麻薯
+    style: 奶茶
+    price_cny: 16.0
+    launch_year: 2024
+    trending_2025: true
+    proxies:
+      cumulative_cups_disclosed: 38_000_000     # 3800 万杯
+      review_positive_rate: 0.95
+    notes_zh: 2024 秋冬爆款, 复购率高(好评率 95%).
+    data_sources:
+      - {cite: "书亦官方:草莓奶云麻薯 3800 万杯", type: press_release, year: 2024}
+
+  - sku_id: shuyi_brown_sugar_pearl_milk
+    brand_id: shuyi
+    sku_name_zh: 老红糖珍珠奶茶
+    style: 奶茶
+    price_cny: 12.0
+    signature: true
+    proxies:
+      cumulative_cups_disclosed: 2_000_000      # 近 200 万杯(单期)
+    data_sources:
+      - {cite: "书亦官方", type: press_release, year: 2024}
+
+  # ---------- CoCo都可 (cocodc) ----------
+  - sku_id: coco_pearl_milk_tea
+    brand_id: cocodc
+    sku_name_zh: 珍珠奶茶
+    style: 奶茶
+    price_cny: 11.0
+    launch_year: 1997
+    signature: true
+    proxies: {}
+    notes_zh: 现制珍珠奶茶经典代表.
+    data_sources: []
+
+  - sku_id: coco_passion_double
+    brand_id: cocodc
+    sku_name_zh: 百香果双响炮
+    style: 果茶
+    price_cny: 14.0
+    signature: true
+    proxies: {}
+    data_sources: []
+
+# =============================================================================
+# 已知数据缺口 (gaps)
+# =============================================================================
+gaps:
+  - "蜜雪冰城前 5 大 SKU 合计占总杯量 41.2%, 但每个 SKU 的精确占比未拆分披露"
+  - "古茗、沪上阿姨招股书未单独披露具体 SKU 杯量, 只给品类合计"
+  - "喜茶、奈雪 / 茶颜悦色等非上市品牌, 详细 SKU 销量需通过品牌公关稿挖掘"
+  - "复购率多数品牌不披露 (古茗 53% 是少数公开数据)"
+  - "单店日均销量分布、地域差异、季节性需自行采集 (大众点评单店数据是公开但需爬虫)"
+  - "供应链成本、毛利率仅上市公司年报披露"
+  - "新品上线后 N 个月的衰减曲线无公开数据"
+
+# =============================================================================
+# 元数据
+# =============================================================================
+meta:
+  schema_version: 1
+  collected_at: "2026-05-25"
+  data_vintage: "2024 H2 - 2025 H2"
+  n_brands: 10
+  n_skus: 33
+  coverage_note: |
+    覆盖头部 10 个茶饮品牌的招牌 / 当下热销 SKU. 数据严格按公开来源标注;
+    未标 data_sources 的字段为合理估算 (主要是非上市品牌的门店数).
+  next_steps:
+    - "扩展 SKU 列表至 80+ (添加新品 / 跨品牌经典对比组)"
+    - "为每个 SKU 补社交媒体代理数据 (小红书笔记数 / 抖音播放量)"
+    - "对接 §3.3.2 销量预测模型作为特征"
+    - "建立 vintage 版本控制, 每季度更新一次"

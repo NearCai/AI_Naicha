@@ -1,0 +1,1338 @@
+# Reference recipes v1 — 110 entries covering all 6 styles
+# Per 技术方案书 §E.4-B: used to fit Dirichlet alpha priors and validate
+# typical_serving_g values.
+#
+# Provenance levels (metadata.source):
+#   well_known_classic        Canonical formulas in any 奶茶 textbook (high confidence)
+#   brand_inspired_typical    Common in 新中式茶饮 market, structure realistic, masses estimated
+#   style_coverage_synthetic  Plausible-feasible, generated to balance style distribution
+#
+# Replace entries one-by-one as you collect real recipes from
+# 小红书 复刻 posts / 淘宝研发教材 / 头部 SKU 逆向工程.
+#
+# Mass guideline:
+#   - Total ingredient mass should approx the cup_volume_ml (±10%, see reconciler)
+#   - sugar amount aligns with sugar_level via §E.5.2 (with sweetener equivalence)
+#   - Liquid ml ≈ gram (water density approximation)
+
+# =============================================================================
+# 纯茶 (12 entries)
+# =============================================================================
+
+- recipe_id: ref_001
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jasmine_green: 380
+    sweet_cane_sugar: 8
+    aux_ice_cube: 110
+  metadata: {source: well_known_classic, name_zh: 茉莉绿茶}
+
+- recipe_id: ref_002
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_osmanthus_oolong: 380
+    sweet_cane_sugar: 8
+    flavor_dried_osmanthus: 0.5
+    aux_ice_cube: 110
+  metadata: {source: well_known_classic, name_zh: 桂花乌龙茶}
+
+- recipe_id: ref_003
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_assam: 380
+    sweet_cane_sugar: 8
+    aux_ice_cube: 110
+  metadata: {source: well_known_classic, name_zh: 阿萨姆鲜茶}
+
+- recipe_id: ref_004
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 无糖
+  ingredients:
+    tea_jasmine: 400
+    aux_ice_cube: 100
+  metadata: {source: well_known_classic, name_zh: 无糖茉莉花茶}
+
+- recipe_id: ref_005
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_matcha: 3
+    aux_pure_water: 370
+    sweet_cane_sugar: 8
+    aux_ice_cube: 110
+  metadata: {source: well_known_classic, name_zh: 冷泡抹茶}
+
+- recipe_id: ref_006
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_dongding: 370
+    sweet_rock_sugar: 13
+    aux_ice_cube: 110
+  metadata: {source: well_known_classic, name_zh: 冻顶乌龙}
+
+- recipe_id: ref_007
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_dahongpao: 380
+    sweet_rock_sugar: 13
+    aux_ice_cube: 100
+  metadata: {source: well_known_classic, name_zh: 大红袍}
+
+- recipe_id: ref_008
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_pu_ripe: 380
+    sweet_cane_sugar: 13
+    aux_ice_cube: 100
+  metadata: {source: well_known_classic, name_zh: 冰熟普}
+
+- recipe_id: ref_009
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 无糖
+  ingredients:
+    tea_gyokuro: 400
+    aux_ice_cube: 100
+  metadata: {source: well_known_classic, name_zh: 玉露冷泡}
+
+- recipe_id: ref_010
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_hibiscus: 370
+    sweet_cane_sugar: 13
+    aux_ice_cube: 110
+  metadata: {source: well_known_classic, name_zh: 洛神花茶}
+
+- recipe_id: ref_011
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_chrysanthemum: 200
+    tea_cassia: 180
+    sweet_rock_sugar: 8
+    aux_ice_cube: 100
+  metadata: {source: brand_inspired_typical, name_zh: 菊花决明子茶}
+
+- recipe_id: ref_012
+  style: 纯茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_ceylon: 380
+    sweet_cane_sugar: 13
+    aux_ice_cube: 100
+  metadata: {source: well_known_classic, name_zh: 锡兰红茶}
+
+# =============================================================================
+# 奶茶 (35 entries)
+# =============================================================================
+
+- recipe_id: ref_013
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 250
+    dairy_whole_milk: 110
+    sweet_cane_sugar: 13
+    topping_brown_pearl: 40
+    aux_ice_cube: 90
+  metadata: {source: well_known_classic, name_zh: 经典珍珠奶茶}
+
+- recipe_id: ref_014
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    tea_ceylon: 230
+    dairy_evap_milk: 80
+    dairy_condensed: 25
+    sweet_cane_sugar: 5
+    aux_ice_cube: 160
+  metadata: {source: well_known_classic, name_zh: 港式丝袜奶茶}
+
+- recipe_id: ref_015
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    tea_assam: 200
+    dairy_thick_milk: 120
+    sweet_dark_syrup: 25
+    topping_brown_pearl: 45
+    aux_ice_cube: 110
+  metadata: {source: brand_inspired_typical, name_zh: 黑糖珍珠厚乳茶}
+
+- recipe_id: ref_016
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_osmanthus_oolong: 250
+    dairy_thick_milk: 125
+    sweet_cane_sugar: 13
+    topping_taro_ball: 35
+    flavor_dried_osmanthus: 0.5
+    aux_pure_water: 25
+    aux_ice_cube: 85
+  metadata: {source: brand_inspired_typical, name_zh: 桂花乌龙厚乳茶}
+
+- recipe_id: ref_017
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 260
+    dairy_whole_milk: 110
+    sweet_cane_sugar: 13
+    aux_ice_cube: 110
+  metadata: {source: brand_inspired_typical, name_zh: 茉莉绿茶拿铁}
+
+- recipe_id: ref_018
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 230
+    aux_pure_water: 110
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: well_known_classic, name_zh: 抹茶拿铁}
+
+- recipe_id: ref_019
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    flavor_matcha_powder: 3
+    alt_milk_oat_barista: 240
+    aux_pure_water: 100
+    sweet_cane_sugar: 8
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 抹茶燕麦拿铁}
+
+- recipe_id: ref_020
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 290
+    dairy_cheese_foam: 50
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 阿萨姆芝士奶盖}
+
+- recipe_id: ref_021
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jinxuan: 290
+    dairy_seasalt_foam: 40
+    sweet_cane_sugar: 13
+    flavor_sea_salt: 0.3
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 海盐奶盖金萱乌龙}
+
+- recipe_id: ref_022
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_dancong: 230
+    dairy_thick_milk: 110
+    dairy_seasalt_foam: 40
+    sweet_cane_sugar: 13
+    aux_ice_cube: 100
+  metadata: {source: brand_inspired_typical, name_zh: 鸭屎香轻乳茶}
+
+- recipe_id: ref_023
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 230
+    dairy_whole_milk: 100
+    fruit_lychee: 40
+    flavor_rose_water: 2
+    sweet_cane_sugar: 13
+    aux_ice_cube: 110
+  metadata: {source: brand_inspired_typical, name_zh: 玫瑰荔枝奶茶}
+
+- recipe_id: ref_024
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 220
+    alt_milk_coconut_cream: 90
+    sweet_cane_sugar: 13
+    topping_brown_pearl: 35
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 椰椰珍珠奶茶}
+
+- recipe_id: ref_025
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_assam: 250
+    alt_milk_oat_barista: 130
+    sweet_brown_sugar: 8
+    aux_ice_cube: 110
+  metadata: {source: brand_inspired_typical, name_zh: 燕麦奶茶}
+
+- recipe_id: ref_026
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_assam: 260
+    alt_milk_almond: 110
+    sweet_maple_syrup: 8
+    aux_ice_cube: 120
+  metadata: {source: style_coverage_synthetic, name_zh: 杏仁奶茶}
+
+- recipe_id: ref_027
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 220
+    aux_pure_water: 90
+    topping_red_bean: 30
+    sweet_cane_sugar: 13
+    aux_ice_cube: 140
+  metadata: {source: well_known_classic, name_zh: 抹茶红豆奶茶}
+
+- recipe_id: ref_028
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 180
+    dairy_whole_milk: 100
+    topping_hot_grass_jelly: 70
+    topping_red_bean: 25
+    topping_taro_ball: 30
+    sweet_cane_sugar: 13
+    aux_ice_cube: 80
+  metadata: {source: brand_inspired_typical, name_zh: 烧仙草奶茶}
+
+- recipe_id: ref_029
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 200
+    dairy_whole_milk: 100
+    topping_mixed_ball: 50
+    sweet_dark_syrup: 15
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 三色芋圆奶茶}
+
+- recipe_id: ref_030
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 180
+    dairy_thick_milk: 110
+    topping_taro_paste: 60
+    topping_purple_potato_paste: 40
+    sweet_cane_sugar: 8
+    aux_ice_cube: 100
+  metadata: {source: brand_inspired_typical, name_zh: 紫薯芋泥拿铁}
+
+- recipe_id: ref_031
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 240
+    dairy_whole_milk: 110
+    sweet_osmanthus_honey: 12
+    flavor_dried_osmanthus: 0.5
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 桂花蜜奶茶}
+
+- recipe_id: ref_032
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_baimudan: 240
+    dairy_thick_milk: 115
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 冷泡白茶奶}
+
+- recipe_id: ref_033
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    dairy_whole_milk: 280
+    sweet_dark_brown: 18
+    flavor_ginger_powder: 0.8
+    aux_pure_water: 60
+    aux_ice_cube: 140
+  metadata: {source: well_known_classic, name_zh: 黑糖姜母鲜奶}
+
+- recipe_id: ref_034
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 220
+    aux_pure_water: 100
+    grain_chia: 5
+    sweet_cane_sugar: 8
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 抹茶奇亚籽拿铁}
+
+- recipe_id: ref_035
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 160
+    alt_milk_coconut_cream: 110
+    fruit_mango: 50
+    topping_sago: 30
+    sweet_cane_sugar: 10
+    aux_ice_cube: 130
+  metadata: {source: well_known_classic, name_zh: 杨枝甘露奶茶}
+
+- recipe_id: ref_036
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    tea_assam: 220
+    dairy_whole_milk: 110
+    flavor_chocolate_powder: 8
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 阿华田奶茶}
+
+- recipe_id: ref_037
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 240
+    dairy_whole_milk: 100
+    topping_crystal_pearl: 35
+    sweet_cane_sugar: 13
+    aux_ice_cube: 110
+  metadata: {source: style_coverage_synthetic, name_zh: 水晶珍珠茉莉奶茶}
+
+- recipe_id: ref_038
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 220
+    dairy_whole_milk: 100
+    topping_sweet_bean: 30
+    sweet_brown_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 蜜豆奶茶}
+
+- recipe_id: ref_039
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 200
+    dairy_whole_milk: 100
+    topping_caramel_pudding: 55
+    sweet_caramel_syrup: 12
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 焦糖布丁奶茶}
+
+- recipe_id: ref_040
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 200
+    aux_pure_water: 90
+    topping_matcha_pudding: 50
+    sweet_cane_sugar: 13
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 抹茶布丁拿铁}
+
+- recipe_id: ref_041
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    tea_ceylon: 230
+    dairy_whole_milk: 110
+    sweet_cane_sugar: 18
+    topping_brown_pearl: 40
+    aux_ice_cube: 100
+  metadata: {source: well_known_classic, name_zh: 锡兰红奶茶}
+
+- recipe_id: ref_042
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 230
+    dairy_whole_milk: 110
+    fruit_grapefruit: 30
+    sweet_honey: 12
+    aux_ice_cube: 120
+  metadata: {source: style_coverage_synthetic, name_zh: 蜂蜜柚子奶茶}
+
+- recipe_id: ref_043
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    tea_assam: 220
+    dairy_whole_milk: 110
+    flavor_chocolate_sauce: 8
+    flavor_cocoa_powder: 3
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 巧克力奶茶}
+
+- recipe_id: ref_044
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 200
+    alt_milk_coconut: 100
+    fruit_coconut_meat: 30
+    sweet_dark_brown: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 生椰小绿茶}
+
+- recipe_id: ref_045
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jinxuan: 230
+    dairy_whole_milk: 110
+    topping_red_bean: 30
+    sweet_cane_sugar: 13
+    aux_ice_cube: 120
+  metadata: {source: style_coverage_synthetic, name_zh: 红豆金萱奶茶}
+
+- recipe_id: ref_046
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 220
+    dairy_whole_milk: 100
+    topping_crispy_pop: 25
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 脆啵啵奶茶}
+
+- recipe_id: ref_047
+  style: 奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_barley: 270
+    dairy_whole_milk: 110
+    sweet_maple_syrup: 8
+    aux_ice_cube: 120
+  metadata: {source: style_coverage_synthetic, name_zh: 大麦奶茶}
+
+# =============================================================================
+# 果茶 (25 entries)
+# =============================================================================
+
+- recipe_id: ref_048
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 220
+    fruit_grape: 100
+    fruit_shine_muscat: 30
+    fruit_lemon: 10
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 多肉葡萄}
+
+- recipe_id: ref_049
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jinxuan: 230
+    fruit_grapefruit: 80
+    sweet_honey: 10
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 葡萄柚乌龙}
+
+- recipe_id: ref_050
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 200
+    fruit_perfume_lemon: 40
+    sweet_cane_sugar: 13
+    aux_pure_water: 80
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 香水柠檬茶}
+
+- recipe_id: ref_051
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    fruit_lemon: 35
+    sweet_cane_sugar: 13
+    aux_pure_water: 280
+    aux_ice_cube: 150
+  metadata: {source: well_known_classic, name_zh: 经典柠檬水}
+
+- recipe_id: ref_052
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jinxuan: 200
+    fruit_yougan: 50
+    sweet_cane_sugar: 8
+    aux_pure_water: 80
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 油柑乌龙}
+
+- recipe_id: ref_053
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jinxuan: 230
+    fruit_shine_muscat: 80
+    fruit_lemon: 10
+    sweet_cane_sugar: 8
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 阳光玫瑰乌龙}
+
+- recipe_id: ref_054
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 230
+    fruit_mango: 80
+    sweet_honey: 12
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 芒果茉莉茶}
+
+- recipe_id: ref_055
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 220
+    fruit_passion: 50
+    sweet_cane_sugar: 13
+    aux_pure_water: 60
+    aux_ice_cube: 130
+  metadata: {source: well_known_classic, name_zh: 百香果绿茶}
+
+- recipe_id: ref_056
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    alt_milk_coconut_cream: 130
+    fruit_mango: 100
+    topping_sago: 40
+    sweet_cane_sugar: 13
+    aux_ice_cube: 170
+  metadata: {source: well_known_classic, name_zh: 杨枝甘露}
+
+- recipe_id: ref_057
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 220
+    fruit_blueberry: 60
+    sweet_cane_sugar: 13
+    aux_pure_water: 60
+    aux_ice_cube: 140
+  metadata: {source: style_coverage_synthetic, name_zh: 蓝莓茉莉}
+
+- recipe_id: ref_058
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jinxuan: 220
+    fruit_honey_peach: 80
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 桃桃乌龙}
+
+- recipe_id: ref_059
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 230
+    fruit_cherry: 60
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 樱桃绿茶}
+
+- recipe_id: ref_060
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jasmine_green: 180
+    fruit_watermelon: 120
+    fruit_lime: 10
+    sweet_cane_sugar: 8
+    aux_ice_cube: 140
+  metadata: {source: style_coverage_synthetic, name_zh: 西瓜冰茶}
+
+- recipe_id: ref_061
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 230
+    fruit_hami_melon: 80
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 哈密瓜茉莉}
+
+- recipe_id: ref_062
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 220
+    fruit_dragon_red: 90
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 火龙果茉莉}
+
+- recipe_id: ref_063
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 220
+    fruit_yougan: 60
+    sweet_cane_sugar: 13
+    aux_pure_water: 50
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 油柑诚意茶}
+
+- recipe_id: ref_064
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 230
+    fruit_bayberry: 70
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 杨梅冰茶}
+
+- recipe_id: ref_065
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_dianhong: 250
+    fruit_longan: 50
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 桂圆红茶}
+
+- recipe_id: ref_066
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 200
+    fruit_lemon: 20
+    fruit_blueberry: 50
+    sweet_cane_sugar: 13
+    aux_pure_water: 80
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 柠檬蓝莓茶}
+
+- recipe_id: ref_067
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 230
+    fruit_orange: 80
+    sweet_honey: 12
+    aux_ice_cube: 130
+  metadata: {source: well_known_classic, name_zh: 鲜橙茉莉}
+
+- recipe_id: ref_068
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 220
+    fruit_passion: 40
+    flavor_osmanthus_sauce: 6
+    sweet_cane_sugar: 8
+    aux_pure_water: 70
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 桂花百香果}
+
+- recipe_id: ref_069
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 130
+    fruit_strawberry: 80
+    aux_sparkling_water: 130
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 草莓气泡茶}
+
+- recipe_id: ref_070
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    aux_sparkling_water: 220
+    fruit_grapefruit: 100
+    fruit_lemon: 20
+    sweet_cane_sugar: 8
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 葡萄柚气泡}
+
+- recipe_id: ref_071
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine: 210
+    fruit_lychee: 70
+    flavor_rose_sauce: 6
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 玫瑰荔枝果茶}
+
+- recipe_id: ref_072
+  style: 果茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 200
+    fruit_strawberry: 80
+    fruit_lemon: 15
+    sweet_cane_sugar: 13
+    aux_pure_water: 50
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 草莓茉莉绿}
+
+# =============================================================================
+# 咖啡奶茶 (12 entries)
+# =============================================================================
+
+- recipe_id: ref_073
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    coffee_espresso: 35
+    alt_milk_coconut_cream: 100
+    aux_pure_water: 30
+    sweet_cane_sugar: 13
+    aux_ice_cube: 170
+  metadata: {source: brand_inspired_typical, name_zh: 生椰拿铁}
+
+- recipe_id: ref_074
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    coffee_espresso: 35
+    alt_milk_oat_barista: 250
+    sweet_cane_sugar: 8
+    aux_ice_cube: 170
+  metadata: {source: brand_inspired_typical, name_zh: 燕麦拿铁}
+
+- recipe_id: ref_075
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    coffee_espresso: 35
+    dairy_thick_milk: 130
+    flavor_osmanthus_sauce: 6
+    aux_pure_water: 30
+    sweet_cane_sugar: 8
+    aux_ice_cube: 170
+  metadata: {source: brand_inspired_typical, name_zh: 桂花厚乳拿铁}
+
+- recipe_id: ref_076
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_jasmine_green: 180
+    coffee_coldbrew: 80
+    dairy_whole_milk: 80
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 茉莉茶咖}
+
+- recipe_id: ref_077
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    coffee_espresso: 30
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 200
+    aux_pure_water: 50
+    sweet_cane_sugar: 13
+    aux_ice_cube: 160
+  metadata: {source: style_coverage_synthetic, name_zh: 抹茶 espresso 拿铁}
+
+- recipe_id: ref_078
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    coffee_coldbrew: 120
+    alt_milk_coconut_cream: 80
+    aux_pure_water: 30
+    sweet_cane_sugar: 8
+    aux_ice_cube: 170
+  metadata: {source: brand_inspired_typical, name_zh: 冷萃椰椰咖}
+
+- recipe_id: ref_079
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    coffee_espresso: 35
+    dairy_thick_milk: 130
+    aux_pure_water: 40
+    sweet_cane_sugar: 13
+    aux_ice_cube: 160
+  metadata: {source: well_known_classic, name_zh: 厚乳拿铁}
+
+- recipe_id: ref_080
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_dancong: 180
+    coffee_espresso: 30
+    dairy_thick_milk: 100
+    sweet_cane_sugar: 13
+    aux_ice_cube: 160
+  metadata: {source: brand_inspired_typical, name_zh: 鸭屎香拿铁}
+
+- recipe_id: ref_081
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    coffee_espresso: 35
+    dairy_whole_milk: 200
+    sweet_caramel_syrup: 12
+    aux_pure_water: 30
+    aux_ice_cube: 160
+  metadata: {source: well_known_classic, name_zh: 焦糖拿铁}
+
+- recipe_id: ref_082
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    coffee_americano: 220
+    flavor_sea_salt: 0.3
+    sweet_cane_sugar: 8
+    aux_pure_water: 30
+    aux_ice_cube: 200
+  metadata: {source: style_coverage_synthetic, name_zh: 海盐美式}
+
+- recipe_id: ref_083
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    flavor_matcha_powder: 3
+    coffee_coldbrew: 80
+    alt_milk_oat_barista: 200
+    sweet_cane_sugar: 13
+    aux_ice_cube: 150
+  metadata: {source: style_coverage_synthetic, name_zh: 抹茶冷萃燕麦}
+
+- recipe_id: ref_084
+  style: 咖啡奶茶
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    coffee_espresso: 35
+    dairy_thick_milk: 130
+    sweet_dark_syrup: 20
+    aux_pure_water: 30
+    aux_ice_cube: 160
+  metadata: {source: brand_inspired_typical, name_zh: 黑糖厚乳拿铁}
+
+# =============================================================================
+# 冰沙 (10 entries)
+# =============================================================================
+
+- recipe_id: ref_085
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    fruit_mango: 130
+    aux_crushed_ice: 230
+    aux_pure_water: 60
+    sweet_cane_sugar: 13
+  metadata: {source: well_known_classic, name_zh: 芒果冰沙}
+
+- recipe_id: ref_086
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    fruit_strawberry: 130
+    aux_crushed_ice: 230
+    aux_pure_water: 60
+    sweet_cane_sugar: 13
+  metadata: {source: well_known_classic, name_zh: 草莓冰沙}
+
+- recipe_id: ref_087
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 130
+    aux_crushed_ice: 210
+    aux_pure_water: 50
+    sweet_cane_sugar: 13
+  metadata: {source: well_known_classic, name_zh: 抹茶冰沙}
+
+- recipe_id: ref_088
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    dairy_yogurt: 140
+    fruit_blueberry: 80
+    aux_crushed_ice: 200
+    sweet_honey: 8
+  metadata: {source: brand_inspired_typical, name_zh: 蓝莓酸奶冰沙}
+
+- recipe_id: ref_089
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    fruit_grape: 130
+    aux_crushed_ice: 230
+    aux_pure_water: 60
+    sweet_cane_sugar: 13
+  metadata: {source: style_coverage_synthetic, name_zh: 葡萄冰沙}
+
+- recipe_id: ref_090
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    fruit_avocado: 80
+    dairy_whole_milk: 130
+    aux_crushed_ice: 200
+    sweet_honey: 8
+  metadata: {source: brand_inspired_typical, name_zh: 牛油果奶昔}
+
+- recipe_id: ref_091
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    fruit_passion: 60
+    aux_crushed_ice: 240
+    aux_pure_water: 110
+    sweet_cane_sugar: 13
+  metadata: {source: style_coverage_synthetic, name_zh: 百香果冰沙}
+
+- recipe_id: ref_092
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    fruit_watermelon: 200
+    fruit_lime: 8
+    aux_crushed_ice: 200
+    sweet_cane_sugar: 8
+  metadata: {source: brand_inspired_typical, name_zh: 西瓜冰沙}
+
+- recipe_id: ref_093
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    fruit_honey_peach: 130
+    aux_crushed_ice: 230
+    aux_pure_water: 60
+    sweet_cane_sugar: 13
+  metadata: {source: style_coverage_synthetic, name_zh: 桃子冰沙}
+
+- recipe_id: ref_094
+  style: 冰沙
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    alt_milk_coconut_cream: 110
+    fruit_coconut_meat: 40
+    aux_crushed_ice: 210
+    aux_pure_water: 50
+    sweet_cane_sugar: 13
+  metadata: {source: brand_inspired_typical, name_zh: 椰椰冰沙}
+
+# =============================================================================
+# 特调 (16 entries)
+# =============================================================================
+
+- recipe_id: ref_095
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jasmine_green: 290
+    dairy_seasalt_foam: 50
+    flavor_sea_salt: 0.3
+    sweet_cane_sugar: 8
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 海盐奶盖芝士绿妍}
+
+- recipe_id: ref_096
+  style: 特调
+  cup_volume_ml: 700
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 250
+    dairy_thick_milk: 130
+    topping_hot_grass_jelly: 80
+    topping_red_bean: 30
+    topping_sweet_bean: 25
+    topping_taro_ball: 35
+    sweet_cane_sugar: 18
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 烧仙草满足杯}
+
+- recipe_id: ref_097
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    dairy_whole_milk: 320
+    flavor_osmanthus_sauce: 6
+    sweet_cane_sugar: 13
+    flavor_dried_osmanthus: 0.5
+    aux_ice_cube: 160
+  metadata: {source: style_coverage_synthetic, name_zh: 桂花鲜奶}
+
+- recipe_id: ref_098
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_dancong: 250
+    alt_milk_oat_barista: 110
+    sweet_brown_sugar: 8
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 鸭屎香轻乳}
+
+- recipe_id: ref_099
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 200
+    dairy_whole_milk: 100
+    topping_purple_potato_paste: 50
+    topping_milk_pop: 25
+    sweet_cane_sugar: 13
+    aux_ice_cube: 110
+  metadata: {source: brand_inspired_typical, name_zh: 紫薯啵啵奶茶}
+
+- recipe_id: ref_100
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    flavor_matcha_powder: 3
+    dairy_whole_milk: 200
+    topping_red_bean: 30
+    topping_taro_paste: 40
+    sweet_cane_sugar: 13
+    aux_pure_water: 90
+    aux_ice_cube: 120
+  metadata: {source: well_known_classic, name_zh: 抹茶宇治金时}
+
+- recipe_id: ref_101
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    coffee_espresso: 35
+    dairy_thick_milk: 130
+    flavor_rose_sauce: 6
+    flavor_dried_rose: 0.3
+    sweet_cane_sugar: 8
+    aux_pure_water: 30
+    aux_ice_cube: 150
+  metadata: {source: style_coverage_synthetic, name_zh: 玫瑰拿铁}
+
+- recipe_id: ref_102
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    coffee_espresso: 35
+    dairy_whole_milk: 180
+    flavor_salted_caramel: 10
+    sweet_caramel_syrup: 12
+    flavor_sea_salt: 0.3
+    aux_pure_water: 40
+    aux_ice_cube: 145
+  metadata: {source: brand_inspired_typical, name_zh: 焦糖海盐拿铁}
+
+- recipe_id: ref_103
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jasmine_green: 150
+    fruit_passion: 40
+    aux_coconut_water: 130
+    sweet_cane_sugar: 8
+    aux_ice_cube: 140
+  metadata: {source: brand_inspired_typical, name_zh: 椰青百香果茶}
+
+- recipe_id: ref_104
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_osmanthus_oolong: 220
+    fruit_lychee: 60
+    flavor_osmanthus_sauce: 6
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: brand_inspired_typical, name_zh: 桂花荔枝乌龙}
+
+- recipe_id: ref_105
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    aux_sparkling_water: 200
+    fruit_strawberry: 70
+    fruit_blueberry: 50
+    fruit_lemon: 12
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 莓莓气泡}
+
+- recipe_id: ref_106
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 五分
+  ingredients:
+    tea_assam: 180
+    alt_milk_coconut: 110
+    topping_caramel_pudding: 50
+    sweet_cane_sugar: 13
+    aux_ice_cube: 130
+  metadata: {source: style_coverage_synthetic, name_zh: 椰奶布丁茶}
+
+- recipe_id: ref_107
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    flavor_matcha_powder: 2
+    aux_sparkling_water: 250
+    fruit_lime: 8
+    sweet_cane_sugar: 8
+    aux_ice_cube: 150
+  metadata: {source: style_coverage_synthetic, name_zh: 抹茶气泡}
+
+- recipe_id: ref_108
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    tea_jasmine: 290
+    flavor_dried_osmanthus: 1
+    sweet_cane_sugar: 8
+    flavor_osmanthus_sauce: 4
+    aux_ice_cube: 140
+  metadata: {source: style_coverage_synthetic, name_zh: 桂花养生茶}
+
+- recipe_id: ref_109
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 七分
+  ingredients:
+    dairy_whole_milk: 260
+    sweet_dark_syrup: 25
+    topping_brown_pearl: 50
+    aux_ice_cube: 150
+  metadata: {source: well_known_classic, name_zh: 黑糖珍珠鲜奶}
+
+- recipe_id: ref_110
+  style: 特调
+  cup_volume_ml: 500
+  sugar_level: 三分
+  ingredients:
+    flavor_matcha_powder: 2
+    fruit_lemon: 15
+    aux_sparkling_water: 230
+    sweet_cane_sugar: 8
+    aux_ice_cube: 150
+  metadata: {source: style_coverage_synthetic, name_zh: 抹茶柠檬气泡}

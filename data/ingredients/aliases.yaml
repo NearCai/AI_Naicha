@@ -1,0 +1,213 @@
+# Synonym normalization: alias → canonical vocab id
+# Used by §D.5 for handling out-of-vocab ingredient names
+# Match is case-insensitive
+
+# ===== Brand-named aliases =====
+"OATLY": alt_milk_oat_barista
+"oatly 咖啡大师": alt_milk_oat_barista
+"oatly barista": alt_milk_oat_barista
+"奥麦": alt_milk_oat
+"金典": dairy_whole_milk
+"特仑苏": dairy_whole_milk
+"伊利": dairy_whole_milk
+"蒙牛": dairy_whole_milk
+"明治": dairy_whole_milk
+"明治厚乳": dairy_thick_milk
+"安佳厚乳": dairy_thick_milk
+"安佳淡奶油": dairy_light_cream
+"光明": dairy_whole_milk
+"君乐宝": dairy_whole_milk
+
+# ===== Common colloquial names =====
+"鲜奶": dairy_whole_milk
+"牛奶": dairy_whole_milk
+"全脂奶": dairy_whole_milk
+"低脂奶": dairy_lowfat_milk
+"脱脂奶": dairy_skim_milk
+"厚乳": dairy_thick_milk
+"厚乳茶": dairy_thick_milk
+"芝士奶盖": dairy_cheese_foam
+"奶盖": dairy_cheese_foam
+"咸奶盖": dairy_seasalt_foam
+"奶霜": dairy_cheese_foam
+"植物奶": alt_milk_oat
+"植物基底": alt_milk_oat
+"奶精": alt_milk_creamer
+"咖啡伴侣": alt_milk_creamer
+"老酸奶": dairy_yogurt
+"希腊酸奶": dairy_greek_yogurt
+"全脂奶粉": dairy_milk_powder_whole
+
+# ===== Toppings — colloquial =====
+"波霸": topping_boba
+"大珍珠": topping_boba
+"小珍珠": topping_brown_pearl
+"珍珠": topping_brown_pearl
+"白珍珠": topping_white_pearl
+"水晶球": topping_crystal_pearl
+"水晶珍珠": topping_crystal_pearl
+"爆爆珠": topping_pop_mango        # default to mango if no flavor specified
+"芒果爆爆珠": topping_pop_mango
+"葡萄爆爆珠": topping_pop_grape
+"草莓爆爆珠": topping_pop_strawberry
+"荔枝爆爆珠": topping_pop_lychee
+"芋圆": topping_taro_ball
+"三色芋圆": topping_mixed_ball
+"五彩芋圆": topping_mixed_ball
+"紫薯圆": topping_purple_potato_ball
+"地瓜圆": topping_potato_ball
+"芋泥": topping_taro_paste
+"紫薯泥": topping_purple_potato_paste
+"烧仙草": topping_hot_grass_jelly
+"仙草": topping_grass_jelly
+"椰果": topping_nata_de_coco
+"蒟蒻": topping_konjac
+"蒟蒻果冻": topping_konjac
+"红豆": topping_red_bean
+"蜜豆": topping_sweet_bean
+"西米露": topping_sago
+"鸡蛋布丁": topping_egg_pudding
+"焦糖布丁": topping_caramel_pudding
+"抹茶布丁": topping_matcha_pudding
+"脆啵啵": topping_crispy_pop
+"奶啵啵": topping_milk_pop
+"咖啡冻": topping_coffee_jelly
+"抹茶冻": topping_matcha_jelly
+
+# ===== Tea aliases =====
+"绿茶": tea_jasmine_green
+"红茶": tea_assam
+"乌龙": tea_jinxuan
+"乌龙茶": tea_jinxuan
+"金萱奶茶基底": tea_jinxuan
+"桂花乌龙茶": tea_osmanthus_oolong
+"茉莉": tea_jasmine
+"茉莉花": tea_jasmine
+"玫瑰花茶": tea_rose
+"菊花": tea_chrysanthemum
+"洛神花": tea_hibiscus
+"普洱": tea_pu_ripe
+"白茶": tea_baimudan
+"伯爵": tea_earlgrey
+"龙井": tea_longjing
+"碧螺春": tea_biluochun
+"毛峰": tea_maofeng
+"毛尖": tea_maojian
+"铁观音": tea_tieguanyin
+"大红袍": tea_dahongpao
+"凤凰单丛": tea_dancong
+"蜜兰香": tea_dancong
+"鸭屎香": tea_dancong
+"四季春": tea_sijichun
+"高山乌龙": tea_highmtn_oolong
+
+# ===== Coffee aliases =====
+"浓缩": coffee_espresso
+"浓缩咖啡": coffee_espresso
+"espresso": coffee_espresso
+"冷萃": coffee_coldbrew
+"美式": coffee_americano
+"挂耳": coffee_drip
+"挂耳咖啡": coffee_drip
+"咖啡粉": coffee_instant
+"速溶咖啡": coffee_instant
+"咖啡浓缩液": coffee_concentrate
+
+# ===== Sweetener aliases =====
+"砂糖": sweet_cane_sugar
+"白糖": sweet_cane_sugar
+"冰糖": sweet_rock_sugar
+"红糖": sweet_brown_sugar
+"黑糖": sweet_dark_brown
+"果糖": sweet_fructose_syrup
+"代糖": sweet_erythritol
+"零卡糖": sweet_erythritol
+"罗汉果": sweet_monkfruit
+"罗汉果糖": sweet_monkfruit
+"甜菊": sweet_stevia
+"麦芽糖醇": sweet_maltitol
+"枫糖": sweet_maple_syrup
+"龙舌兰": sweet_agave_syrup
+
+# ===== Fruit aliases =====
+"香水柠": fruit_perfume_lemon
+"香水柠檬汁": fruit_perfume_lemon
+"百香果汁": fruit_passion
+"芒果汁": fruit_mango
+"芒果泥": fruit_mango
+"凯特": fruit_keitt_mango
+"青芒": fruit_green_mango
+"火龙果": fruit_dragon_red
+"白火龙果": fruit_dragon_white
+"红火龙果": fruit_dragon_red
+"番石榴": fruit_guava
+"草莓泥": fruit_strawberry
+"蓝莓汁": fruit_blueberry
+"水蜜桃": fruit_honey_peach
+"车厘子": fruit_bing_cherry
+"美早": fruit_bing_cherry
+"巨峰": fruit_grape
+"提子": fruit_grape
+"麝香葡萄": fruit_shine_muscat
+"猕猴桃汁": fruit_kiwi
+"鳄梨": fruit_avocado
+"龙眼": fruit_longan
+"杨梅汁": fruit_bayberry
+
+# ===== Flavoring aliases =====
+"桂花酱": flavor_osmanthus_sauce
+"桂花蜜酱": flavor_osmanthus_sauce
+"玫瑰酱": flavor_rose_sauce
+"巧克力": flavor_chocolate_sauce
+"焦糖": flavor_caramel_sauce
+"草莓酱": flavor_strawberry_jam
+"蓝莓酱": flavor_blueberry_jam
+"海盐焦糖": flavor_salted_caramel
+"抹茶粉": flavor_matcha_powder
+"石臼抹茶": flavor_matcha_stone
+"可可": flavor_cocoa_powder
+"可可粉": flavor_cocoa_powder
+"巧克力粉": flavor_chocolate_powder
+"肉桂": flavor_cinnamon_powder
+"姜粉": flavor_ginger_powder
+"香草": flavor_vanilla_powder
+"椰粉": flavor_coconut_milk_powder
+"紫薯粉": flavor_purple_potato_powder
+"香草精": flavor_vanilla_extract
+"杏仁精": flavor_almond_extract
+"玫瑰水": flavor_rose_water
+"桂花精": flavor_osmanthus_essence
+"薄荷精油": flavor_mint_essence
+"海盐": flavor_sea_salt
+"喜马拉雅盐": flavor_rose_salt
+"干桂花": flavor_dried_osmanthus
+"干玫瑰": flavor_dried_rose
+"干薰衣草": flavor_dried_lavender
+
+# ===== Aux aliases =====
+"冰": aux_ice_cube
+"冰块": aux_ice_cube
+"碎冰": aux_crushed_ice
+"冰沙基底": aux_smoothie_ice
+"苏打": aux_soda_water
+"气泡": aux_sparkling_water
+"椰青水": aux_coconut_water
+
+# ===== Gels / grains =====
+"奇亚": grain_chia
+"罗勒": grain_basil_seed
+"罗勒籽": grain_basil_seed
+"亚麻": grain_flax
+"燕麦片": grain_rolled_oats
+"即食燕麦": grain_instant_oats
+"黑米": grain_black_rice
+"糙米": grain_brown_rice
+"小米": grain_millet
+"寒天": gel_agar
+"明胶": gel_gelatin
+"鱼胶": gel_fish_gelatin
+"果胶": gel_pectin
+"卡拉胶": gel_carrageenan
+"黄原胶": gel_xanthan
+"木薯粉": gel_tapioca_starch
+"玉米淀粉": gel_corn_starch

@@ -1,0 +1,65 @@
+# Conditional Dirichlet context delta adjustments, per §E.9.2
+# Each entry adds to the base alpha vector [tea, milk, fruit, water, coffee, ice]
+# Initial values are expert-set; will be refined by Bayesian update (§E.9.3)
+
+season:
+  summer:
+    tea: 0.0
+    milk: -0.3
+    fruit: 0.2
+    water: 0.0
+    coffee: 0.0
+    ice: 0.8
+  winter:
+    tea: 0.0
+    milk: 0.5
+    fruit: -0.2
+    water: 0.0
+    coffee: 0.0
+    ice: -0.6
+  spring:
+    tea: 0.2
+    milk: 0.0
+    fruit: 0.1
+    water: 0.0
+    coffee: 0.0
+    ice: 0.0
+  autumn:
+    tea: 0.2
+    milk: 0.2
+    fruit: 0.0
+    water: 0.0
+    coffee: 0.0
+    ice: -0.2
+
+target_age:
+  youth:
+    tea: -0.3
+    milk: -0.3
+    fruit: 0.5
+    water: 0.0
+    coffee: 0.0
+    ice: 0.2
+  mature:
+    tea: 0.5
+    milk: 0.5
+    fruit: -0.3
+    water: 0.0
+    coffee: 0.0
+    ice: 0.0
+
+health_strict:
+  true:
+    tea: 0.5
+    milk: -0.2
+    fruit: 0.3
+    water: 0.3
+    coffee: 0.0
+    ice: 0.0
+  false:
+    tea: 0.0
+    milk: 0.0
+    fruit: 0.0
+    water: 0.0
+    coffee: 0.0
+    ice: 0.0
