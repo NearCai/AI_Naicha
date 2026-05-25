@@ -32,7 +32,30 @@ export function createImageClient() {
 }
 
 export function getAIModel() {
-  return process.env.DEEPSEEK_MODEL || process.env.AI_MODEL || "deepseek-v4-pro";
+  return (
+    process.env.DEEPSEEK_MODEL ||
+    process.env.AI_MODEL ||
+    "deepseek-v4-flash"
+  );
+}
+
+export function getAICompletionOptions() {
+  const thinkingEnabled =
+    process.env.DEEPSEEK_THINKING_ENABLED === "true" ||
+    process.env.AI_THINKING_ENABLED === "true";
+
+  if (!thinkingEnabled) {
+    return { stream: false } as const;
+  }
+
+  return {
+    thinking: { type: "enabled" },
+    reasoning_effort:
+      process.env.DEEPSEEK_REASONING_EFFORT ||
+      process.env.AI_REASONING_EFFORT ||
+      "medium",
+    stream: false,
+  } as const;
 }
 
 export function getImageModel() {

@@ -9,18 +9,16 @@ import type {
   StoreProfile,
   StoreIngredient,
 } from "@/types/drink";
-import { createAIClient, getAIModel } from "@/lib/ai-client";
+import {
+  createAIClient,
+  getAICompletionOptions,
+  getAIModel,
+} from "@/lib/ai-client";
 import type {
   ChatCompletion,
   ChatCompletionCreateParamsNonStreaming,
 } from "openai/resources/chat/completions";
 import { parseAIJsonObject } from "@/lib/parse-ai-json";
-
-const deepSeekReasoningOptions = {
-  thinking: { type: "enabled" },
-  reasoning_effort: "high",
-  stream: false,
-} as const;
 
 type AIClient = NonNullable<ReturnType<typeof createAIClient>>;
 
@@ -30,7 +28,7 @@ async function createDeepSeekCompletion(
 ) {
   const completion = await client.chat.completions.create({
     ...params,
-    ...deepSeekReasoningOptions,
+    ...getAICompletionOptions(),
   } as unknown as ChatCompletionCreateParamsNonStreaming);
 
   return completion as ChatCompletion;
@@ -77,7 +75,7 @@ async function loadSkillLibrary(constraints?: GenerationConstraints) {
       return {
         label,
         file,
-        content: pickRelevantSkillSections(content, constraints),
+        content: pickRelevantSkillSections(content, constraints, 6),
       };
     }),
   );
@@ -93,6 +91,7 @@ async function loadSkillLibrary(constraints?: GenerationConstraints) {
 function pickRelevantSkillSections(
   content: string,
   constraints?: GenerationConstraints,
+  maxRecipesPerSection = 8,
 ) {
   const headings = [
     constraints?.season,
@@ -108,15 +107,27 @@ function pickRelevantSkillSections(
   for (const heading of headings) {
     const section = extractMarkdownSection(content, heading);
     if (section) {
-      sections.add(section);
+      sections.add(limitMarkdownSection(section, maxRecipesPerSection));
     }
   }
 
   if (!sections.size) {
-    return content.split("\n").slice(0, 40).join("\n");
+    return content.split("\n").slice(0, 18).join("\n");
   }
 
   return Array.from(sections).join("\n\n");
+}
+
+function limitMarkdownSection(section: string, maxRecipes: number) {
+  const lines = section.split("\n");
+  const heading = lines[0];
+  const recipeLines = lines.filter((line) => line.startsWith("- "));
+
+  if (recipeLines.length) {
+    return [heading, ...recipeLines.slice(0, maxRecipes)].join("\n");
+  }
+
+  return lines.slice(0, Math.min(lines.length, maxRecipes + 1)).join("\n");
 }
 
 function extractMarkdownSection(content: string, heading: string) {
@@ -382,7 +393,7 @@ export async function POST(request: Request) {
         { role: "user", content: body.prompt.trim() },
       ],
       temperature: 0.8,
-      max_tokens: 6000,
+      max_tokens: 1600,
     });
 
     const content = completion.choices[0]?.message?.content ?? "";

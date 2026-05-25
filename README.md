@@ -37,7 +37,9 @@ npm run dev
 ```env
 DEEPSEEK_API_KEY=your-deepseek-api-key
 DEEPSEEK_BASE_URL=https://api.deepseek.com
-DEEPSEEK_MODEL=deepseek-v4-pro
+DEEPSEEK_MODEL=deepseek-v4-flash
+DEEPSEEK_THINKING_ENABLED=false
+DEEPSEEK_REASONING_EFFORT=medium
 
 IMAGE_API_KEY=your-volcengine-ark-api-key
 IMAGE_API_URL=https://ark.cn-beijing.volces.com/api/v3/images/generations
@@ -47,6 +49,8 @@ IMAGE_WATERMARK=true
 ```
 
 未配置文本模型时，配方生成会走 mock 数据；未配置图片模型时，产品图会走 mock 图片。
+
+研发链路默认使用 `deepseek-v4-flash`，并关闭 thinking/reasoning 参数以缩短生成耗时。如需更强推理，可将 `DEEPSEEK_THINKING_ENABLED` 设置为 `true`。
 
 ## 常用命令
 

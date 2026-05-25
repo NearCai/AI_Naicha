@@ -7,18 +7,16 @@ import type {
   RecipeFilterReport,
   StoreIngredient,
 } from "@/types/drink";
-import { createAIClient, getAIModel } from "@/lib/ai-client";
+import {
+  createAIClient,
+  getAICompletionOptions,
+  getAIModel,
+} from "@/lib/ai-client";
 import { parseAIJsonObject } from "@/lib/parse-ai-json";
 import type {
   ChatCompletion,
   ChatCompletionCreateParamsNonStreaming,
 } from "openai/resources/chat/completions";
-
-const deepSeekReasoningOptions = {
-  thinking: { type: "enabled" },
-  reasoning_effort: "high",
-  stream: false,
-} as const;
 
 const marketSignals = [
   "健康化从简单低糖、零糖转向低负担、成分透明和功能化表达。",
@@ -35,7 +33,7 @@ async function createDeepSeekCompletion(
 ) {
   const completion = await client.chat.completions.create({
     ...params,
-    ...deepSeekReasoningOptions,
+    ...getAICompletionOptions(),
   } as unknown as ChatCompletionCreateParamsNonStreaming);
 
   return completion as ChatCompletion;
@@ -219,7 +217,7 @@ async function auditRecipes(
         },
       ],
       temperature: 0.45,
-      max_tokens: 900,
+      max_tokens: 700,
     });
 
     const content = completion.choices[0]?.message?.content ?? "";
