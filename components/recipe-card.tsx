@@ -14,6 +14,7 @@ import type { DrinkRecipe, GenerationStatus } from "@/types/drink";
 
 type RecipeCardProps = {
   recipe: DrinkRecipe;
+  titlePrefix?: string;
   copied: boolean;
   onCopy: () => void;
   onRegenerateRecipe: () => void;
@@ -30,6 +31,7 @@ type DrinkImageCardProps = {
 
 export function RecipeCard({
   recipe,
+  titlePrefix,
   copied,
   onCopy,
   onRegenerateRecipe,
@@ -38,7 +40,12 @@ export function RecipeCard({
   return (
     <Card className="overflow-hidden">
       <div className="bg-[#1E3932] px-6 py-6 text-white md:px-8">
-        <h2 className="text-4xl font-black leading-tight md:text-5xl">
+        {titlePrefix ? (
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-white/60">
+            {titlePrefix}
+          </p>
+        ) : null}
+        <h2 className="text-3xl font-black leading-tight md:text-4xl">
           {recipe.name}
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-8 text-white/75">
@@ -98,7 +105,7 @@ export function RecipeCard({
           </Button>
           <Button onClick={onRegenerateRecipe} disabled={isGeneratingRecipe}>
             <Sparkles className="h-4 w-4" />
-            重新生成配方
+            重新生成 1 个
           </Button>
         </div>
       </div>

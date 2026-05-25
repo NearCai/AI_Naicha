@@ -55,3 +55,91 @@ textarea {
 .glass-shine {
   background: linear-gradient(100deg, rgba(255,255,255,0.72), rgba(255,255,255,0.1) 34%, rgba(255,255,255,0.38) 64%, rgba(255,255,255,0.08));
 }
+
+.engineer-console {
+  box-shadow:
+    0 0 0 1px rgba(0, 117, 74, 0.04),
+    0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.engineer-avatar {
+  animation: engineer-think 1.8s ease-in-out infinite;
+}
+
+.engineer-spark {
+  animation: engineer-spark 2.2s ease-in-out infinite;
+}
+
+.engineer-scanline {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 30%, rgba(212, 233, 226, 0.13) 45%, transparent 62%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 10px);
+  animation: engineer-scan 2.6s linear infinite;
+}
+
+.engineer-progress {
+  position: relative;
+  transition: width 420ms ease;
+}
+
+.engineer-progress::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  animation: engineer-shimmer 1.2s linear infinite;
+}
+
+.engineer-step-active {
+  box-shadow:
+    0 0 0 1px rgba(0, 117, 74, 0.1),
+    0 8px 22px rgba(0, 117, 74, 0.12);
+  animation: engineer-step-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes engineer-think {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-2deg);
+  }
+}
+
+@keyframes engineer-spark {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes engineer-scan {
+  0% {
+    transform: translateX(-34%);
+  }
+  100% {
+    transform: translateX(34%);
+  }
+}
+
+@keyframes engineer-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes engineer-step-pulse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
