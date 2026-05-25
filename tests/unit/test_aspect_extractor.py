@@ -1,8 +1,6 @@
 """Tests for AspectExtractor (mock + payload parsing)."""
 from __future__ import annotations
 
-import pytest
-
 from beverage_ai.aspects.extractor import (
     MockAspectExtractor,
     parse_llm_payload,

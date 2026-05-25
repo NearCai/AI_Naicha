@@ -99,7 +99,7 @@ def main(
 
     # ----- gap analysis + recommendation -----
     remaining = max(target - total, 0)
-    typer.echo(f"\n--- Gap analysis ---")
+    typer.echo("\n--- Gap analysis ---")
     typer.echo(f"  Current: {total:,}")
     typer.echo(f"  Target:  {target:,}")
     typer.echo(f"  Gap:     {remaining:,}")

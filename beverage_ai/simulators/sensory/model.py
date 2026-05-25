@@ -16,8 +16,8 @@ try:
     import torch
     import torch.nn as nn
     import torch.nn.functional as F
-    from torch_geometric.nn import GATv2Conv, global_max_pool, global_mean_pool
     from torch_geometric.data import Batch
+    from torch_geometric.nn import GATv2Conv, global_max_pool, global_mean_pool
     _TORCH_AVAILABLE = True
 except ImportError as e:
     _IMPORT_ERR = e

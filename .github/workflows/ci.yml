@@ -44,7 +44,8 @@ jobs:
           pip install -e ".[dev]"
 
       - name: Lint with ruff
-        run: ruff check beverage_ai scripts tests --select E,F,W,I,UP
+        # Use pyproject [tool.ruff.lint] config (select + ignore + per-file-ignores)
+        run: ruff check beverage_ai scripts tests
 
       - name: Run tests
         run: pytest --cov=beverage_ai --cov-report=term-missing --cov-report=xml

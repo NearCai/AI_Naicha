@@ -5,8 +5,8 @@ Schema is kept simple so we can evolve via Parquet column-add.
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 import duckdb
 import pandas as pd

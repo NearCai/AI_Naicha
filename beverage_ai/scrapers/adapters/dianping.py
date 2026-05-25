@@ -19,10 +19,9 @@ Implementation notes:
 """
 from __future__ import annotations
 
-from typing import Iterable
+from collections.abc import Iterable
 
 from ..base import ReviewRecord, hash_user_id, make_review_id, normalize_text
-
 
 # Placeholder selectors — keep them in code only as documentation; in
 # production, load from data/scrapers/dianping_selectors.yaml

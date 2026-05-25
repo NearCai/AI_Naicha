@@ -15,7 +15,7 @@ import argparse
 import json
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -98,9 +98,8 @@ def main():
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    rng = np.random.default_rng(args.seed)
 
-    print(f"[1/5] Loading synthetic SKUs ...")
+    print("[1/5] Loading synthetic SKUs ...")
     df = pd.read_parquet(args.data)
     print(f"      total: {len(df)} SKUs, {df['brand'].nunique()} brands, "
           f"{df['recipe_id'].nunique()} unique recipes")
@@ -138,7 +137,7 @@ def main():
     print(f"      done in {time.time() - fold_t0:.1f}s  "
           f"|residual| mean={np.abs(residuals_train).mean():.2f}")
 
-    print(f"\n[4/5] Stage 2: recipe model fits residuals ...")
+    print("\n[4/5] Stage 2: recipe model fits residuals ...")
     recipe_train = build_recipe_features(train_df)
     recipe_test = build_recipe_features(test_df)
     print(f"      recipe features: {recipe_train.shape[1]}")
@@ -157,9 +156,9 @@ def main():
         n_estimators=args.n_estimators_recipe, objective="quantile", alpha=0.95,
         verbose=-1, random_state=args.seed,
     ).fit(recipe_train, residuals_train)
-    print(f"      recipe model + q05/q95 trained")
+    print("      recipe model + q05/q95 trained")
 
-    print(f"\n[5/5] Evaluating on held-out test set ...")
+    print("\n[5/5] Evaluating on held-out test set ...")
     # Mean ensemble of K baselines on test
     baseline_pred_test = np.mean([m.predict(baseline_test) for m in baseline_models], axis=0)
     recipe_contrib_test = recipe_model.predict(recipe_test)
@@ -195,14 +194,14 @@ def main():
         "feature": recipe_train.columns,
         "importance": recipe_model.feature_importances_,
     }).sort_values("importance", ascending=False).head(10)
-    print(f"\n      Top baseline features:")
+    print("\n      Top baseline features:")
     for _, r in fi_baseline.iterrows():
         print(f"        {r['feature']:<35s} {int(r['importance'])}")
-    print(f"      Top recipe features:")
+    print("      Top recipe features:")
     for _, r in fi_recipe.iterrows():
         print(f"        {r['feature']:<35s} {int(r['importance'])}")
 
-    print(f"\n[6/6] Saving model + log ...")
+    print("\n[6/6] Saving model + log ...")
     import pickle
     bundle = {
         "baseline_models": baseline_models,
@@ -213,7 +212,7 @@ def main():
             "baseline": list(baseline_train.columns),
             "recipe": list(recipe_train.columns),
         },
-        "trained_at": datetime.now(timezone.utc).isoformat(),
+        "trained_at": datetime.now(UTC).isoformat(),
         "args": vars(args),
         "test_metrics": {
             "spearman_baseline": round(spearman_baseline, 3),

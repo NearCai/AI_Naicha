@@ -4,7 +4,6 @@ from __future__ import annotations
 import pytest
 
 from beverage_ai.ingredients.vocab import load_default_vocab
-from beverage_ai.priors.engine import load_default_engine
 from beverage_ai.recipes.schema import Process, Recipe
 
 

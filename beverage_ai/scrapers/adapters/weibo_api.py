@@ -28,10 +28,10 @@ from __future__ import annotations
 
 import os
 import time
-from typing import Any, Iterable
+from collections.abc import Iterable
+from typing import Any
 
 from ..base import ReviewRecord, hash_user_id, make_review_id, normalize_text
-
 
 WEIBO_SEARCH_URL = "https://api.weibo.com/2/search/statuses.json"
 WEIBO_DEFAULT_COUNT_PER_PAGE = 50

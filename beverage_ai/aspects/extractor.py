@@ -15,7 +15,7 @@ from typing import Protocol
 
 from ..scrapers.base import ReviewRecord
 from .customization import parse_customization_regex
-from .schema import ALL_DIMS, CORE_DIMS, EXT_DIMS, Customization, ExtractedAspects
+from .schema import ALL_DIMS, CORE_DIMS, Customization, ExtractedAspects
 
 
 class AspectExtractor(Protocol):

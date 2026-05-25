@@ -27,7 +27,7 @@ import json
 import sys
 import time
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 try:
@@ -35,7 +35,7 @@ try:
     import torch
     import torch.nn.functional as F
     from scipy.stats import pearsonr
-    from torch_geometric.data import Batch, Data
+    from torch_geometric.data import Data
     from torch_geometric.loader import DataLoader
     from torch_geometric.nn import GATv2Conv, global_max_pool, global_mean_pool
     _TORCH_OK = True
@@ -49,7 +49,6 @@ import duckdb
 from beverage_ai.aspects.schema import CORE_DIMS
 from beverage_ai.ingredients.vocab import load_default_vocab
 from beverage_ai.recipes.schema import Recipe
-
 
 # These MUST match what train_sensory_gnn_stage1.py uses
 CATEGORIES = (
@@ -226,7 +225,7 @@ def main():
         print(f"ERROR: only {len(pairs)} (recipe, targets) pairs — need ≥ 5 for Stage 2")
         sys.exit(2)
 
-    print(f"\n[3/5] Building graphs from panel recipes ...")
+    print("\n[3/5] Building graphs from panel recipes ...")
     vocab = load_default_vocab()
     graphs: list[Data] = []
     for recipe, targets in pairs:
@@ -264,7 +263,7 @@ def main():
 
     # Track val Pearson r BEFORE fine-tune (i.e. Stage 1 zero-shot)
     initial_r = evaluate(model, val_loader, device)
-    print(f"      [zero-shot Stage 1 on panel val]:")
+    print("      [zero-shot Stage 1 on panel val]:")
     for d, v in initial_r.items():
         print(f"        {d}: {v if v is None else f'{v:+.3f}'}")
 
@@ -276,7 +275,7 @@ def main():
         "trainable_params": n_trainable,
         "initial_zero_shot_pearson": initial_r,
         "epochs": [],
-        "started_at": datetime.now(timezone.utc).isoformat(),
+        "started_at": datetime.now(UTC).isoformat(),
     }
 
     best_val_loss = float("inf")
@@ -328,7 +327,7 @@ def main():
     log["final_val_pearson_after_finetune"] = val_r
 
     # Eval gains
-    print(f"\n      ZERO-SHOT (Stage 1) vs FINE-TUNED (Stage 2):")
+    print("\n      ZERO-SHOT (Stage 1) vs FINE-TUNED (Stage 2):")
     for d in CORE_DIMS:
         z = initial_r.get(d)
         f_ = val_r.get(d)
@@ -338,7 +337,7 @@ def main():
             f"  Δ={f_ - z:+.3f}")
         print(f"        {d:<6}: {z_s} → {f_s}{delta}")
 
-    print(f"\n[5/5] Saving Stage 2 checkpoints ...")
+    print("\n[5/5] Saving Stage 2 checkpoints ...")
     final_path = out_dir / "sensory_gnn_stage2_final.pt"
     best_path = out_dir / "sensory_gnn_stage2_best.pt"
     log_path = out_dir / "sensory_gnn_stage2_log.json"
@@ -348,7 +347,7 @@ def main():
         "model_arch": arch,
         "core_dims": list(CORE_DIMS),
         "categories": list(CATEGORIES),
-        "saved_at": datetime.now(timezone.utc).isoformat(),
+        "saved_at": datetime.now(UTC).isoformat(),
         "stage": "stage2_final",
         "session_id": args.session_id,
         "base_model": args.base_model,
@@ -361,7 +360,7 @@ def main():
             "categories": list(CATEGORIES),
             "best_epoch": best_epoch,
             "best_val_loss": best_val_loss,
-            "saved_at": datetime.now(timezone.utc).isoformat(),
+            "saved_at": datetime.now(UTC).isoformat(),
             "stage": "stage2_best",
             "session_id": args.session_id,
             "base_model": args.base_model,

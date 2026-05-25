@@ -57,9 +57,9 @@ class SalesPredictorLGB:
     @classmethod
     def fit(
         cls,
-        baseline_df: "pd.DataFrame",
-        recipe_embed_df: "pd.DataFrame",
-        y: "np.ndarray",
+        baseline_df: pd.DataFrame,
+        recipe_embed_df: pd.DataFrame,
+        y: np.ndarray,
         k: int = 5,
         seed: int = 42,
     ) -> SalesPredictorLGB:
@@ -99,7 +99,7 @@ class SalesPredictorLGB:
             },
         )
 
-    def predict(self, baseline_feat: "np.ndarray", recipe_embed: "np.ndarray") -> SalesPrediction:
+    def predict(self, baseline_feat: np.ndarray, recipe_embed: np.ndarray) -> SalesPrediction:
         _require_ml()
         base = float(np.mean([m.predict(baseline_feat) for m in self.baseline_models], axis=0))
         contrib = float(self.recipe_model.predict(recipe_embed))

@@ -5,7 +5,7 @@ import pytest
 from pydantic import ValidationError
 
 from beverage_ai.ingredients.aliases import load_default_aliases
-from beverage_ai.ingredients.vocab import Ingredient, IngredientNutrition, Vocab
+from beverage_ai.ingredients.vocab import Ingredient, IngredientNutrition
 
 
 def test_default_vocab_loads(vocab):

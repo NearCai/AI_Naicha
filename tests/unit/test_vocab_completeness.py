@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import pytest
 
-
 # Minimum count required per category, per 附录 D §D.2
 MIN_PER_CATEGORY = {
     "tea_base":      30,

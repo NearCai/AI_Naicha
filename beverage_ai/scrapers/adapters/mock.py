@@ -7,10 +7,9 @@ Used for testing the LLM aspect extractor + downstream GNN training prototype.
 from __future__ import annotations
 
 import random
-from typing import Iterable
+from collections.abc import Iterable
 
 from ..base import ReviewRecord, make_review_id, normalize_text
-
 
 _BRANDS_SKUS = [
     ("喜茶", ["多肉葡萄", "芝士绿妍", "桂花乌龙", "鸭屎香拿铁", "酪酪桃桃"]),

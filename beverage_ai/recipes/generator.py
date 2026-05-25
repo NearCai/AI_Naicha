@@ -59,7 +59,7 @@ class RecipeGenerator:
     def __init__(
         self,
         vocab: Vocab,
-        prior: "PriorEngine",
+        prior: PriorEngine,
         seed: int = 42,
         compatibility_path: Path | None = None,
         keyword_aliases_path: Path | None = None,

@@ -38,7 +38,6 @@ from beverage_ai.ingredients.vocab import load_default_vocab
 from beverage_ai.recipes.schema import Recipe
 from beverage_ai.simulators.health.calculator import compute_nutrition
 
-
 # Brands with rough prestige effect on baseline sales (higher = more eyeballs)
 BRAND_PRESTIGE = {
     "喜茶": 30, "奈雪": 26, "茶颜悦色": 22, "霸王茶姬": 22,
@@ -186,9 +185,9 @@ def main():
     print(f"wrote {out_path}  ({len(df)} SKUs)")
 
     print("\n=== summary ===")
-    print(f"By brand:")
+    print("By brand:")
     print(df.groupby("brand")["sales_proxy"].agg(["count", "mean", "std"]).round(1).to_string())
-    print(f"\nBy style × season (mean sales):")
+    print("\nBy style × season (mean sales):")
     pivot = df.pivot_table(values="sales_proxy", index="recipe_style",
                             columns="season", aggfunc="mean").round(1)
     print(pivot.to_string())

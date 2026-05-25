@@ -33,11 +33,10 @@ import csv
 import json
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
-
 
 GROUP_LABELS = ("A", "B", "C")
 
@@ -202,7 +201,7 @@ def write_instructions(schedule: list[dict], path: Path, design_id: str) -> None
         by_pan_sess[(row["panelist_id"], row["session"])].append(row)
 
     lines = [f"# Panel Tasting Schedule — {design_id}",
-             "", f"_Generated {datetime.now(timezone.utc).isoformat()}_",
+             "", f"_Generated {datetime.now(UTC).isoformat()}_",
              "",
              "**Instructions**: Each panelist rates the listed cups in the GIVEN ORDER. ",
              "Between cups: rinse mouth with plain water (5 min rest); ",
@@ -260,7 +259,7 @@ def main():
         print(f"loaded {[len(g) for g in group_recipes]} recipes from A/B/C lists")
 
     if args.design_id == "auto":
-        args.design_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
+        args.design_id = datetime.now(UTC).strftime("%Y%m%dT%H%M")
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -293,7 +292,7 @@ def main():
         print(f"  [WARN] {n_violations} panelists with group imbalance "
               f"(sample): {diagnostics['panelists_group_balance_violation'][:3]}")
     else:
-        print(f"  [OK] group balance: all panelists see 1-3 cups from each group")
+        print("  [OK] group balance: all panelists see 1-3 cups from each group")
 
     csv_path = out_dir / f"panel_schedule_{args.design_id}.csv"
     md_path = out_dir / f"panel_schedule_{args.design_id}.md"

@@ -20,7 +20,6 @@ from ..simulators.sensory.predict import SensoryPredictor
 from .acquisition import lcb, ucb
 from .nsga2 import ScoredCandidate
 
-
 # Rough cost per gram by category (industry estimate, ¥/g)
 _COST_PER_G = {
     "tea_base": 0.01,

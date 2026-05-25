@@ -35,7 +35,7 @@ import json
 import sys
 import time
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 # ----- imports that may fail without [ml] extras -----
@@ -66,7 +66,7 @@ from beverage_ai.aspects.extractor import (
     MockAspectExtractor,
 )
 from beverage_ai.aspects.pipeline import AspectExtractionPipeline
-from beverage_ai.aspects.schema import CORE_DIMS, Customization, ExtractedAspects
+from beverage_ai.aspects.schema import CORE_DIMS
 from beverage_ai.ingredients.aliases import load_default_aliases
 from beverage_ai.ingredients.vocab import Vocab, load_default_vocab
 from beverage_ai.scrapers.base import ReviewRecord
@@ -112,7 +112,7 @@ class IngredientMentionExtractor:
 # Graph construction
 # =============================================================================
 
-def ingredient_node_features(ing) -> "torch.Tensor":
+def ingredient_node_features(ing) -> torch.Tensor:
     """16-dim node feature vector: 5 nutrition + 11 category one-hot."""
     nut = ing.nutrition_per_100g
     feat = [
@@ -134,7 +134,7 @@ def build_graph(
     ingredient_ids: list[str],
     vocab: Vocab,
     aspect_labels: dict[str, float | None],
-) -> "Data":
+) -> Data:
     """Build a torch_geometric Data with complete graph + node features + label."""
     n = len(ingredient_ids)
     x = torch.stack([ingredient_node_features(vocab.get(i)) for i in ingredient_ids])
@@ -174,7 +174,7 @@ class SensoryGATProto(torch.nn.Module):
         self.head_mean = torch.nn.Linear(128, len(CORE_DIMS))
         self.head_logvar = torch.nn.Linear(128, len(CORE_DIMS))
 
-    def forward(self, data: "Batch") -> tuple["torch.Tensor", "torch.Tensor"]:
+    def forward(self, data: Batch) -> tuple[torch.Tensor, torch.Tensor]:
         x, ei, batch = data.x, data.edge_index, data.batch
         x = F.elu(self.conv1(x, ei))
         x = F.dropout(x, 0.2, training=self.training)
@@ -246,7 +246,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"[1/6] Loading vocab + reviews ...")
+    print("[1/6] Loading vocab + reviews ...")
     vocab = load_default_vocab()
     store = RawReviewStore(raw_dir)
     df = store.read()
@@ -256,7 +256,7 @@ def main():
         df = df.head(args.max_reviews)
         print(f"      capped to {len(df)}")
 
-    print(f"\n[2/6] Aspect extraction ...")
+    print("\n[2/6] Aspect extraction ...")
     if args.extractor == "claude":
         try:
             extractor = ClaudeAspectExtractor()
@@ -285,9 +285,9 @@ def main():
         print(f"      extracted={stats.extracted}  cache_hits={stats.cache_hits}  "
               f"errors={stats.errors}  cost=${stats.cost_usd:.4f}")
     else:
-        print(f"      (skipped; using existing cache)")
+        print("      (skipped; using existing cache)")
 
-    print(f"\n[3/6] Loading aspect labels ...")
+    print("\n[3/6] Loading aspect labels ...")
     labelled: list[tuple[str, str, dict]] = []   # (review_id, text, aspects)
     for row in df.to_dict(orient="records"):
         result = cache.get(row["review_id"], extractor.version)
@@ -300,7 +300,7 @@ def main():
         labelled.append((row["review_id"], row["text"], core))
     print(f"      labelled reviews: {len(labelled)} / {len(df)}")
 
-    print(f"\n[4/6] Extracting ingredient mentions + building graphs ...")
+    print("\n[4/6] Extracting ingredient mentions + building graphs ...")
     mention_extractor = IngredientMentionExtractor(vocab)
     graphs: list[Data] = []
     mention_counts: list[int] = []
@@ -328,7 +328,7 @@ def main():
         cache.close()
         sys.exit(2)
 
-    print(f"\n[5/6] Train/val split + training ...")
+    print("\n[5/6] Train/val split + training ...")
     rng.shuffle(graphs)
     n_val = max(int(len(graphs) * args.val_frac), 10)
     train_graphs = graphs[n_val:]
@@ -346,7 +346,7 @@ def main():
         gpu_mem_gb = torch.cuda.get_device_properties(0).total_memory / 1e9
         print(f"      GPU: {gpu_name} ({gpu_mem_gb:.1f} GB)")
     else:
-        print(f"      device: CPU (slow; for production scale use GPU via AutoDL)")
+        print("      device: CPU (slow; for production scale use GPU via AutoDL)")
         if args.amp:
             print("      WARN: --amp ignored on CPU")
             args.amp = False
@@ -388,7 +388,7 @@ def main():
         "args": vars(args), "epochs": [], "device": str(device),
         "gpu": gpu_name if is_gpu else None,
         "n_train": len(train_graphs), "n_val": len(val_graphs),
-        "tag": args.tag, "started_at": datetime.now(timezone.utc).isoformat(),
+        "tag": args.tag, "started_at": datetime.now(UTC).isoformat(),
     }
     t0 = time.time()
     best_val_loss = float("inf")
@@ -502,7 +502,7 @@ def main():
     log["best_epoch"] = best_epoch
     log["best_val_loss"] = round(best_val_loss, 4)
 
-    print(f"\n[6/6] Saving model + log ...")
+    print("\n[6/6] Saving model + log ...")
     model_path = out_dir / "sensory_gnn_stage1_prototype.pt"
     best_path = out_dir / "sensory_gnn_stage1_best.pt"
     log_path = out_dir / "sensory_gnn_stage1_log.json"
@@ -512,7 +512,7 @@ def main():
         "model_arch": {"node_in_dim": NODE_FEAT_DIM, "hidden": 64, "heads": 4},
         "core_dims": list(CORE_DIMS),
         "categories": list(CATEGORIES),
-        "saved_at": datetime.now(timezone.utc).isoformat(),
+        "saved_at": datetime.now(UTC).isoformat(),
         "tag": args.tag,
     }, model_path)
     print(f"      wrote {model_path}  (final state)")
@@ -525,7 +525,7 @@ def main():
             "categories": list(CATEGORIES),
             "best_epoch": best_epoch,
             "best_val_loss": best_val_loss,
-            "saved_at": datetime.now(timezone.utc).isoformat(),
+            "saved_at": datetime.now(UTC).isoformat(),
             "tag": args.tag,
         }, best_path)
         print(f"      wrote {best_path}  (best @ epoch {best_epoch}, val={best_val_loss:.4f})")

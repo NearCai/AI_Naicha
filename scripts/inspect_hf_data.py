@@ -1,7 +1,5 @@
 """Inspect what was actually ingested into the hf_waimai shard."""
-import sys
 
-import pandas as pd
 
 from beverage_ai.scrapers.store import RawReviewStore
 

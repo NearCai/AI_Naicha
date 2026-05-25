@@ -14,7 +14,6 @@ import sys
 import time
 from pathlib import Path
 
-
 # Curated candidates — names I'm reasonably confident exist on HF, or that
 # are explicitly mentioned in the project docstrings. Add more as you find them.
 CANDIDATES = [
@@ -102,13 +101,13 @@ def main():
     out.write_text(json.dumps(survey, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nWrote {out}")
 
-    print(f"\n=== Summary ===")
+    print("\n=== Summary ===")
     print(f"USABLE: {len(usable)}")
     for name in usable:
         print(f"  ✓ {name}")
     from collections import Counter
     other = Counter(e["status"] for e in survey if e["status"] != "USABLE")
-    print(f"\nNot usable:")
+    print("\nNot usable:")
     for s, n in other.most_common():
         print(f"  {s}: {n}")
 

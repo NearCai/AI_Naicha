@@ -23,10 +23,9 @@ import hashlib
 import json
 import os
 import re
-from typing import Iterable
+from collections.abc import Iterable
 
 from ..base import ReviewRecord, make_review_id, normalize_text
-
 
 # 8 mainstream brands × ~6 SKU each = 48 product variations
 _BRAND_SKUS = [

@@ -12,7 +12,6 @@ from collections import Counter
 
 from beverage_ai.recipes.generator import RecipeGenerator, _load_keyword_aliases
 
-
 # -------- score helper unit tests --------
 
 def test_aliases_yaml_loads(vocab):

@@ -27,22 +27,19 @@ from __future__ import annotations
 
 import argparse
 import json
-import statistics
 import subprocess
 import sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import duckdb
 import numpy as np
 import yaml
 
-from beverage_ai.aspects.schema import CORE_DIMS
 from beverage_ai.ingredients.vocab import load_default_vocab
 from beverage_ai.priors.engine import PriorEngine, load_default_engine
 from beverage_ai.recipes.schema import Recipe
-
 
 # =============================================================================
 # Step 0: load panel session
@@ -244,7 +241,7 @@ def main():
         "session": args.session,
         "feedback_db": args.feedback_db,
         "args": vars(args),
-        "started_at": datetime.now(timezone.utc).isoformat(),
+        "started_at": datetime.now(UTC).isoformat(),
         "n_recipes": len(pairs),
         "liking_stats": {"mean": float(np.mean(likings)),
                          "std": float(np.std(likings)),
@@ -254,10 +251,10 @@ def main():
 
     # ----- Stage 1: GNN Stage 2 fine-tune -----
     if args.skip_stage2:
-        print(f"\n[1/4] Skipping GNN Stage 2 (--skip-stage2)")
+        print("\n[1/4] Skipping GNN Stage 2 (--skip-stage2)")
         audit["stage2"] = {"skipped": True}
     else:
-        print(f"\n[1/4] GNN Stage 2 fine-tune ...")
+        print("\n[1/4] GNN Stage 2 fine-tune ...")
         audit["stage2"] = _trigger_stage2(
             args.session, args.base_model, args.feedback_db, args.stage2_epochs,
         )
@@ -268,7 +265,7 @@ def main():
     dirichlet_changes = _update_dirichlet(prior, pairs, args.dirichlet_lr)
     audit["dirichlet_changes"] = dirichlet_changes
     if not dirichlet_changes:
-        print(f"      no style updated (none had ≥3 recipes)")
+        print("      no style updated (none had ≥3 recipes)")
     else:
         for style, info in dirichlet_changes.items():
             print(f"      {style}: n={info['n_observed']}  Δ={info['delta']}")
@@ -284,7 +281,7 @@ def main():
     )
     audit["typical_serving_changes"] = serving_changes
     if not serving_changes:
-        print(f"      no ingredient crossed 20% shift threshold")
+        print("      no ingredient crossed 20% shift threshold")
     else:
         print(f"      {len(serving_changes)} ingredients updated:")
         for ing_id, info in list(serving_changes.items())[:10]:
@@ -296,7 +293,7 @@ def main():
         print(f"      wrote {overrides_path}")
 
     # ----- Stage 4: audit trail -----
-    audit["finished_at"] = datetime.now(timezone.utc).isoformat()
+    audit["finished_at"] = datetime.now(UTC).isoformat()
     audit_path.write_text(
         json.dumps(audit, ensure_ascii=False, indent=2, default=str),
         encoding="utf-8",

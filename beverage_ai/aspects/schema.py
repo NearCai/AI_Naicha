@@ -6,7 +6,7 @@ Aligned with 技术方案书 §3.3.1 双层输出头:
 """
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -41,5 +41,5 @@ class ExtractedAspects(BaseModel):
     customization: Customization = Field(default_factory=Customization)
     confidence: float = 0.5          # extractor's self-assessed confidence
     raw_response: str | None = None  # for auditing
-    extracted_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    extracted_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     cost_estimate_usd: float = 0.0

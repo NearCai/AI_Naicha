@@ -24,7 +24,6 @@ from beverage_ai.ingredients.vocab import load_default_vocab
 from beverage_ai.recipes.reconciler import reconcile
 from beverage_ai.recipes.schema import Recipe, sugar_level_to_grams
 
-
 KNOWN_SOURCES = {
     "well_known_classic",
     "brand_inspired_typical",

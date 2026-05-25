@@ -11,7 +11,7 @@ every update is auditable and reversible.
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -78,7 +78,7 @@ class PriorEngine:
 
         # Persist snapshot
         if self.history_dir is not None:
-            ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+            ts = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
             snap = {
                 "style": style,
                 "timestamp_utc": ts,

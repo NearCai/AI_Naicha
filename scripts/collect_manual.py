@@ -18,7 +18,7 @@ Tips:
 from __future__ import annotations
 
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import typer
@@ -139,7 +139,7 @@ def _collect_one(*, default_source: str) -> ReviewRecord | None:
             typer.echo("  (couldn't parse rating, skipping field)", err=True)
 
     source = typer.prompt(
-        f"Source tag", default=default_source, show_default=True
+        "Source tag", default=default_source, show_default=True
     ).strip() or default_source
     source_url = typer.prompt(
         "Source URL (optional)", default="", show_default=False
@@ -154,7 +154,7 @@ def _collect_one(*, default_source: str) -> ReviewRecord | None:
         customization_raw=customization,
         rating=rating,
         source_url=source_url,
-        scraped_at=datetime.now(timezone.utc),
+        scraped_at=datetime.now(UTC),
         metadata={"manual": True},
     )
 

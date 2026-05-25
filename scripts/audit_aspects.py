@@ -6,7 +6,6 @@ Per 技术方案书 §4.3 数据质量控制.
 """
 from __future__ import annotations
 
-import random
 from pathlib import Path
 
 import typer
@@ -48,7 +47,6 @@ def main(
         typer.echo("No overlap between cache and raw store.", err=True)
         raise typer.Exit(1)
 
-    rng = random.Random(seed)
     sample = merged.sample(min(n, len(merged)), random_state=seed)
 
     typer.echo(f"=== Audit sample ({len(sample)} of {len(merged)}) ===\n")

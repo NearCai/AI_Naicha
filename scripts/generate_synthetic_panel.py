@@ -25,8 +25,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime, timezone
-from pathlib import Path
 
 import numpy as np
 import yaml
@@ -60,7 +58,7 @@ def main():
     vocab = load_default_vocab()
     sensory = MockSensoryPredictor(vocab, seed=args.seed)
 
-    print(f"[1/3] Loading recipes ...")
+    print("[1/3] Loading recipes ...")
     with open(args.recipes, encoding="utf-8") as f:
         all_recipes = [Recipe(**r) for r in (yaml.safe_load(f) or [])]
     print(f"      {len(all_recipes)} recipes available")
@@ -69,7 +67,7 @@ def main():
     selected = [all_recipes[i] for i in idx]
     print(f"      sampled {len(selected)} for panel")
 
-    print(f"\n[2/3] Computing 'true' aspect scores from ingredient composition ...")
+    print("\n[2/3] Computing 'true' aspect scores from ingredient composition ...")
     # MockSensoryPredictor returns scores in [0, 1] (after dividing by 1.0 of Likert).
     # Convert to Likert 1-5 by: score = 1 + 4 * x (linear map).
     recipe_truth: dict[str, dict[str, float]] = {}

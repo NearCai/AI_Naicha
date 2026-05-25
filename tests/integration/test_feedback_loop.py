@@ -9,7 +9,6 @@ import numpy as np
 
 from beverage_ai.feedback.recorder import FeedbackRecorder
 from beverage_ai.pipeline.end_to_end import run_pipeline
-from beverage_ai.priors.engine import PriorEngine
 
 
 def test_record_and_recall(tmp_path, prior_engine):

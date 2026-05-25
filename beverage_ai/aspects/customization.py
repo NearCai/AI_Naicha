@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import re
 
-from .schema import Customization, CupSizeLabel, IceLevel, SugarLevel
+from .schema import CupSizeLabel, Customization, IceLevel, SugarLevel
 
 # Sugar mentions: "三分糖", "三分", "去糖", "无糖", "100%糖"
 _SUGAR_PATTERNS: list[tuple[str, SugarLevel]] = [

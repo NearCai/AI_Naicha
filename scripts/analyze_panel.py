@@ -28,8 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import duckdb
@@ -326,14 +325,14 @@ def write_report(results: dict, md_path: Path) -> None:
         "",
         f"_Generated {results['timestamp']}_",
         "",
-        f"## Session overview",
+        "## Session overview",
         f"- Total ratings: {results['n_rows']:,}",
         f"- Panelists: {results['n_panelists']}",
         f"- Recipes: {results['n_recipes']}",
         f"- Dimensions: {', '.join(results['dimensions'])}",
         f"- Groups: {results['group_counts']}",
         "",
-        f"## Per-dimension summary",
+        "## Per-dimension summary",
     ]
     summary = results.get("per_dim_summary", {})
     if summary:
@@ -440,7 +439,7 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"\n[2/4] Per-dimension summary ...")
+    print("\n[2/4] Per-dimension summary ...")
     summary = {}
     for d in CORE_DIMS:
         sub = df[df["dimension"] == d]
@@ -453,7 +452,7 @@ def main():
     for d, s in summary.items():
         print(f"      {d}: n={s['n']} mean={s['mean']:.2f} std={s['std']:.2f}")
 
-    print(f"\n[3/4] Running tests ...")
+    print("\n[3/4] Running tests ...")
     alpha_corrected = ALPHA_FAMILYWISE / BONFERRONI_DIVISOR
     print(f"      Bonferroni α = {ALPHA_FAMILYWISE}/{BONFERRONI_DIVISOR} = {alpha_corrected:.4f}")
 
@@ -481,10 +480,10 @@ def main():
     elif friedman.get("status"):
         print(f"      FRIEDMAN: n/a ({friedman.get('status')})")
 
-    print(f"\n[4/4] Writing report ...")
+    print("\n[4/4] Writing report ...")
     results = {
         "session": args.session,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "timestamp": datetime.now(UTC).isoformat(),
         "n_rows": int(len(df)),
         "n_panelists": int(df["panelist_id"].nunique()),
         "n_recipes": int(df["recipe_id"].nunique()),
