@@ -216,7 +216,7 @@ export default function StoreConfigPage() {
         <header className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white px-5 py-4 shadow-soft">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-              Store Setup
+              门店设置
             </p>
             <h1 className="mt-1 text-2xl font-black text-[#006241] md:text-3xl">
               门店配置

@@ -203,7 +203,7 @@ export function HistoryView({ records }: HistoryViewProps) {
         <header className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white px-5 py-4 shadow-soft">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-              Recipe History
+              配方历史
             </p>
             <h1 className="mt-1 text-2xl font-black text-[#006241] md:text-3xl">
               历史配方回溯
@@ -229,7 +229,7 @@ export function HistoryView({ records }: HistoryViewProps) {
           <Card className="px-4 py-4">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/45">
               <CalendarClock className="h-4 w-4" />
-              Records
+              记录数
             </p>
             <p className="mt-2 text-3xl font-black text-[#1E3932]">
               {historyRecords.length}
@@ -238,7 +238,7 @@ export function HistoryView({ records }: HistoryViewProps) {
           <Card className="px-4 py-4">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/45">
               <Star className="h-4 w-4" />
-              Avg Score
+              平均分
             </p>
             <p className="mt-2 text-3xl font-black text-[#00754A]">
               {averageScore.toFixed(1)}
@@ -247,7 +247,7 @@ export function HistoryView({ records }: HistoryViewProps) {
           <Card className="px-4 py-4">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/45">
               <TrendingUp className="h-4 w-4" />
-              Good
+              好配方
             </p>
             <p className="mt-2 text-3xl font-black text-[#00754A]">
               {highScoreCount}
@@ -256,7 +256,7 @@ export function HistoryView({ records }: HistoryViewProps) {
           <Card className="px-4 py-4">
             <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-black/45">
               <CircleDollarSign className="h-4 w-4" />
-              Monthly Cups
+              月销量
             </p>
             <p className="mt-2 text-3xl font-black text-[#1E3932]">
               {totalMonthlyCups}
@@ -426,7 +426,7 @@ export function HistoryView({ records }: HistoryViewProps) {
                   <div className="grid gap-3">
                     <div className="rounded-xl border border-border bg-[#fbfaf7] px-4 py-3">
                       <p className="text-xs font-bold uppercase tracking-[0.12em] text-black/45">
-                        Average Rating
+                        平均评分
                       </p>
                       <p className="mt-1 text-4xl font-black text-[#00754A]">
                         {record.averageRating.toFixed(1)}

@@ -130,7 +130,7 @@ export function DrinkImageCard({
         <div className="mb-4 flex items-center justify-between gap-3">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-              Preview
+              预览
             </p>
             <h3 className="mt-1 text-xl font-black text-[#006241]">
               奶茶产品图

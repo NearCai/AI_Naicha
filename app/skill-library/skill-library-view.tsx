@@ -131,7 +131,7 @@ function LibraryPanel({ library }: { library: SkillLibrary }) {
     >
       <div className={`rounded-xl px-4 py-4 ${libraryAccentClass[library.tone]}`}>
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-white/70">
-          {library.key === "good" ? "Positive Skill" : "Negative Skill"}
+          {library.key === "good" ? "正向技能" : "反向技能"}
         </p>
         <h2 className="mt-1 text-2xl font-black">{library.title}</h2>
         <p className="mt-2 text-sm leading-6 text-white/78">{library.subtitle}</p>
@@ -140,7 +140,7 @@ function LibraryPanel({ library }: { library: SkillLibrary }) {
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
         <div className="rounded-xl bg-white px-4 py-3 shadow-soft">
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-black/45">
-            Categories
+            分类数
           </p>
           <p className="mt-1 text-2xl font-black text-[#1E3932]">
             {library.categories.length}
@@ -148,7 +148,7 @@ function LibraryPanel({ library }: { library: SkillLibrary }) {
         </div>
         <div className="rounded-xl bg-white px-4 py-3 shadow-soft">
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-black/45">
-            Current
+            当前分类
           </p>
           <p className="mt-1 text-2xl font-black text-[#1E3932]">
             {selectedCategory?.recipeCount ?? 0}
@@ -156,7 +156,7 @@ function LibraryPanel({ library }: { library: SkillLibrary }) {
         </div>
         <div className="rounded-xl bg-white px-4 py-3 shadow-soft">
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-black/45">
-            Showing
+            当前展示
           </p>
           <p className="mt-1 text-2xl font-black text-[#1E3932]">
             {visibleRecipes.length}
@@ -289,7 +289,7 @@ export function SkillLibraryView({ libraries }: SkillLibraryViewProps) {
         <header className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white px-5 py-4 shadow-soft">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-              Skill Library
+              配方技能库
             </p>
             <h1 className="mt-1 text-2xl font-black text-[#006241] md:text-3xl">
               奶茶 Skill 库可视化

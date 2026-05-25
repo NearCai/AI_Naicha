@@ -235,7 +235,7 @@ function FeedbackPanel({
     <Card className="overflow-hidden">
       <div className="border-b border-border bg-[#fbfaf7] px-5 py-4">
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-          User Feedback
+          用户反馈
         </p>
         <h3 className="mt-1 text-xl font-black text-[#006241]">
           反馈收集
@@ -845,7 +845,7 @@ export default function Home() {
         <header className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white px-5 py-4 shadow-soft">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-              AI Drink Lab
+              AI 奶茶实验室
             </p>
             <h1 className="mt-1 text-2xl font-black text-[#006241] md:text-3xl">
               AI 奶茶配方生成
@@ -889,7 +889,7 @@ export default function Home() {
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             <div className="rounded-xl border border-border bg-[#fbfaf7] px-4 py-3">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-                Store
+                门店
               </p>
               <p className="mt-1 font-bold text-[#1E3932]">
                 {storeConfig.storeProfile.storeType}
@@ -900,7 +900,7 @@ export default function Home() {
             </div>
             <div className="rounded-xl border border-border bg-[#fbfaf7] px-4 py-3">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-                Equipment
+                设备
               </p>
               <p className="mt-1 font-bold text-[#1E3932]">
                 {storeConfig.storeProfile.equipment.length} 个设备
@@ -911,7 +911,7 @@ export default function Home() {
             </div>
             <div className="rounded-xl border border-border bg-[#fbfaf7] px-4 py-3">
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-                Ingredients
+                原料
               </p>
               <p className="mt-1 font-bold text-[#1E3932]">
                 {selectedIngredients.length} 个可用原料
@@ -1149,7 +1149,7 @@ export default function Home() {
                   <div className="mb-4 flex items-center justify-between gap-3">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#00754A]">
-                        Workflow
+                        工作流
                       </p>
                       <h3 className="mt-1 text-lg font-black text-[#1E3932]">
                         研发模块进程
@@ -1218,7 +1218,7 @@ export default function Home() {
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
-                    Stage 1 · R&D Module
+                    阶段 1 · 研发模块
                   </p>
                   <h2 className="mt-1 text-2xl font-black text-[#006241]">
                     {developmentResult.engineerName}已输出{" "}
@@ -1311,7 +1311,7 @@ export default function Home() {
                     <div className="mb-4 flex items-center justify-between gap-3">
                       <div>
                         <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#00754A]">
-                          Stage 2
+                          阶段 2
                         </p>
                         <h3 className="mt-1 text-lg font-black text-[#1E3932]">
                           审核模块进程
@@ -1373,67 +1373,67 @@ export default function Home() {
             ) : null}
 
             {auditResult ? (
-            <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px]">
-              <Card className="overflow-hidden">
-                <div className="bg-[#00754A] px-5 py-5 text-white md:px-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/70">
-                    Stage 2 · Auditor Pick
-                  </p>
-                  <h2 className="mt-1 text-2xl font-black">
-                    {auditResult.audit.auditorName}选出：
-                    {auditResult.audit.selectedRecipeName}
-                  </h2>
-                  <p className="mt-3 max-w-4xl text-sm leading-7 text-white/80">
-                    {auditResult.audit.summary}
-                  </p>
-                </div>
-                <div className="grid gap-4 p-5 md:grid-cols-[minmax(0,1fr)_320px] md:p-6">
-                  <div>
-                    <h3 className="text-lg font-bold text-[#006241]">
-                      选择理由
-                    </h3>
-                    <div className="mt-3 grid gap-2">
-                      {auditResult.audit.reasons.map((reason) => (
-                        <div
-                          key={reason}
-                          className="rounded-xl border border-border bg-[#fbfaf7] px-4 py-3 text-sm leading-6 text-black/70"
-                        >
-                          {reason}
-                        </div>
-                      ))}
+            <>
+              <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px]">
+                <Card className="overflow-hidden">
+                  <div className="bg-[#00754A] px-5 py-5 text-white md:px-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/70">
+                      阶段 2 · 审核挑选
+                    </p>
+                    <h2 className="mt-1 text-2xl font-black">
+                      {auditResult.audit.auditorName}选出：
+                      {auditResult.audit.selectedRecipeName}
+                    </h2>
+                    <p className="mt-3 max-w-4xl text-sm leading-7 text-white/80">
+                      {auditResult.audit.summary}
+                    </p>
+                  </div>
+                  <div className="grid gap-4 p-5 md:grid-cols-[minmax(0,1fr)_320px] md:p-6">
+                    <div>
+                      <h3 className="text-lg font-bold text-[#006241]">
+                        选择理由
+                      </h3>
+                      <div className="mt-3 grid gap-2">
+                        {auditResult.audit.reasons.map((reason) => (
+                          <div
+                            key={reason}
+                            className="rounded-xl border border-border bg-[#fbfaf7] px-4 py-3 text-sm leading-6 text-black/70"
+                          >
+                            {reason}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-[#006241]">
+                        代码过滤
+                      </h3>
+                      <div className="mt-3 rounded-xl border border-border bg-[#fbfaf7] px-4 py-3">
+                        <p className="text-sm font-bold text-[#1E3932]">
+                          保留 {auditResult.filterReport.keptCount} 个，剔除{" "}
+                          {auditResult.filterReport.rejectedCount} 个
+                        </p>
+                        <p className="mt-2 text-xs leading-5 text-black/58">
+                          过滤依据：原料合法性、成本上限、出杯时间、配料数量和制作步骤完整度。
+                        </p>
+                      </div>
+                      <h3 className="mt-4 text-lg font-bold text-[#006241]">
+                        市场信号
+                      </h3>
+                      <div className="mt-3 grid gap-2">
+                        {auditResult.audit.marketSignals.map((signal) => (
+                          <div
+                            key={signal}
+                            className="rounded-xl bg-[#d4e9e2] px-3 py-2 text-xs font-semibold leading-5 text-[#1E3932]"
+                          >
+                            {signal}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-[#006241]">
-                      代码过滤
-                    </h3>
-                    <div className="mt-3 rounded-xl border border-border bg-[#fbfaf7] px-4 py-3">
-                      <p className="text-sm font-bold text-[#1E3932]">
-                        保留 {auditResult.filterReport.keptCount} 个，剔除{" "}
-                        {auditResult.filterReport.rejectedCount} 个
-                      </p>
-                      <p className="mt-2 text-xs leading-5 text-black/58">
-                        过滤依据：原料合法性、成本上限、出杯时间、配料数量和制作步骤完整度。
-                      </p>
-                    </div>
-                    <h3 className="mt-4 text-lg font-bold text-[#006241]">
-                      市场信号
-                    </h3>
-                    <div className="mt-3 grid gap-2">
-                      {auditResult.audit.marketSignals.map((signal) => (
-                        <div
-                          key={signal}
-                          className="rounded-xl bg-[#d4e9e2] px-3 py-2 text-xs font-semibold leading-5 text-[#1E3932]"
-                        >
-                          {signal}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Card>
+                </Card>
 
-              <div className="grid gap-5">
                 <DrinkImageCard
                   recipe={selectedRecipe}
                   imageUrl={imageUrl}
@@ -1441,20 +1441,20 @@ export default function Home() {
                   error={imageError}
                   onRegenerateImage={() => handleGenerateImage()}
                 />
-                <FeedbackPanel
-                  recipe={selectedRecipe}
-                  feedbacks={feedbacks}
-                  draft={feedbackDraft}
-                  averageRating={averageRating}
-                  status={ratingStatus}
-                  result={ratingResult}
-                  message={ratingMessage}
-                  onDraftChange={setFeedbackDraft}
-                  onAddFeedback={handleAddFeedback}
-                  onSubmit={handleSubmitRating}
-                />
               </div>
-            </div>
+              <FeedbackPanel
+                recipe={selectedRecipe}
+                feedbacks={feedbacks}
+                draft={feedbackDraft}
+                averageRating={averageRating}
+                status={ratingStatus}
+                result={ratingResult}
+                message={ratingMessage}
+                onDraftChange={setFeedbackDraft}
+                onAddFeedback={handleAddFeedback}
+                onSubmit={handleSubmitRating}
+              />
+            </>
             ) : null}
 
             {finalResult ? (

@@ -1,6 +1,6 @@
 {
   "sourceMarkdown": "temperature.md",
-  "recipeCount": 9,
+  "recipeCount": 10,
   "recipes": [
     {
       "section": "冰饮",
@@ -309,6 +309,76 @@
       ],
       "averageRating": 2.1,
       "problem": "用户平均评分 2.1 分，低于高分入库阈值 7 分"
+    },
+    {
+      "section": "冰饮",
+      "name": "轻乳青提茉莉",
+      "id": "user_bad_1779689209884",
+      "style": "用户低分配方",
+      "volume": "500ml",
+      "sweetness": "中低甜",
+      "estimatedCostYuan": null,
+      "ingredients": [
+        {
+          "name": "jasmine_green_tea",
+          "amount": "150ml"
+        },
+        {
+          "name": "light_milk",
+          "amount": "30ml"
+        },
+        {
+          "name": "grape_juice",
+          "amount": "20ml"
+        },
+        {
+          "name": "cane_syrup",
+          "amount": "12ml"
+        },
+        {
+          "name": "ice",
+          "amount": "80g"
+        }
+      ],
+      "description": "突出茉莉茶感与青提鲜香，轻乳用量较少，口感更清爽，适合追求轻负担的年轻人群。",
+      "steps": [
+        "取500ml冰饮杯，加入冰块80g",
+        "加入青提果汁20ml、蔗糖糖浆12ml",
+        "加入轻乳基底30ml",
+        "倒入茉莉绿茶汤150ml",
+        "搅拌混合均匀",
+        "封口出品"
+      ],
+      "feedbacks": [
+        {
+          "score": 8,
+          "comment": "",
+          "createdAt": "2026-05-25T06:03:25.232Z"
+        },
+        {
+          "score": 4,
+          "comment": "",
+          "createdAt": "2026-05-25T06:03:29.889Z"
+        },
+        {
+          "score": 1,
+          "comment": "不好喝",
+          "createdAt": "2026-05-25T06:03:38.854Z"
+        },
+        {
+          "score": 8,
+          "comment": "",
+          "createdAt": "2026-05-25T06:04:01.219Z"
+        }
+      ],
+      "userRatings": [
+        8,
+        4,
+        1,
+        8
+      ],
+      "averageRating": 5.25,
+      "problem": "用户平均评分 5.3 分，低于高分入库阈值 7 分"
     }
   ]
 }
