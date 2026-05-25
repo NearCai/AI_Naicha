@@ -8,6 +8,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "茉莉绿茶汤",
     category: "茶底",
     costPerUnit: "0.018元/ml",
+    quantity: "5000ml",
     flavorTags: ["花香", "清爽", "茶感"],
     allergens: [],
     availability: "充足",
@@ -18,6 +19,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "锡兰红茶汤",
     category: "茶底",
     costPerUnit: "0.016元/ml",
+    quantity: "5000ml",
     flavorTags: ["醇厚", "焦糖感", "茶感"],
     allergens: [],
     availability: "充足",
@@ -28,6 +30,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "桂花乌龙茶汤",
     category: "茶底",
     costPerUnit: "0.022元/ml",
+    quantity: "3000ml",
     flavorTags: ["桂花香", "焙火", "回甘"],
     allergens: [],
     availability: "季节限定",
@@ -38,6 +41,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "鲜牛奶",
     category: "奶基底",
     costPerUnit: "0.038元/ml",
+    quantity: "3000ml",
     flavorTags: ["奶香", "顺滑", "清洁感"],
     allergens: ["乳制品"],
     availability: "充足",
@@ -48,6 +52,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "轻乳基底",
     category: "奶基底",
     costPerUnit: "0.031元/ml",
+    quantity: "3000ml",
     flavorTags: ["轻盈", "低负担", "柔和"],
     allergens: ["乳制品"],
     availability: "充足",
@@ -58,6 +63,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "芝士奶盖",
     category: "奶基底",
     costPerUnit: "0.065元/g",
+    quantity: "2000g",
     flavorTags: ["咸甜", "浓郁", "绵密"],
     allergens: ["乳制品"],
     availability: "偏低",
@@ -68,6 +74,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "青提果汁",
     category: "水果",
     costPerUnit: "0.058元/ml",
+    quantity: "2000ml",
     flavorTags: ["青提", "果香", "清爽"],
     allergens: [],
     availability: "充足",
@@ -78,6 +85,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "芒果果泥",
     category: "水果",
     costPerUnit: "0.052元/g",
+    quantity: "2000g",
     flavorTags: ["热带", "甜香", "厚实"],
     allergens: [],
     availability: "充足",
@@ -88,6 +96,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "草莓果酱",
     category: "水果",
     costPerUnit: "0.049元/g",
+    quantity: "1500g",
     flavorTags: ["莓果", "酸甜", "明亮"],
     allergens: [],
     availability: "季节限定",
@@ -98,6 +107,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "椰果",
     category: "小料",
     costPerUnit: "0.026元/g",
+    quantity: "3000g",
     flavorTags: ["脆弹", "椰香", "清爽"],
     allergens: [],
     availability: "充足",
@@ -108,6 +118,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "茉莉茶冻",
     category: "小料",
     costPerUnit: "0.032元/g",
+    quantity: "2500g",
     flavorTags: ["茶香", "嫩滑", "清爽"],
     allergens: [],
     availability: "充足",
@@ -118,6 +129,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "黑糖珍珠",
     category: "小料",
     costPerUnit: "0.035元/g",
+    quantity: "3000g",
     flavorTags: ["黑糖", "嚼感", "厚重"],
     allergens: [],
     availability: "充足",
@@ -128,6 +140,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "蔗糖糖浆",
     category: "风味糖浆",
     costPerUnit: "0.018元/ml",
+    quantity: "3000ml",
     flavorTags: ["甜感", "干净", "基础"],
     allergens: [],
     availability: "充足",
@@ -138,6 +151,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "桂花糖浆",
     category: "风味糖浆",
     costPerUnit: "0.041元/ml",
+    quantity: "1500ml",
     flavorTags: ["花香", "甜润", "东方感"],
     allergens: [],
     availability: "季节限定",
@@ -148,6 +162,7 @@ export const ingredientLibrary: StoreIngredient[] = [
     name: "冰块",
     category: "辅料",
     costPerUnit: "0.004元/g",
+    quantity: "10000g",
     flavorTags: ["冰爽", "降温"],
     allergens: [],
     availability: "充足",
@@ -183,12 +198,16 @@ export const equipmentOptions = [
 export type StoreConfig = {
   storeProfile: StoreProfile;
   selectedIngredientIds: string[];
+  customIngredients: StoreIngredient[];
+  ingredientQuantities: Record<string, string>;
 };
 
 export function getDefaultStoreConfig(): StoreConfig {
   return {
     storeProfile: defaultStoreProfile,
     selectedIngredientIds: defaultSelectedIngredientIds,
+    customIngredients: [],
+    ingredientQuantities: {},
   };
 }
 
@@ -204,5 +223,42 @@ export function normalizeStoreConfig(config: Partial<StoreConfig>): StoreConfig 
     selectedIngredientIds: Array.isArray(config.selectedIngredientIds)
       ? config.selectedIngredientIds
       : defaultSelectedIngredientIds,
+    customIngredients: Array.isArray(config.customIngredients)
+      ? config.customIngredients
+      : [],
+    ingredientQuantities:
+      config.ingredientQuantities && typeof config.ingredientQuantities === "object"
+        ? config.ingredientQuantities
+        : {},
   };
+}
+
+export function getIngredientQuantity(
+  ingredient: StoreIngredient,
+  quantities: Record<string, string>,
+): string {
+  return quantities[ingredient.id] ?? ingredient.quantity;
+}
+
+export function getAllIngredients(storeConfig: StoreConfig): StoreIngredient[] {
+  const builtInMap = new Map(ingredientLibrary.map((i) => [i.id, i]));
+  const customMap = new Map(storeConfig.customIngredients.map((i) => [i.id, i]));
+
+  const all = new Map<string, StoreIngredient>();
+
+  for (const [id, ingredient] of builtInMap) {
+    all.set(id, {
+      ...ingredient,
+      quantity: getIngredientQuantity(ingredient, storeConfig.ingredientQuantities),
+    });
+  }
+
+  for (const [id, ingredient] of customMap) {
+    all.set(id, {
+      ...ingredient,
+      quantity: getIngredientQuantity(ingredient, storeConfig.ingredientQuantities),
+    });
+  }
+
+  return Array.from(all.values());
 }
