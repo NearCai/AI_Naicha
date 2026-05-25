@@ -62,8 +62,13 @@ hf = [
     "datasets>=2.14",
     "huggingface-hub>=0.20",
 ]
+api = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "httpx>=0.25",
+]
 all = [
-    "beverage_ai[ml,llm,demo,dev,scrape,hf]",
+    "beverage_ai[ml,llm,demo,dev,scrape,hf,api]",
 ]
 
 [project.scripts]
