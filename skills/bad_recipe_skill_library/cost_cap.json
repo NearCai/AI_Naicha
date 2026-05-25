@@ -1,0 +1,382 @@
+{
+  "sourceMarkdown": "cost_cap.md",
+  "recipeCount": 10,
+  "recipes": [
+    {
+      "section": "4 元以内",
+      "name": "淡味茉莉奶水",
+      "id": "bad_017",
+      "style": "过度压成本",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 2.6,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "120g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "45g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ],
+      "problem": "为了低成本严重稀释，茶香和奶香都不足"
+    },
+    {
+      "section": "4 元以内",
+      "name": "低配椰果红茶",
+      "id": "bad_018",
+      "style": "结构单薄",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.4,
+      "ingredients": [
+        {
+          "name": "锡兰红茶",
+          "amount": "260g"
+        },
+        {
+          "name": "椰果",
+          "amount": "20g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ],
+      "problem": "只有甜茶和少量椰果，产品感弱，不像新品"
+    },
+    {
+      "section": "5 元以内",
+      "name": "抹茶红茶双拼奶",
+      "id": "bad_019",
+      "style": "茶感冲突",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.8,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "阿萨姆红茶",
+          "amount": "160g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "120g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ],
+      "problem": "抹茶海苔感和红茶焙火感互相干扰，入口粗糙"
+    },
+    {
+      "section": "5 元以内",
+      "name": "桂花薄荷奶茶",
+      "id": "bad_020",
+      "style": "香气冲撞",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 4.9,
+      "ingredients": [
+        {
+          "name": "桂花乌龙",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "桂花酱",
+          "amount": "10g"
+        },
+        {
+          "name": "薄荷糖浆",
+          "amount": "16g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ],
+      "problem": "桂花温润和薄荷清凉方向相反，香气廉价"
+    },
+    {
+      "section": "6 元以内",
+      "name": "柠檬芝士鲜奶茶",
+      "id": "bad_021",
+      "style": "酸奶不稳",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.7,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "180g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "130g"
+        },
+        {
+          "name": "柠檬汁",
+          "amount": "30g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "55g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "柠檬酸感破坏奶味顺滑，芝士奶盖让酸腻感放大"
+    },
+    {
+      "section": "6 元以内",
+      "name": "红豆葡萄乌龙奶",
+      "id": "bad_022",
+      "style": "口感错配",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.9,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "180g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "葡萄果浆",
+          "amount": "70g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "45g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "葡萄清爽感与红豆沙糯感不搭"
+    },
+    {
+      "section": "8 元以内",
+      "name": "厚乳烧仙草气泡茶",
+      "id": "bad_023",
+      "style": "工艺冲突",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7.3,
+      "ingredients": [
+        {
+          "name": "厚乳",
+          "amount": "150g"
+        },
+        {
+          "name": "气泡水",
+          "amount": "160g"
+        },
+        {
+          "name": "烧仙草",
+          "amount": "70g"
+        },
+        {
+          "name": "阿萨姆红茶",
+          "amount": "120g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "20g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ],
+      "problem": "厚乳和气泡水不稳定，烧仙草让饮品更难吸饮"
+    },
+    {
+      "section": "8 元以内",
+      "name": "多果奶盖咖啡茶",
+      "id": "bad_024",
+      "style": "成本浪费",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7.8,
+      "ingredients": [
+        {
+          "name": "冷萃咖啡",
+          "amount": "80g"
+        },
+        {
+          "name": "茉莉绿茶",
+          "amount": "120g"
+        },
+        {
+          "name": "芒果",
+          "amount": "50g"
+        },
+        {
+          "name": "蓝莓",
+          "amount": "40g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "高成本原料互相遮盖，没有明确卖点"
+    },
+    {
+      "section": "8 元以上",
+      "name": "全家桶奶茶",
+      "id": "bad_025",
+      "style": "成本失控",
+      "volume": "700ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 12.4,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "180g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "150g"
+        },
+        {
+          "name": "椰浆",
+          "amount": "100g"
+        },
+        {
+          "name": "芋泥",
+          "amount": "70g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "60g"
+        },
+        {
+          "name": "烧仙草",
+          "amount": "70g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "80g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "18g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ],
+      "problem": "成本和热量都过高，制作复杂且口感糊"
+    },
+    {
+      "section": "6 元以内",
+      "name": "青提茉莉轻乳茶",
+      "id": "user_bad_1779686443478",
+      "style": "用户低分配方",
+      "volume": "500ml",
+      "sweetness": "中低甜",
+      "estimatedCostYuan": null,
+      "ingredients": [
+        {
+          "name": "jasmine_green_tea",
+          "amount": "150ml"
+        },
+        {
+          "name": "light_milk",
+          "amount": "40ml"
+        },
+        {
+          "name": "grape_juice",
+          "amount": "15ml"
+        },
+        {
+          "name": "jasmine_jelly",
+          "amount": "10g"
+        },
+        {
+          "name": "cane_syrup",
+          "amount": "5ml"
+        },
+        {
+          "name": "ice",
+          "amount": "150g"
+        }
+      ],
+      "description": "清爽青提果汁与茉莉绿茶汤碰撞，融入轻盈基底乳，搭配嫩滑茉莉茶冻，口感层次丰富，低负担不腻，是夏日解暑的果香奶茶首选。",
+      "steps": [
+        "在杯中加入茉莉茶汤150ml、轻乳基底40ml、青提果汁15ml、蔗糖糖浆5ml，搅拌均匀",
+        "加入冰块150g至满杯",
+        "加入茉莉茶冻10g",
+        "用封口机封口，摇匀后出品"
+      ],
+      "userRatings": [
+        5,
+        9,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "averageRating": 2.1,
+      "problem": "用户平均评分 2.1 分，低于高分入库阈值 7 分"
+    }
+  ]
+}

@@ -216,6 +216,7 @@ async function auditRecipes(
           content: buildAuditorPrompt(recipes, filterReport, constraints),
         },
       ],
+      response_format: { type: "json_object" },
       temperature: 0.45,
       max_tokens: 700,
     });

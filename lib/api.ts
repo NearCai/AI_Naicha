@@ -5,6 +5,10 @@ import type {
   DrinkImageResult,
   GenerateDrinkImageRequest,
   GenerateDrinkRequest,
+  AddHistoryFeedbackRequest,
+  AddHistoryFeedbackResult,
+  RateDrinkRequest,
+  RateDrinkResult,
 } from "@/types/drink";
 
 export async function generateDrinkRecipe(
@@ -59,6 +63,44 @@ export async function generateDrinkImage(
   if (!response.ok) {
     const errorBody = await response.json().catch(() => null);
     throw new Error(errorBody?.message ?? "产品图生成失败，请稍后重试。");
+  }
+
+  return response.json();
+}
+
+export async function rateDrinkRecipe(
+  payload: RateDrinkRequest,
+): Promise<RateDrinkResult> {
+  const response = await fetch("/api/rate-drink", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.json().catch(() => null);
+    throw new Error(errorBody?.message ?? "反馈保存失败，请稍后重试。");
+  }
+
+  return response.json();
+}
+
+export async function addHistoryFeedback(
+  payload: AddHistoryFeedbackRequest,
+): Promise<AddHistoryFeedbackResult> {
+  const response = await fetch("/api/history-feedback", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.json().catch(() => null);
+    throw new Error(errorBody?.message ?? "反馈保存失败，请稍后重试。");
   }
 
   return response.json();

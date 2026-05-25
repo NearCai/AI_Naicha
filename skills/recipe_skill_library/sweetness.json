@@ -1,0 +1,3328 @@
+{
+  "sourceMarkdown": "sweetness.md",
+  "recipeCount": 110,
+  "recipes": [
+    {
+      "section": "无糖",
+      "name": "无糖茉莉花茶",
+      "id": "ref_004",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "无糖",
+      "estimatedCostYuan": 4.05,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "400g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "无糖",
+      "name": "玉露冷泡",
+      "id": "ref_009",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "无糖",
+      "estimatedCostYuan": 4.05,
+      "ingredients": [
+        {
+          "name": "玉露",
+          "amount": "400g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "茉莉绿茶",
+      "id": "ref_001",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.9,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "380g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "桂花乌龙茶",
+      "id": "ref_002",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.94,
+      "ingredients": [
+        {
+          "name": "桂花乌龙",
+          "amount": "380g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "干桂花",
+          "amount": "0.5g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "阿萨姆鲜茶",
+      "id": "ref_003",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.9,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "380g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "冷泡抹茶",
+      "id": "ref_005",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 0.31,
+      "ingredients": [
+        {
+          "name": "抹茶",
+          "amount": "3g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "370g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "菊花决明子茶",
+      "id": "ref_011",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.89,
+      "ingredients": [
+        {
+          "name": "菊花茶",
+          "amount": "200g"
+        },
+        {
+          "name": "决明子",
+          "amount": "180g"
+        },
+        {
+          "name": "冰糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "抹茶燕麦拿铁",
+      "id": "ref_019",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 6.4,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "燕麦奶咖啡师版",
+          "amount": "240g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "100g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "燕麦奶茶",
+      "id": "ref_025",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.84,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "250g"
+        },
+        {
+          "name": "燕麦奶咖啡师版",
+          "amount": "130g"
+        },
+        {
+          "name": "红糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "杏仁奶茶",
+      "id": "ref_026",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.45,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "260g"
+        },
+        {
+          "name": "杏仁奶",
+          "amount": "110g"
+        },
+        {
+          "name": "枫糖浆",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "抹茶奇亚籽拿铁",
+      "id": "ref_034",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.94,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "220g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "100g"
+        },
+        {
+          "name": "奇亚籽",
+          "amount": "5g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "大麦奶茶",
+      "id": "ref_047",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 4.45,
+      "ingredients": [
+        {
+          "name": "大麦茶",
+          "amount": "270g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "枫糖浆",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "葡萄柚乌龙",
+      "id": "ref_049",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.62,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "230g"
+        },
+        {
+          "name": "葡萄柚",
+          "amount": "80g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "10g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "油柑乌龙",
+      "id": "ref_052",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 4.15,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "200g"
+        },
+        {
+          "name": "油柑",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "80g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "阳光玫瑰乌龙",
+      "id": "ref_053",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 6.01,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "230g"
+        },
+        {
+          "name": "阳光玫瑰",
+          "amount": "80g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "10g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "西瓜冰茶",
+      "id": "ref_060",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 7.11,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "180g"
+        },
+        {
+          "name": "西瓜",
+          "amount": "120g"
+        },
+        {
+          "name": "青柠",
+          "amount": "10g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "葡萄柚气泡",
+      "id": "ref_070",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.02,
+      "ingredients": [
+        {
+          "name": "气泡水",
+          "amount": "220g"
+        },
+        {
+          "name": "葡萄柚",
+          "amount": "100g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "20g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "燕麦拿铁",
+      "id": "ref_074",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 8.47,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "燕麦奶咖啡师版",
+          "amount": "250g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "170g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "冷萃椰椰咖",
+      "id": "ref_078",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 9.34,
+      "ingredients": [
+        {
+          "name": "冷萃咖啡",
+          "amount": "120g"
+        },
+        {
+          "name": "椰浆",
+          "amount": "80g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "170g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "海盐美式",
+      "id": "ref_082",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 13.38,
+      "ingredients": [
+        {
+          "name": "美式",
+          "amount": "220g"
+        },
+        {
+          "name": "海盐",
+          "amount": "0.3g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "冰块",
+          "amount": "200g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "蓝莓酸奶冰沙",
+      "id": "ref_088",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.44,
+      "ingredients": [
+        {
+          "name": "酸奶",
+          "amount": "140g"
+        },
+        {
+          "name": "蓝莓",
+          "amount": "80g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "200g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "8g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "牛油果奶昔",
+      "id": "ref_090",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.29,
+      "ingredients": [
+        {
+          "name": "牛油果",
+          "amount": "80g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "130g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "200g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "8g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "西瓜冰沙",
+      "id": "ref_092",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 8.46,
+      "ingredients": [
+        {
+          "name": "西瓜",
+          "amount": "200g"
+        },
+        {
+          "name": "青柠",
+          "amount": "8g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "200g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "海盐奶盖芝士绿妍",
+      "id": "ref_095",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.78,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "290g"
+        },
+        {
+          "name": "海盐奶盖",
+          "amount": "50g"
+        },
+        {
+          "name": "海盐",
+          "amount": "0.3g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "鸭屎香轻乳",
+      "id": "ref_098",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 5.36,
+      "ingredients": [
+        {
+          "name": "凤凰单丛",
+          "amount": "250g"
+        },
+        {
+          "name": "燕麦奶咖啡师版",
+          "amount": "110g"
+        },
+        {
+          "name": "红糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "椰青百香果茶",
+      "id": "ref_103",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.27,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "150g"
+        },
+        {
+          "name": "百香果",
+          "amount": "40g"
+        },
+        {
+          "name": "椰子水",
+          "amount": "130g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "抹茶气泡",
+      "id": "ref_107",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 0.72,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "2g"
+        },
+        {
+          "name": "气泡水",
+          "amount": "250g"
+        },
+        {
+          "name": "青柠",
+          "amount": "8g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "桂花养生茶",
+      "id": "ref_108",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.41,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "290g"
+        },
+        {
+          "name": "干桂花",
+          "amount": "1g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "桂花酱",
+          "amount": "4g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "低甜",
+      "name": "抹茶柠檬气泡",
+      "id": "ref_110",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 0.99,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "2g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "15g"
+        },
+        {
+          "name": "气泡水",
+          "amount": "230g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "冻顶乌龙",
+      "id": "ref_006",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.82,
+      "ingredients": [
+        {
+          "name": "冻顶乌龙",
+          "amount": "370g"
+        },
+        {
+          "name": "冰糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "大红袍",
+      "id": "ref_007",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.92,
+      "ingredients": [
+        {
+          "name": "大红袍",
+          "amount": "380g"
+        },
+        {
+          "name": "冰糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "冰熟普",
+      "id": "ref_008",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.92,
+      "ingredients": [
+        {
+          "name": "熟普",
+          "amount": "380g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "洛神花茶",
+      "id": "ref_010",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.82,
+      "ingredients": [
+        {
+          "name": "洛神花茶",
+          "amount": "370g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "锡兰红茶",
+      "id": "ref_012",
+      "style": "纯茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.92,
+      "ingredients": [
+        {
+          "name": "锡兰红茶",
+          "amount": "380g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "经典珍珠奶茶",
+      "id": "ref_013",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.26,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "250g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "40g"
+        },
+        {
+          "name": "冰块",
+          "amount": "90g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂花乌龙厚乳茶",
+      "id": "ref_016",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.41,
+      "ingredients": [
+        {
+          "name": "桂花乌龙",
+          "amount": "250g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "125g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "芋圆",
+          "amount": "35g"
+        },
+        {
+          "name": "干桂花",
+          "amount": "0.5g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "25g"
+        },
+        {
+          "name": "冰块",
+          "amount": "85g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "茉莉绿茶拿铁",
+      "id": "ref_017",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.37,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "260g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶拿铁",
+      "id": "ref_018",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.87,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "230g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "110g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "阿萨姆芝士奶盖",
+      "id": "ref_020",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.78,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "290g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "海盐奶盖金萱乌龙",
+      "id": "ref_021",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.66,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "290g"
+        },
+        {
+          "name": "海盐奶盖",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "海盐",
+          "amount": "0.3g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "鸭屎香轻乳茶",
+      "id": "ref_022",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.67,
+      "ingredients": [
+        {
+          "name": "凤凰单丛",
+          "amount": "230g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "110g"
+        },
+        {
+          "name": "海盐奶盖",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "玫瑰荔枝奶茶",
+      "id": "ref_023",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.68,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "230g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "荔枝",
+          "amount": "40g"
+        },
+        {
+          "name": "玫瑰水",
+          "amount": "2g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "椰椰珍珠奶茶",
+      "id": "ref_024",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.46,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "椰浆",
+          "amount": "90g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "35g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶红豆奶茶",
+      "id": "ref_027",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.47,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "220g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "90g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "烧仙草奶茶",
+      "id": "ref_028",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 6.53,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "180g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "烧仙草",
+          "amount": "70g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "25g"
+        },
+        {
+          "name": "芋圆",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "80g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "三色芋圆奶茶",
+      "id": "ref_029",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.89,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "五彩芋圆",
+          "amount": "50g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "15g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "紫薯芋泥拿铁",
+      "id": "ref_030",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 6.04,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "180g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "110g"
+        },
+        {
+          "name": "芋泥",
+          "amount": "60g"
+        },
+        {
+          "name": "紫薯泥",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂花蜜奶茶",
+      "id": "ref_031",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.21,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "240g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "桂花蜜",
+          "amount": "12g"
+        },
+        {
+          "name": "干桂花",
+          "amount": "0.5g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "冷泡白茶奶",
+      "id": "ref_032",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.26,
+      "ingredients": [
+        {
+          "name": "白牡丹",
+          "amount": "240g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "115g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "杨枝甘露奶茶",
+      "id": "ref_035",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7.21,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "160g"
+        },
+        {
+          "name": "椰浆",
+          "amount": "110g"
+        },
+        {
+          "name": "芒果",
+          "amount": "50g"
+        },
+        {
+          "name": "西米",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "10g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "水晶珍珠茉莉奶茶",
+      "id": "ref_037",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.9,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "240g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "水晶珍珠",
+          "amount": "35g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "蜜豆奶茶",
+      "id": "ref_038",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.58,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "蜜豆",
+          "amount": "30g"
+        },
+        {
+          "name": "红糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "焦糖布丁奶茶",
+      "id": "ref_039",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.0,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "焦糖布丁",
+          "amount": "55g"
+        },
+        {
+          "name": "焦糖糖浆",
+          "amount": "12g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶布丁拿铁",
+      "id": "ref_040",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.67,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "200g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "90g"
+        },
+        {
+          "name": "抹茶布丁",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "蜂蜜柚子奶茶",
+      "id": "ref_042",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.27,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "230g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "葡萄柚",
+          "amount": "30g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "12g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "生椰小绿茶",
+      "id": "ref_044",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.83,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "200g"
+        },
+        {
+          "name": "椰奶",
+          "amount": "100g"
+        },
+        {
+          "name": "椰肉",
+          "amount": "30g"
+        },
+        {
+          "name": "黑糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "红豆金萱奶茶",
+      "id": "ref_045",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.83,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "230g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "脆啵啵奶茶",
+      "id": "ref_046",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.46,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "脆啵啵",
+          "amount": "25g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "多肉葡萄",
+      "id": "ref_048",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7.93,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "220g"
+        },
+        {
+          "name": "葡萄",
+          "amount": "100g"
+        },
+        {
+          "name": "阳光玫瑰",
+          "amount": "30g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "10g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "香水柠檬茶",
+      "id": "ref_050",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 3.77,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "200g"
+        },
+        {
+          "name": "香水柠檬",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "80g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "经典柠檬水",
+      "id": "ref_051",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 1.68,
+      "ingredients": [
+        {
+          "name": "柠檬",
+          "amount": "35g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "280g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "芒果茉莉茶",
+      "id": "ref_054",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.62,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "230g"
+        },
+        {
+          "name": "芒果",
+          "amount": "80g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "12g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "百香果绿茶",
+      "id": "ref_055",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.36,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "220g"
+        },
+        {
+          "name": "百香果",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "杨枝甘露",
+      "id": "ref_056",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 8.4,
+      "ingredients": [
+        {
+          "name": "椰浆",
+          "amount": "130g"
+        },
+        {
+          "name": "芒果",
+          "amount": "100g"
+        },
+        {
+          "name": "西米",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "170g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "蓝莓茉莉",
+      "id": "ref_057",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.77,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "220g"
+        },
+        {
+          "name": "蓝莓",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桃桃乌龙",
+      "id": "ref_058",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.53,
+      "ingredients": [
+        {
+          "name": "金萱乌龙",
+          "amount": "220g"
+        },
+        {
+          "name": "水蜜桃",
+          "amount": "80g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "樱桃绿茶",
+      "id": "ref_059",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.83,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "230g"
+        },
+        {
+          "name": "樱桃",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "哈密瓜茉莉",
+      "id": "ref_061",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.63,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "230g"
+        },
+        {
+          "name": "哈密瓜",
+          "amount": "80g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "火龙果茉莉",
+      "id": "ref_062",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.93,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "220g"
+        },
+        {
+          "name": "红心火龙果",
+          "amount": "90g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "油柑诚意茶",
+      "id": "ref_063",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.76,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "220g"
+        },
+        {
+          "name": "油柑",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "50g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "杨梅冰茶",
+      "id": "ref_064",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.23,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "230g"
+        },
+        {
+          "name": "杨梅",
+          "amount": "70g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂圆红茶",
+      "id": "ref_065",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.63,
+      "ingredients": [
+        {
+          "name": "滇红",
+          "amount": "250g"
+        },
+        {
+          "name": "桂圆",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "柠檬蓝莓茶",
+      "id": "ref_066",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.97,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "200g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "20g"
+        },
+        {
+          "name": "蓝莓",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "80g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "鲜橙茉莉",
+      "id": "ref_067",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.62,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "230g"
+        },
+        {
+          "name": "橙子",
+          "amount": "80g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "12g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂花百香果",
+      "id": "ref_068",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.42,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "220g"
+        },
+        {
+          "name": "百香果",
+          "amount": "40g"
+        },
+        {
+          "name": "桂花酱",
+          "amount": "6g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "70g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "草莓气泡茶",
+      "id": "ref_069",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.7,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "130g"
+        },
+        {
+          "name": "草莓",
+          "amount": "80g"
+        },
+        {
+          "name": "气泡水",
+          "amount": "130g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "玫瑰荔枝果茶",
+      "id": "ref_071",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.51,
+      "ingredients": [
+        {
+          "name": "茉莉花茶",
+          "amount": "210g"
+        },
+        {
+          "name": "荔枝",
+          "amount": "70g"
+        },
+        {
+          "name": "玫瑰酱",
+          "amount": "6g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "草莓茉莉绿",
+      "id": "ref_072",
+      "style": "果茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.96,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "200g"
+        },
+        {
+          "name": "草莓",
+          "amount": "80g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "15g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "50g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "生椰拿铁",
+      "id": "ref_073",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.76,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "椰浆",
+          "amount": "100g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "170g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂花厚乳拿铁",
+      "id": "ref_075",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.67,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "130g"
+        },
+        {
+          "name": "桂花酱",
+          "amount": "6g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "170g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "茉莉茶咖",
+      "id": "ref_076",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7.93,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "180g"
+        },
+        {
+          "name": "冷萃咖啡",
+          "amount": "80g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "80g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶 espresso 拿铁",
+      "id": "ref_077",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.21,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "30g"
+        },
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "200g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "厚乳拿铁",
+      "id": "ref_079",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.21,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "130g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "鸭屎香拿铁",
+      "id": "ref_080",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.25,
+      "ingredients": [
+        {
+          "name": "凤凰单丛",
+          "amount": "180g"
+        },
+        {
+          "name": "意式浓缩",
+          "amount": "30g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "100g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "焦糖拿铁",
+      "id": "ref_081",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.25,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "200g"
+        },
+        {
+          "name": "焦糖糖浆",
+          "amount": "12g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶冷萃燕麦",
+      "id": "ref_083",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 10.18,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "冷萃咖啡",
+          "amount": "80g"
+        },
+        {
+          "name": "燕麦奶咖啡师版",
+          "amount": "200g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "芒果冰沙",
+      "id": "ref_085",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.41,
+      "ingredients": [
+        {
+          "name": "芒果",
+          "amount": "130g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "230g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "草莓冰沙",
+      "id": "ref_086",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.41,
+      "ingredients": [
+        {
+          "name": "草莓",
+          "amount": "130g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "230g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶冰沙",
+      "id": "ref_087",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 2.38,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "130g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "210g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "葡萄冰沙",
+      "id": "ref_089",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.41,
+      "ingredients": [
+        {
+          "name": "葡萄",
+          "amount": "130g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "230g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "百香果冰沙",
+      "id": "ref_091",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 2.64,
+      "ingredients": [
+        {
+          "name": "百香果",
+          "amount": "60g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "240g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "110g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桃子冰沙",
+      "id": "ref_093",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.41,
+      "ingredients": [
+        {
+          "name": "水蜜桃",
+          "amount": "130g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "230g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "椰椰冰沙",
+      "id": "ref_094",
+      "style": "冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.55,
+      "ingredients": [
+        {
+          "name": "椰浆",
+          "amount": "110g"
+        },
+        {
+          "name": "椰肉",
+          "amount": "40g"
+        },
+        {
+          "name": "碎冰",
+          "amount": "210g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "烧仙草满足杯",
+      "id": "ref_096",
+      "style": "特调",
+      "volume": "700ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 8.85,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "250g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "130g"
+        },
+        {
+          "name": "烧仙草",
+          "amount": "80g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "30g"
+        },
+        {
+          "name": "蜜豆",
+          "amount": "25g"
+        },
+        {
+          "name": "芋圆",
+          "amount": "35g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "18g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂花鲜奶",
+      "id": "ref_097",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.46,
+      "ingredients": [
+        {
+          "name": "全脂鲜奶",
+          "amount": "320g"
+        },
+        {
+          "name": "桂花酱",
+          "amount": "6g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "干桂花",
+          "amount": "0.5g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "紫薯啵啵奶茶",
+      "id": "ref_099",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.5,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "100g"
+        },
+        {
+          "name": "紫薯泥",
+          "amount": "50g"
+        },
+        {
+          "name": "奶啵啵",
+          "amount": "25g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "抹茶宇治金时",
+      "id": "ref_100",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.16,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "3g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "200g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "30g"
+        },
+        {
+          "name": "芋泥",
+          "amount": "40g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "90g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "玫瑰拿铁",
+      "id": "ref_101",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.68,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "130g"
+        },
+        {
+          "name": "玫瑰酱",
+          "amount": "6g"
+        },
+        {
+          "name": "干玫瑰花瓣",
+          "amount": "0.3g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "桂花荔枝乌龙",
+      "id": "ref_104",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.21,
+      "ingredients": [
+        {
+          "name": "桂花乌龙",
+          "amount": "220g"
+        },
+        {
+          "name": "荔枝",
+          "amount": "60g"
+        },
+        {
+          "name": "桂花酱",
+          "amount": "6g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "莓莓气泡",
+      "id": "ref_105",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.51,
+      "ingredients": [
+        {
+          "name": "气泡水",
+          "amount": "200g"
+        },
+        {
+          "name": "草莓",
+          "amount": "70g"
+        },
+        {
+          "name": "蓝莓",
+          "amount": "50g"
+        },
+        {
+          "name": "柠檬",
+          "amount": "12g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "标准甜",
+      "name": "椰奶布丁茶",
+      "id": "ref_106",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.93,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "180g"
+        },
+        {
+          "name": "椰奶",
+          "amount": "110g"
+        },
+        {
+          "name": "焦糖布丁",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "港式丝袜奶茶",
+      "id": "ref_014",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 3.98,
+      "ingredients": [
+        {
+          "name": "锡兰红茶",
+          "amount": "230g"
+        },
+        {
+          "name": "淡奶",
+          "amount": "80g"
+        },
+        {
+          "name": "炼乳",
+          "amount": "25g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "5g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "黑糖珍珠厚乳茶",
+      "id": "ref_015",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 5.1,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "120g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "25g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "45g"
+        },
+        {
+          "name": "冰块",
+          "amount": "110g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "黑糖姜母鲜奶",
+      "id": "ref_033",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 4.45,
+      "ingredients": [
+        {
+          "name": "全脂鲜奶",
+          "amount": "280g"
+        },
+        {
+          "name": "黑糖",
+          "amount": "18g"
+        },
+        {
+          "name": "姜粉",
+          "amount": "0.8g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "60g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "阿华田奶茶",
+      "id": "ref_036",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 4.62,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "巧克力粉",
+          "amount": "8g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "锡兰红奶茶",
+      "id": "ref_041",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 5.09,
+      "ingredients": [
+        {
+          "name": "锡兰红茶",
+          "amount": "230g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "18g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "40g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "巧克力奶茶",
+      "id": "ref_043",
+      "style": "奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 4.86,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "巧克力酱",
+          "amount": "8g"
+        },
+        {
+          "name": "可可粉",
+          "amount": "3g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "黑糖厚乳拿铁",
+      "id": "ref_084",
+      "style": "咖啡奶茶",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 4.24,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "130g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "20g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "30g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "焦糖海盐拿铁",
+      "id": "ref_102",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 5.78,
+      "ingredients": [
+        {
+          "name": "意式浓缩",
+          "amount": "35g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "180g"
+        },
+        {
+          "name": "海盐焦糖酱",
+          "amount": "10g"
+        },
+        {
+          "name": "焦糖糖浆",
+          "amount": "12g"
+        },
+        {
+          "name": "海盐",
+          "amount": "0.3g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "40g"
+        },
+        {
+          "name": "冰块",
+          "amount": "145g"
+        }
+      ]
+    },
+    {
+      "section": "高甜",
+      "name": "黑糖珍珠鲜奶",
+      "id": "ref_109",
+      "style": "特调",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 5.35,
+      "ingredients": [
+        {
+          "name": "全脂鲜奶",
+          "amount": "260g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "25g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "50g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ]
+    }
+  ]
+}

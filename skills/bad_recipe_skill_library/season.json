@@ -1,0 +1,342 @@
+{
+  "sourceMarkdown": "season.md",
+  "recipeCount": 9,
+  "recipes": [
+    {
+      "section": "春夏",
+      "name": "腻桃奶盖厚乳茶",
+      "id": "bad_001",
+      "style": "甜腻冲突",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 7.8,
+      "ingredients": [
+        {
+          "name": "水蜜桃果酱",
+          "amount": "90g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "160g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "70g"
+        },
+        {
+          "name": "炼乳",
+          "amount": "25g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "18g"
+        },
+        {
+          "name": "冰块",
+          "amount": "60g"
+        }
+      ],
+      "problem": "春夏场景下过度厚重，果香被乳脂和甜味压住，喝后负担感强"
+    },
+    {
+      "section": "春夏",
+      "name": "青柠红豆奶茶",
+      "id": "bad_002",
+      "style": "酸甜错位",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.9,
+      "ingredients": [
+        {
+          "name": "阿萨姆红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "120g"
+        },
+        {
+          "name": "青柠汁",
+          "amount": "35g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "50g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ],
+      "problem": "青柠酸感让奶基底发涩，红豆绵密口感和酸味不协调"
+    },
+    {
+      "section": "夏季",
+      "name": "热芋泥杨梅厚乳",
+      "id": "bad_003",
+      "style": "季节错配",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 8.2,
+      "ingredients": [
+        {
+          "name": "芋泥",
+          "amount": "90g"
+        },
+        {
+          "name": "杨梅果浆",
+          "amount": "70g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "150g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "25g"
+        },
+        {
+          "name": "热水",
+          "amount": "120g"
+        }
+      ],
+      "problem": "夏季需求通常偏清爽，这杯热饮又厚又酸甜，入口沉闷"
+    },
+    {
+      "section": "夏季",
+      "name": "咸芝士油柑奶茶",
+      "id": "bad_004",
+      "style": "苦涩叠加",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 6.4,
+      "ingredients": [
+        {
+          "name": "油柑汁",
+          "amount": "80g"
+        },
+        {
+          "name": "阿萨姆红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "110g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "60g"
+        },
+        {
+          "name": "海盐",
+          "amount": "1.5g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "油柑涩感、红茶涩感和咸奶盖叠加，收口发苦"
+    },
+    {
+      "section": "秋冬",
+      "name": "冰薄荷桂圆珍珠茶",
+      "id": "bad_005",
+      "style": "温感冲突",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 6.1,
+      "ingredients": [
+        {
+          "name": "滇红",
+          "amount": "230g"
+        },
+        {
+          "name": "桂圆",
+          "amount": "60g"
+        },
+        {
+          "name": "薄荷糖浆",
+          "amount": "20g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "45g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ],
+      "problem": "秋冬滋补感和强薄荷冰感冲突，桂圆甜香被薄荷压制"
+    },
+    {
+      "section": "秋冬",
+      "name": "姜汁葡萄气泡奶",
+      "id": "bad_006",
+      "style": "香气冲突",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 6.7,
+      "ingredients": [
+        {
+          "name": "葡萄汁",
+          "amount": "100g"
+        },
+        {
+          "name": "姜汁",
+          "amount": "18g"
+        },
+        {
+          "name": "气泡水",
+          "amount": "160g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "90g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "姜辣、葡萄香和奶味互相打架，气泡奶口感分离"
+    },
+    {
+      "section": "全年常规",
+      "name": "咖啡柠檬黑糖珍珠奶",
+      "id": "bad_007",
+      "style": "风味过载",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 7.1,
+      "ingredients": [
+        {
+          "name": "冷萃咖啡",
+          "amount": "100g"
+        },
+        {
+          "name": "柠檬汁",
+          "amount": "30g"
+        },
+        {
+          "name": "全脂鲜奶",
+          "amount": "130g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "50g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "25g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "咖啡苦、柠檬酸、黑糖甜和奶味同时堆叠，缺少主线"
+    },
+    {
+      "section": "全年常规",
+      "name": "抹茶玫瑰椰果红茶",
+      "id": "bad_008",
+      "style": "主题混乱",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.8,
+      "ingredients": [
+        {
+          "name": "抹茶粉",
+          "amount": "4g"
+        },
+        {
+          "name": "锡兰红茶",
+          "amount": "180g"
+        },
+        {
+          "name": "玫瑰酱",
+          "amount": "18g"
+        },
+        {
+          "name": "椰果",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "130g"
+        }
+      ],
+      "problem": "抹茶、红茶、玫瑰和椰果没有共同风味方向，香气杂乱"
+    },
+    {
+      "section": "夏季",
+      "name": "青提茉莉轻乳茶",
+      "id": "user_bad_1779686443478",
+      "style": "用户低分配方",
+      "volume": "500ml",
+      "sweetness": "中低甜",
+      "estimatedCostYuan": null,
+      "ingredients": [
+        {
+          "name": "jasmine_green_tea",
+          "amount": "150ml"
+        },
+        {
+          "name": "light_milk",
+          "amount": "40ml"
+        },
+        {
+          "name": "grape_juice",
+          "amount": "15ml"
+        },
+        {
+          "name": "jasmine_jelly",
+          "amount": "10g"
+        },
+        {
+          "name": "cane_syrup",
+          "amount": "5ml"
+        },
+        {
+          "name": "ice",
+          "amount": "150g"
+        }
+      ],
+      "description": "清爽青提果汁与茉莉绿茶汤碰撞，融入轻盈基底乳，搭配嫩滑茉莉茶冻，口感层次丰富，低负担不腻，是夏日解暑的果香奶茶首选。",
+      "steps": [
+        "在杯中加入茉莉茶汤150ml、轻乳基底40ml、青提果汁15ml、蔗糖糖浆5ml，搅拌均匀",
+        "加入冰块150g至满杯",
+        "加入茉莉茶冻10g",
+        "用封口机封口，摇匀后出品"
+      ],
+      "userRatings": [
+        5,
+        9,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "averageRating": 2.1,
+      "problem": "用户平均评分 2.1 分，低于高分入库阈值 7 分"
+    }
+  ]
+}

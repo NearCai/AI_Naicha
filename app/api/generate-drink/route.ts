@@ -66,6 +66,18 @@ const mockRecipeBase: DrinkRecipe = {
 };
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const defaultGenerationCount = 1;
+const maxGenerationCount = 6;
+
+function normalizeGenerationCount(value: unknown) {
+  const count = Number(value);
+
+  if (!Number.isFinite(count)) {
+    return defaultGenerationCount;
+  }
+
+  return Math.max(1, Math.min(maxGenerationCount, Math.round(count)));
+}
 
 async function loadSkillLibrary(constraints?: GenerationConstraints) {
   const skillDir = path.join(process.cwd(), "skills", "recipe_skill_library");
@@ -176,7 +188,7 @@ function formatIngredientLibrary(ingredients: StoreIngredient[]) {
       const allergens = ingredient.allergens.join("、") || "无";
       const equipment = ingredient.equipment.join("、") || "无特殊设备";
 
-      return `- ${ingredient.id}｜${ingredient.name}｜类别：${ingredient.category}｜成本：${ingredient.costPerUnit}｜风味：${tags}｜过敏原：${allergens}｜供应：${ingredient.availability}｜设备：${equipment}`;
+      return `- ${ingredient.id}｜${ingredient.name}｜类别：${ingredient.category}｜数量：${ingredient.quantity}｜成本：${ingredient.costPerUnit}｜风味：${tags}｜过敏原：${allergens}｜供应：${ingredient.availability}｜设备：${equipment}`;
     })
     .join("\n");
 }
@@ -214,9 +226,9 @@ function formatConstraints(constraints?: GenerationConstraints) {
   ].join("\n");
 }
 
-function buildMockRecipes(ingredients: StoreIngredient[]): DrinkRecipe[] {
+function buildMockRecipes(ingredients: StoreIngredient[], generationCount = 1): DrinkRecipe[] {
   if (!ingredients.length) {
-    return Array.from({ length: 1 }, (_, index) => ({
+    return Array.from({ length: generationCount }, (_, index) => ({
       ...mockRecipeBase,
       name: `${mockRecipeBase.name}${index + 1}`,
     }));
@@ -236,7 +248,7 @@ function buildMockRecipes(ingredients: StoreIngredient[]): DrinkRecipe[] {
     "青提茉莉冰乳",
   ];
 
-  return names.slice(0, 1).map((name, recipeIndex) => ({
+  return names.slice(0, generationCount).map((name, recipeIndex) => ({
     name,
     description:
       "研发工程师参考配方 skill 库后，基于当前门店原料生成的候选方案，强调清爽果香、茶感和轻负担口感。",
@@ -276,9 +288,58 @@ function mockAmountForIngredient(ingredient: StoreIngredient, index: number) {
   return "适量";
 }
 
+function isCompleteRecipe(recipe: DrinkRecipe) {
+  return (
+    Boolean(recipe?.name) &&
+    Boolean(recipe.description) &&
+    Array.isArray(recipe.ingredients) &&
+    Array.isArray(recipe.steps) &&
+    recipe.ingredients.length >= 4 &&
+    recipe.steps.length >= 4
+  );
+}
+
+function normalizeGeneratedResult(
+  result: DrinkDevelopmentResult,
+  fallbackRecipes: DrinkRecipe[],
+  generationCount: number,
+): DrinkDevelopmentResult {
+  const recipes = Array.isArray(result.recipes)
+    ? result.recipes.filter(isCompleteRecipe)
+    : [];
+  const seenNames = new Set<string>();
+  const deduped = recipes.filter((recipe) => {
+    if (seenNames.has(recipe.name)) {
+      return false;
+    }
+    seenNames.add(recipe.name);
+    return true;
+  });
+  const merged = [...deduped];
+
+  for (const fallbackRecipe of fallbackRecipes) {
+    if (merged.length >= generationCount) {
+      break;
+    }
+    if (!seenNames.has(fallbackRecipe.name)) {
+      merged.push(fallbackRecipe);
+      seenNames.add(fallbackRecipe.name);
+    }
+  }
+
+  return {
+    engineerName: "研发工程师",
+    skillReferences: result.skillReferences?.length
+      ? result.skillReferences
+      : [],
+    recipes: merged.slice(0, generationCount),
+  };
+}
+
 function buildSystemPrompt(
   ingredients: StoreIngredient[],
   skillContent: string,
+  generationCount: number,
   storeProfile?: StoreProfile,
   constraints?: GenerationConstraints,
 ): string {
@@ -287,7 +348,7 @@ function buildSystemPrompt(
 工作流程必须是：
 1. 先阅读“配方 Skill 库参考”中的现有配方；
 2. 再结合门店现有原料库、门店设备和用户需求；
-3. 最后输出 1 个可执行奶茶候选配方。
+3. 最后输出 ${generationCount} 个可执行奶茶候选配方。
 
 你必须基于以下门店现有原料库设计配方，ingredients 中只能使用原料库里出现的原料名称，不要编造新原料。
 如果用户需求和原料库冲突，请优先使用风味相近的现有原料替代，并在 description 中自然说明风味方向。
@@ -326,7 +387,7 @@ ${skillContent}
 要求：
 - 只允许返回一个 JSON object，禁止 Markdown 代码块、解释文字、前后缀、注释
 - JSON 必须能被 JSON.parse 直接解析，所有 key 和字符串都必须使用英文双引号
-- recipes 必须正好 1 个，名称不能重复
+- recipes 必须正好 ${generationCount} 个，名称不能重复
 - 每个 recipes[i].ingredients 至少 4 项，不超过 8 项
 - 每个 recipes[i].steps 至少 4 步，不超过 6 步
 - 用量要具体、可执行
@@ -355,6 +416,7 @@ export async function POST(request: Request) {
     : [];
   const storeProfile = body.storeProfile;
   const constraints = body.constraints;
+  const generationCount = normalizeGenerationCount(body.generationCount);
   const skillLibrary = await loadSkillLibrary(constraints);
 
   const client = createAIClient();
@@ -369,11 +431,11 @@ export async function POST(request: Request) {
     }
 
     await sleep(1200);
-    const result: DrinkDevelopmentResult = {
-      engineerName: "研发工程师",
-      skillReferences: skillLibrary.references,
-      recipes: buildMockRecipes(availableIngredients),
-    };
+      const result: DrinkDevelopmentResult = {
+        engineerName: "研发工程师",
+        skillReferences: skillLibrary.references,
+        recipes: buildMockRecipes(availableIngredients, generationCount),
+      };
     return NextResponse.json(result);
   }
 
@@ -386,14 +448,16 @@ export async function POST(request: Request) {
           content: buildSystemPrompt(
             availableIngredients,
             skillLibrary.content,
+            generationCount,
             storeProfile,
             constraints,
           ),
         },
         { role: "user", content: body.prompt.trim() },
       ],
+      response_format: { type: "json_object" },
       temperature: 0.8,
-      max_tokens: 1600,
+      max_tokens: Math.min(5200, 900 + generationCount * 800),
     });
 
     const content = completion.choices[0]?.message?.content ?? "";
@@ -402,30 +466,18 @@ export async function POST(request: Request) {
     try {
       result = parseAIJsonObject<DrinkDevelopmentResult>(content);
     } catch {
-      return NextResponse.json(
-        { message: "AI 返回格式异常，请稍后重试。" },
-        { status: 500 },
-      );
+      result = {
+        engineerName: "研发工程师",
+        skillReferences: skillLibrary.references,
+        recipes: buildMockRecipes(availableIngredients, generationCount),
+      };
     }
 
-    // 简单校验
-    if (
-      result.engineerName !== "研发工程师" ||
-      !Array.isArray(result.recipes) ||
-      result.recipes.length !== 1 ||
-      result.recipes.some(
-        (recipe) =>
-          !recipe.name ||
-          !recipe.description ||
-          !Array.isArray(recipe.ingredients) ||
-          !Array.isArray(recipe.steps),
-      )
-    ) {
-      return NextResponse.json(
-        { message: "AI 返回数据不完整，请稍后重试。" },
-        { status: 500 },
-      );
-    }
+    result = normalizeGeneratedResult(
+      result,
+      buildMockRecipes(availableIngredients, generationCount),
+      generationCount,
+    );
 
     return NextResponse.json({
       ...result,

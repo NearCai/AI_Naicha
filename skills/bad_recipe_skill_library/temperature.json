@@ -1,0 +1,314 @@
+{
+  "sourceMarkdown": "temperature.md",
+  "recipeCount": 9,
+  "recipes": [
+    {
+      "section": "冰饮",
+      "name": "冰姜黑糖厚乳茶",
+      "id": "bad_051",
+      "style": "温感错位",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 5.9,
+      "ingredients": [
+        {
+          "name": "红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "130g"
+        },
+        {
+          "name": "姜汁",
+          "amount": "18g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "25g"
+        },
+        {
+          "name": "冰块",
+          "amount": "160g"
+        }
+      ],
+      "problem": "姜和黑糖更适合暖饮，做成冰饮后辛辣和甜腻都显突兀"
+    },
+    {
+      "section": "冰饮",
+      "name": "冰桂圆红豆奶茶",
+      "id": "bad_052",
+      "style": "沉重冰饮",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.7,
+      "ingredients": [
+        {
+          "name": "滇红",
+          "amount": "220g"
+        },
+        {
+          "name": "牛奶",
+          "amount": "110g"
+        },
+        {
+          "name": "桂圆",
+          "amount": "60g"
+        },
+        {
+          "name": "红豆",
+          "amount": "45g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "140g"
+        }
+      ],
+      "problem": "滋补甜香和豆沙口感在冰饮里显得厚重"
+    },
+    {
+      "section": "冰沙/冻饮",
+      "name": "黑糖珍珠热感冰沙",
+      "id": "bad_053",
+      "style": "小料形态错配",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 6.3,
+      "ingredients": [
+        {
+          "name": "碎冰",
+          "amount": "220g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "30g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "60g"
+        },
+        {
+          "name": "牛奶",
+          "amount": "120g"
+        },
+        {
+          "name": "红茶",
+          "amount": "80g"
+        }
+      ],
+      "problem": "冰沙低温让珍珠变硬，黑糖甜味厚重"
+    },
+    {
+      "section": "冰沙/冻饮",
+      "name": "芝士奶盖柠檬冰沙",
+      "id": "bad_054",
+      "style": "酸咸冰沙",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.8,
+      "ingredients": [
+        {
+          "name": "碎冰",
+          "amount": "230g"
+        },
+        {
+          "name": "柠檬汁",
+          "amount": "35g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "70g"
+        },
+        {
+          "name": "牛奶",
+          "amount": "80g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ],
+      "problem": "柠檬酸、奶盖咸和冰沙冷感组合刺口"
+    },
+    {
+      "section": "热饮",
+      "name": "热气泡椰奶茶",
+      "id": "bad_055",
+      "style": "形态不可行",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 5.2,
+      "ingredients": [
+        {
+          "name": "热红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "热椰浆",
+          "amount": "120g"
+        },
+        {
+          "name": "气泡水",
+          "amount": "120g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ],
+      "problem": "热饮不适合气泡水，口感和工艺都不稳定"
+    },
+    {
+      "section": "热饮",
+      "name": "热草莓酸奶奶茶",
+      "id": "bad_056",
+      "style": "加热变味",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 6,
+      "ingredients": [
+        {
+          "name": "热红茶",
+          "amount": "160g"
+        },
+        {
+          "name": "酸奶",
+          "amount": "130g"
+        },
+        {
+          "name": "草莓果酱",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        }
+      ],
+      "problem": "酸奶受热后风味变差，草莓酱甜酸发闷"
+    },
+    {
+      "section": "少冰",
+      "name": "少冰厚乳榴莲茶",
+      "id": "bad_057",
+      "style": "降温不足",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7,
+      "ingredients": [
+        {
+          "name": "厚乳",
+          "amount": "170g"
+        },
+        {
+          "name": "榴莲果泥",
+          "amount": "60g"
+        },
+        {
+          "name": "红茶",
+          "amount": "150g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "40g"
+        }
+      ],
+      "problem": "少冰无法压住榴莲和厚乳的腻感，入口温吞"
+    },
+    {
+      "section": "冷热皆可",
+      "name": "冷热通用柠檬奶茶",
+      "id": "bad_058",
+      "style": "适配失败",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.9,
+      "ingredients": [
+        {
+          "name": "红茶",
+          "amount": "220g"
+        },
+        {
+          "name": "牛奶",
+          "amount": "120g"
+        },
+        {
+          "name": "柠檬汁",
+          "amount": "25g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块或热水",
+          "amount": "120g"
+        }
+      ],
+      "problem": "冷饮酸涩，热饮奶味不稳，冷热都不理想"
+    },
+    {
+      "section": "冰饮",
+      "name": "青提茉莉轻乳茶",
+      "id": "user_bad_1779686443478",
+      "style": "用户低分配方",
+      "volume": "500ml",
+      "sweetness": "中低甜",
+      "estimatedCostYuan": null,
+      "ingredients": [
+        {
+          "name": "jasmine_green_tea",
+          "amount": "150ml"
+        },
+        {
+          "name": "light_milk",
+          "amount": "40ml"
+        },
+        {
+          "name": "grape_juice",
+          "amount": "15ml"
+        },
+        {
+          "name": "jasmine_jelly",
+          "amount": "10g"
+        },
+        {
+          "name": "cane_syrup",
+          "amount": "5ml"
+        },
+        {
+          "name": "ice",
+          "amount": "150g"
+        }
+      ],
+      "description": "清爽青提果汁与茉莉绿茶汤碰撞，融入轻盈基底乳，搭配嫩滑茉莉茶冻，口感层次丰富，低负担不腻，是夏日解暑的果香奶茶首选。",
+      "steps": [
+        "在杯中加入茉莉茶汤150ml、轻乳基底40ml、青提果汁15ml、蔗糖糖浆5ml，搅拌均匀",
+        "加入冰块150g至满杯",
+        "加入茉莉茶冻10g",
+        "用封口机封口，摇匀后出品"
+      ],
+      "userRatings": [
+        5,
+        9,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "averageRating": 2.1,
+      "problem": "用户平均评分 2.1 分，低于高分入库阈值 7 分"
+    }
+  ]
+}

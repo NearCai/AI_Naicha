@@ -8,6 +8,7 @@ export type StoreIngredient = {
   name: string;
   category: "茶底" | "奶基底" | "水果" | "小料" | "风味糖浆" | "辅料";
   costPerUnit: string;
+  quantity: string;
   flavorTags: string[];
   allergens: string[];
   availability: "充足" | "偏低" | "季节限定";
@@ -71,6 +72,7 @@ export type GenerationConstraints = {
 
 export type GenerateDrinkRequest = {
   prompt: string;
+  generationCount?: number;
   storeProfile?: StoreProfile;
   constraints?: GenerationConstraints;
   availableIngredients?: StoreIngredient[];
@@ -89,6 +91,42 @@ export type GenerateDrinkImageRequest = Pick<
 
 export type DrinkImageResult = {
   imageUrl: string;
+};
+
+export type DrinkFeedback = {
+  score: number;
+  comment: string;
+  createdAt?: string;
+};
+
+export type RateDrinkRequest = {
+  recipe: DrinkRecipe;
+  feedbacks: DrinkFeedback[];
+  constraints?: GenerationConstraints;
+};
+
+export type RateDrinkResult = {
+  id: string;
+  averageRating: number;
+  library: "recipe_skill_library" | "bad_recipe_skill_library";
+  savedTo: string[];
+};
+
+export type AddHistoryFeedbackRequest = {
+  id: string;
+  feedback: DrinkFeedback;
+};
+
+export type AddHistoryFeedbackResult = {
+  id: string;
+  averageRating: number;
+  feedbackCount: number;
+  sales: {
+    weeklyCups: number;
+    monthlyCups: number;
+    conversionRate: number;
+    repeatRate: number;
+  };
 };
 
 export type GenerationStatus =

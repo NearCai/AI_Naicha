@@ -6,8 +6,10 @@ import {
   AlertCircle,
   BookOpen,
   Brain,
+  ChartColumn,
   Clipboard,
   FlaskConical,
+  LibraryBig,
   Loader2,
   Search,
   Send,
@@ -25,21 +27,24 @@ import {
   auditDrinkRecipes,
   generateDrinkImage,
   generateDrinkRecipe,
+  rateDrinkRecipe,
 } from "@/lib/api";
 import {
+  getAllIngredients,
   getDefaultStoreConfig,
-  ingredientLibrary,
   normalizeStoreConfig,
   storeConfigStorageKey,
 } from "@/lib/store-config";
 import type { StoreConfig } from "@/lib/store-config";
 import type {
   DrinkRecipe,
+  DrinkFeedback,
   DrinkAuditStageResult,
   DrinkDevelopmentResult,
   DrinkGenerationResult,
   GenerationConstraints,
   GenerationStatus,
+  RateDrinkResult,
 } from "@/types/drink";
 
 const defaultPrompt =
@@ -51,7 +56,7 @@ const recipeProgressMessages = [
   "绞尽脑汁中",
   "校验门店约束",
   "调配候选配方",
-  "输出 1 个方案",
+  "输出候选方案",
 ];
 
 const auditProgressMessages = [
@@ -90,12 +95,12 @@ const developmentStages = [
     role: "研发工程师",
     icon: Sparkles,
     title: "调配候选配方",
-    detail: "组合 1 个差异化方案，避免重复和不可执行配方。",
+    detail: "组合差异化方案，避免重复和不可执行配方。",
   },
   {
     role: "研发工程师",
     icon: WandSparkles,
-    title: "输出 1 个方案",
+    title: "输出候选方案",
     detail: "整理配料克重、制作流程和每杯的研发描述。",
   },
 ];
@@ -129,6 +134,44 @@ const auditStages = [
 
 const inputClassName =
   "h-11 w-full rounded-xl border border-input bg-white px-3 text-sm font-medium text-foreground shadow-sm outline-none transition focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-60";
+const homeSessionStorageKey = "ai-drink-lab-home-session";
+
+type HomeSession = {
+  prompt?: string;
+  constraints?: GenerationConstraints;
+  generationCount?: number;
+  developmentResult?: DrinkDevelopmentResult | null;
+  auditResult?: DrinkAuditStageResult | null;
+  status?: GenerationStatus;
+  imageUrl?: string;
+  imageError?: string;
+  showIngredientTable?: boolean;
+  feedbacks?: DrinkFeedback[];
+  feedbackDraft?: DrinkFeedback;
+  ratingStatus?: "idle" | "saving" | "saved" | "error";
+  ratingMessage?: string;
+  ratingResult?: RateDrinkResult | null;
+};
+
+function randomStageDelay() {
+  return 3000 + Math.floor(Math.random() * 2001);
+}
+
+function restoreStableStatus(session: HomeSession): GenerationStatus {
+  if (session.status === "imageError") {
+    return "imageError";
+  }
+  if (session.imageUrl) {
+    return "imageReady";
+  }
+  if (session.auditResult) {
+    return "auditReady";
+  }
+  if (session.developmentResult) {
+    return "developmentReady";
+  }
+  return "idle";
+}
 
 function formatRecipeForClipboard(recipe: DrinkRecipe, index?: number) {
   return [
@@ -146,7 +189,7 @@ function formatRecipeForClipboard(recipe: DrinkRecipe, index?: number) {
 
 function formatResultForClipboard(result: DrinkGenerationResult) {
   return [
-    `${result.engineerName}输出的 1 个奶茶候选配方`,
+    `${result.engineerName}输出的 ${result.recipes.length} 个奶茶候选配方`,
     "",
     `读取 skill：${result.skillReferences.join("、")}`,
     `代码过滤：保留 ${result.filterReport.keptCount} 个，剔除 ${result.filterReport.rejectedCount} 个`,
@@ -157,6 +200,172 @@ function formatResultForClipboard(result: DrinkGenerationResult) {
       formatRecipeForClipboard(recipe, index + 1),
     ),
   ].join("\n\n---\n\n");
+}
+
+type FeedbackPanelProps = {
+  recipe: DrinkRecipe | null;
+  feedbacks: DrinkFeedback[];
+  draft: DrinkFeedback;
+  averageRating: number;
+  status: "idle" | "saving" | "saved" | "error";
+  result: RateDrinkResult | null;
+  message: string;
+  onDraftChange: (draft: DrinkFeedback) => void;
+  onAddFeedback: () => void;
+  onSubmit: () => void;
+};
+
+function FeedbackPanel({
+  recipe,
+  feedbacks,
+  draft,
+  averageRating,
+  status,
+  result,
+  message,
+  onDraftChange,
+  onAddFeedback,
+  onSubmit,
+}: FeedbackPanelProps) {
+  const isSaving = status === "saving";
+  const hasFeedback = feedbacks.length > 0;
+  const targetLibrary = averageRating > 7 ? "好配方库" : "差配方库";
+
+  return (
+    <Card className="overflow-hidden">
+      <div className="border-b border-border bg-[#fbfaf7] px-5 py-4">
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
+          User Feedback
+        </p>
+        <h3 className="mt-1 text-xl font-black text-[#006241]">
+          反馈收集
+        </h3>
+      </div>
+      <div className="p-5">
+        <div className="rounded-xl bg-[#f6fbf8] px-4 py-3">
+          <p className="text-sm font-semibold text-black/58">当前最终配方</p>
+          <p className="mt-1 text-lg font-black text-[#1E3932]">
+            {recipe?.name ?? "等待审核结果"}
+          </p>
+        </div>
+
+        <div className="mt-4 rounded-xl border border-border bg-white p-3">
+          <div className="grid gap-3 sm:grid-cols-[96px_minmax(0,1fr)]">
+            <label className="grid gap-1 text-xs font-bold text-[#1E3932]">
+              分数
+              <input
+                type="number"
+                min={0}
+                max={10}
+                step={1}
+                value={draft.score}
+                onChange={(event) =>
+                  onDraftChange({
+                    ...draft,
+                    score: Math.max(
+                      0,
+                      Math.min(10, Number(event.target.value) || 0),
+                    ),
+                  })
+                }
+                disabled={!recipe || isSaving}
+                className="h-10 rounded-lg border border-input bg-white px-2 text-center text-sm font-black outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+              />
+            </label>
+            <label className="grid gap-1 text-xs font-bold text-[#1E3932]">
+              评价
+              <input
+                value={draft.comment}
+                onChange={(event) =>
+                  onDraftChange({ ...draft, comment: event.target.value })
+                }
+                disabled={!recipe || isSaving}
+                placeholder="例如：青提香气自然，尾段茶涩略重"
+                className="h-10 rounded-lg border border-input bg-white px-3 text-sm font-medium outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+              />
+            </label>
+          </div>
+          <Button
+            type="button"
+            variant="outline"
+            className="mt-3 w-full"
+            onClick={onAddFeedback}
+            disabled={!recipe || isSaving}
+          >
+            新增反馈
+          </Button>
+        </div>
+
+        <div className="mt-4 grid gap-2">
+          {feedbacks.map((feedback, index) => (
+            <div
+              key={`${feedback.createdAt ?? "draft"}-${index}`}
+              className="rounded-xl border border-border bg-[#fbfaf7] px-3 py-2"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-xs font-bold text-black/45">
+                  反馈 {index + 1}
+                </span>
+                <span className="text-lg font-black text-[#00754A]">
+                  {feedback.score}
+                </span>
+              </div>
+              <p className="mt-1 text-sm leading-6 text-black/65">
+                {feedback.comment || "未填写文字评价"}
+              </p>
+            </div>
+          ))}
+
+          {!feedbacks.length ? (
+            <div className="rounded-xl border border-dashed border-border bg-[#fbfaf7] px-3 py-4 text-center text-sm font-semibold text-black/45">
+              暂无反馈，先新增一条分数和评价。
+            </div>
+          ) : null}
+        </div>
+
+        <div className="mt-4 rounded-xl border border-border bg-white px-4 py-3">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm font-bold text-black/58">平均分</span>
+            <span className="text-3xl font-black text-[#00754A]">
+              {averageRating.toFixed(1)}
+            </span>
+          </div>
+          <p className="mt-2 text-xs font-semibold leading-5 text-black/50">
+            已收集 {feedbacks.length} 条反馈。平均分大于 7 存入好配方库，其余存入差配方库。
+            {hasFeedback ? ` 当前将进入：${targetLibrary}` : ""}
+          </p>
+        </div>
+
+        <Button
+          type="button"
+          className="mt-4 w-full"
+          onClick={onSubmit}
+          disabled={!recipe || isSaving || !hasFeedback}
+        >
+          {isSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+          {isSaving ? "保存反馈中" : "提交反馈并入库"}
+        </Button>
+
+        {message ? (
+          <p
+            className={`mt-3 rounded-xl px-3 py-2 text-sm font-semibold leading-6 ${
+              status === "error"
+                ? "bg-red-50 text-red-700"
+                : "bg-[#d4e9e2] text-[#1E3932]"
+            }`}
+          >
+            {message}
+          </p>
+        ) : null}
+
+        {result ? (
+          <p className="mt-2 text-xs leading-5 text-black/45">
+            入库 ID：{result.id}
+          </p>
+        ) : null}
+      </div>
+    </Card>
+  );
 }
 
 export default function Home() {
@@ -173,6 +382,7 @@ export default function Home() {
     sweetness: "中低甜",
     temperature: "冰饮",
   });
+  const [generationCount, setGenerationCount] = useState(3);
   const [developmentResult, setDevelopmentResult] =
     useState<DrinkDevelopmentResult | null>(null);
   const [auditResult, setAuditResult] = useState<DrinkAuditStageResult | null>(
@@ -186,6 +396,17 @@ export default function Home() {
   const [imageError, setImageError] = useState("");
   const [showIngredientTable, setShowIngredientTable] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [feedbacks, setFeedbacks] = useState<DrinkFeedback[]>([]);
+  const [feedbackDraft, setFeedbackDraft] = useState<DrinkFeedback>({
+    score: 8,
+    comment: "",
+  });
+  const [ratingStatus, setRatingStatus] = useState<
+    "idle" | "saving" | "saved" | "error"
+  >("idle");
+  const [ratingMessage, setRatingMessage] = useState("");
+  const [ratingResult, setRatingResult] = useState<RateDrinkResult | null>(null);
+  const [hasLoadedSession, setHasLoadedSession] = useState(false);
 
   const isGeneratingRecipe = status === "generatingDevelopment";
   const isAuditing = status === "auditing";
@@ -194,10 +415,10 @@ export default function Home() {
 
   const selectedIngredients = useMemo(
     () =>
-      ingredientLibrary.filter((ingredient) =>
+      getAllIngredients(storeConfig).filter((ingredient) =>
         storeConfig.selectedIngredientIds.includes(ingredient.id),
       ),
-    [storeConfig.selectedIngredientIds],
+    [storeConfig],
   );
 
   const recipeStatusText = useMemo(
@@ -251,6 +472,14 @@ export default function Home() {
       ...auditResult,
     };
   }, [auditResult, developmentResult]);
+  const averageRating = useMemo(
+    () =>
+      feedbacks.length
+        ? feedbacks.reduce((sum, feedback) => sum + feedback.score, 0) /
+          feedbacks.length
+        : 0,
+    [feedbacks],
+  );
 
   useEffect(() => {
     function loadStoreConfig() {
@@ -269,23 +498,144 @@ export default function Home() {
     }
 
     loadStoreConfig();
+    const sessionValue = window.localStorage.getItem(homeSessionStorageKey);
+
+    if (sessionValue) {
+      try {
+        const session = JSON.parse(sessionValue) as HomeSession;
+
+        if (typeof session.prompt === "string") {
+          setPrompt(session.prompt);
+        }
+        if (session.constraints) {
+          setConstraints(session.constraints);
+        }
+        if (typeof session.generationCount === "number") {
+          setGenerationCount(
+            Math.max(1, Math.min(6, Math.round(session.generationCount))),
+          );
+        }
+        if (session.developmentResult) {
+          setDevelopmentResult(session.developmentResult);
+        }
+        if (session.auditResult) {
+          setAuditResult(session.auditResult);
+        }
+        setStatus(restoreStableStatus(session));
+        setRecipeStatusIndex(recipeProgressMessages.length - 1);
+        setAuditStatusIndex(auditProgressMessages.length - 1);
+        setImageUrl(session.imageUrl ?? "");
+        setImageError(session.imageError ?? "");
+        setShowIngredientTable(Boolean(session.showIngredientTable));
+        if (Array.isArray(session.feedbacks)) {
+          setFeedbacks(
+            session.feedbacks.map((feedback) => ({
+              score: Math.max(0, Math.min(10, Number(feedback.score) || 0)),
+              comment: String(feedback.comment ?? ""),
+              createdAt: feedback.createdAt,
+            })),
+          );
+        }
+        if (session.feedbackDraft) {
+          setFeedbackDraft({
+            score: Math.max(
+              0,
+              Math.min(10, Number(session.feedbackDraft.score) || 0),
+            ),
+            comment: String(session.feedbackDraft.comment ?? ""),
+          });
+        }
+        if (session.ratingStatus && session.ratingStatus !== "saving") {
+          setRatingStatus(session.ratingStatus);
+        }
+        setRatingMessage(session.ratingMessage ?? "");
+        setRatingResult(session.ratingResult ?? null);
+      } catch {
+        window.localStorage.removeItem(homeSessionStorageKey);
+      }
+    }
+
+    setHasLoadedSession(true);
     window.addEventListener("focus", loadStoreConfig);
 
     return () => window.removeEventListener("focus", loadStoreConfig);
   }, []);
 
   useEffect(() => {
+    if (!hasLoadedSession) {
+      return;
+    }
+
+    const session: HomeSession = {
+      prompt,
+      constraints,
+      generationCount,
+      developmentResult,
+      auditResult,
+      status:
+        isGeneratingRecipe || isAuditing || isGeneratingImage
+          ? restoreStableStatus({ developmentResult, auditResult, imageUrl })
+          : status,
+      imageUrl,
+      imageError,
+      showIngredientTable,
+      feedbacks,
+      feedbackDraft,
+      ratingStatus: ratingStatus === "saving" ? "idle" : ratingStatus,
+      ratingMessage,
+      ratingResult,
+    };
+
+    window.localStorage.setItem(homeSessionStorageKey, JSON.stringify(session));
+  }, [
+    auditResult,
+    constraints,
+    developmentResult,
+    feedbackDraft,
+    feedbacks,
+    generationCount,
+    hasLoadedSession,
+    imageError,
+    imageUrl,
+    isAuditing,
+    isGeneratingImage,
+    isGeneratingRecipe,
+    prompt,
+    ratingMessage,
+    ratingResult,
+    ratingStatus,
+    showIngredientTable,
+    status,
+  ]);
+
+  useEffect(() => {
     if (!isGeneratingRecipe) {
       return;
     }
 
-    const timer = window.setInterval(() => {
-      setRecipeStatusIndex((current) =>
-        Math.min(current + 1, recipeProgressMessages.length - 1),
-      );
-    }, 900);
+    let timer: number | undefined;
 
-    return () => window.clearInterval(timer);
+    function scheduleNextStage() {
+      timer = window.setTimeout(() => {
+        setRecipeStatusIndex((current) => {
+          const next = Math.min(current + 1, recipeProgressMessages.length - 1);
+
+          if (next < recipeProgressMessages.length - 1) {
+            scheduleNextStage();
+          }
+
+          return next;
+        });
+      }, randomStageDelay());
+    }
+
+    scheduleNextStage();
+
+    return () => {
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+    };
   }, [isGeneratingRecipe]);
 
   useEffect(() => {
@@ -293,13 +643,29 @@ export default function Home() {
       return;
     }
 
-    const timer = window.setInterval(() => {
-      setAuditStatusIndex((current) =>
-        Math.min(current + 1, auditProgressMessages.length - 1),
-      );
-    }, 900);
+    let timer: number | undefined;
 
-    return () => window.clearInterval(timer);
+    function scheduleNextStage() {
+      timer = window.setTimeout(() => {
+        setAuditStatusIndex((current) => {
+          const next = Math.min(current + 1, auditProgressMessages.length - 1);
+
+          if (next < auditProgressMessages.length - 1) {
+            scheduleNextStage();
+          }
+
+          return next;
+        });
+      }, randomStageDelay());
+    }
+
+    scheduleNextStage();
+
+    return () => {
+      if (timer) {
+        window.clearTimeout(timer);
+      }
+    };
   }, [isAuditing]);
 
   async function handleGenerateRecipe() {
@@ -326,10 +692,16 @@ export default function Home() {
     setAuditResult(null);
     setShowIngredientTable(false);
     setCopied(false);
+    setFeedbacks([]);
+    setFeedbackDraft({ score: 8, comment: "" });
+    setRatingStatus("idle");
+    setRatingMessage("");
+    setRatingResult(null);
 
     try {
       const development = await generateDrinkRecipe({
         prompt: trimmedPrompt,
+        generationCount,
         storeProfile: storeConfig.storeProfile,
         constraints,
         availableIngredients: selectedIngredients,
@@ -420,10 +792,57 @@ export default function Home() {
     window.setTimeout(() => setCopied(false), 1600);
   }
 
+  function handleAddFeedback() {
+    setRatingStatus("idle");
+    setRatingMessage("");
+    setRatingResult(null);
+    setFeedbacks((current) => [
+      ...current,
+      {
+        score: Math.max(0, Math.min(10, Number(feedbackDraft.score) || 0)),
+        comment: feedbackDraft.comment.trim(),
+        createdAt: new Date().toISOString(),
+      },
+    ]);
+    setFeedbackDraft({ score: 8, comment: "" });
+  }
+
+  async function handleSubmitRating() {
+    if (!selectedRecipe || !feedbacks.length) {
+      return;
+    }
+
+    setRatingStatus("saving");
+    setRatingMessage("");
+    setRatingResult(null);
+
+    try {
+      const result = await rateDrinkRecipe({
+        recipe: selectedRecipe,
+        feedbacks,
+        constraints,
+      });
+      setRatingResult(result);
+      setRatingStatus("saved");
+      setRatingMessage(
+        `平均分 ${result.averageRating.toFixed(1)}，已保存到 ${
+          result.library === "recipe_skill_library" ? "好配方库" : "差配方库"
+        }。`,
+      );
+    } catch (currentError) {
+      setRatingStatus("error");
+      setRatingMessage(
+        currentError instanceof Error
+          ? currentError.message
+          : "反馈保存失败，请稍后重试。",
+      );
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#f2f0eb]">
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-6 md:px-8 lg:px-10">
-        <header className="rounded-xl bg-white px-5 py-4 shadow-soft">
+        <header className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white px-5 py-4 shadow-soft">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#00754A]">
               AI Drink Lab
@@ -431,6 +850,20 @@ export default function Home() {
             <h1 className="mt-1 text-2xl font-black text-[#006241] md:text-3xl">
               AI 奶茶配方生成
             </h1>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button asChild variant="outline">
+              <Link href="/history">
+                <ChartColumn className="h-4 w-4" />
+                历史回溯
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/skill-library">
+                <LibraryBig className="h-4 w-4" />
+                Skill 库
+              </Link>
+            </Button>
           </div>
         </header>
 
@@ -499,7 +932,7 @@ export default function Home() {
             <div>
               <h2 className="text-xl font-bold">奶茶生成约束</h2>
               <p className="mt-1 text-sm leading-6 text-black/58">
-                设置新品研发边界，研发工程师会先读取 skill 库，再输出 1 个候选配方。
+                设置新品研发边界，研发工程师会先读取 skill 库，再输出 K 个候选配方。
               </p>
             </div>
             </div>
@@ -627,6 +1060,23 @@ export default function Home() {
                 <option>少冰</option>
               </select>
             </label>
+            <label className="grid gap-2 text-sm font-semibold text-[#1E3932]">
+              生成数量 K
+              <input
+                type="number"
+                min={1}
+                max={6}
+                step={1}
+                value={generationCount}
+                onChange={(event) =>
+                  setGenerationCount(
+                    Math.max(1, Math.min(6, Number(event.target.value) || 1)),
+                  )
+                }
+                disabled={isBusy}
+                className={inputClassName}
+              />
+            </label>
           </div>
 
           <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_136px] lg:items-end">
@@ -655,7 +1105,7 @@ export default function Home() {
                 ? "研发中"
                 : developmentResult
                   ? "重新生成"
-                  : "生成 1 个配方"}
+                  : `生成 ${generationCount} 个配方`}
             </Button>
           </div>
 
@@ -771,7 +1221,8 @@ export default function Home() {
                     Stage 1 · R&D Module
                   </p>
                   <h2 className="mt-1 text-2xl font-black text-[#006241]">
-                    {developmentResult.engineerName}已输出 1 个候选配方
+                    {developmentResult.engineerName}已输出{" "}
+                    {developmentResult.recipes.length} 个候选配方
                   </h2>
                   <p className="mt-2 text-sm leading-6 text-black/58">
                     本模块已结束。已读取 skill：
@@ -793,7 +1244,7 @@ export default function Home() {
               <Card className="overflow-hidden">
                 <div className="border-b border-border bg-[#fbfaf7] px-5 py-4">
                   <h3 className="text-lg font-black text-[#006241]">
-                    1 个研发候选配方配料表
+                    {developmentResult.recipes.length} 个研发候选配方配料表
                   </h3>
                 </div>
                 <div className="overflow-x-auto">
@@ -982,13 +1433,27 @@ export default function Home() {
                 </div>
               </Card>
 
-              <DrinkImageCard
-                recipe={selectedRecipe}
-                imageUrl={imageUrl}
-                status={status}
-                error={imageError}
-                onRegenerateImage={() => handleGenerateImage()}
-              />
+              <div className="grid gap-5">
+                <DrinkImageCard
+                  recipe={selectedRecipe}
+                  imageUrl={imageUrl}
+                  status={status}
+                  error={imageError}
+                  onRegenerateImage={() => handleGenerateImage()}
+                />
+                <FeedbackPanel
+                  recipe={selectedRecipe}
+                  feedbacks={feedbacks}
+                  draft={feedbackDraft}
+                  averageRating={averageRating}
+                  status={ratingStatus}
+                  result={ratingResult}
+                  message={ratingMessage}
+                  onDraftChange={setFeedbackDraft}
+                  onAddFeedback={handleAddFeedback}
+                  onSubmit={handleSubmitRating}
+                />
+              </div>
             </div>
             ) : null}
 
@@ -1031,7 +1496,7 @@ export default function Home() {
                 等待第一杯灵感
               </h2>
               <p className="mt-4 text-base leading-8 text-black/58">
-                输入风味、季节、目标人群或出品场景。研发工程师会先读取 skill 库，再输出 1 个奶茶候选方案。
+                输入风味、季节、目标人群或出品场景。研发工程师会先读取 skill 库，再输出你设置数量的奶茶候选方案。
               </p>
             </div>
           </Card>

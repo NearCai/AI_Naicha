@@ -1,0 +1,310 @@
+{
+  "sourceMarkdown": "make_time.md",
+  "recipeCount": 8,
+  "recipes": [
+    {
+      "section": "75 秒以内",
+      "name": "急速淡奶茶",
+      "id": "bad_026",
+      "style": "快但粗糙",
+      "volume": "500ml",
+      "sweetness": "三分",
+      "estimatedCostYuan": 3.1,
+      "ingredients": [
+        {
+          "name": "红茶汤",
+          "amount": "180g"
+        },
+        {
+          "name": "纯净水",
+          "amount": "160g"
+        },
+        {
+          "name": "牛奶",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "8g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "出杯快，但风味稀薄，缺少层次"
+    },
+    {
+      "section": "90 秒以内",
+      "name": "快手柠檬奶绿",
+      "id": "bad_027",
+      "style": "快速失衡",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 4.2,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "220g"
+        },
+        {
+          "name": "牛奶",
+          "amount": "100g"
+        },
+        {
+          "name": "柠檬汁",
+          "amount": "25g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "工序短但酸奶冲突明显，容易出现涩感"
+    },
+    {
+      "section": "90 秒以内",
+      "name": "一分钟黑糖果茶",
+      "id": "bad_028",
+      "style": "甜味遮盖",
+      "volume": "500ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 4.8,
+      "ingredients": [
+        {
+          "name": "茉莉绿茶",
+          "amount": "220g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "30g"
+        },
+        {
+          "name": "葡萄汁",
+          "amount": "60g"
+        },
+        {
+          "name": "冰块",
+          "amount": "150g"
+        }
+      ],
+      "problem": "黑糖和果茶主线不一致，甜味粗暴"
+    },
+    {
+      "section": "120 秒以内",
+      "name": "奶盖红豆柠檬茶",
+      "id": "bad_029",
+      "style": "复杂但不值",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 6.3,
+      "ingredients": [
+        {
+          "name": "红茶",
+          "amount": "200g"
+        },
+        {
+          "name": "柠檬汁",
+          "amount": "25g"
+        },
+        {
+          "name": "蜜红豆",
+          "amount": "45g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "60g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "120g"
+        }
+      ],
+      "problem": "制作步骤变多，但最终风味酸、咸、甜、沙感混乱"
+    },
+    {
+      "section": "120 秒以内",
+      "name": "芋泥葡萄厚乳茶",
+      "id": "bad_030",
+      "style": "效率低口感差",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 6.9,
+      "ingredients": [
+        {
+          "name": "厚乳",
+          "amount": "150g"
+        },
+        {
+          "name": "葡萄果浆",
+          "amount": "80g"
+        },
+        {
+          "name": "芋泥",
+          "amount": "70g"
+        },
+        {
+          "name": "红茶",
+          "amount": "120g"
+        },
+        {
+          "name": "白砂糖",
+          "amount": "13g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ],
+      "problem": "芋泥挂壁耗时，葡萄清爽感被芋泥吞掉"
+    },
+    {
+      "section": "120 秒以上",
+      "name": "五层小料奶盖杯",
+      "id": "bad_031",
+      "style": "高峰期不可行",
+      "volume": "700ml",
+      "sweetness": "七分",
+      "estimatedCostYuan": 9.2,
+      "ingredients": [
+        {
+          "name": "红茶",
+          "amount": "180g"
+        },
+        {
+          "name": "厚乳",
+          "amount": "120g"
+        },
+        {
+          "name": "黑糖珍珠",
+          "amount": "50g"
+        },
+        {
+          "name": "芋圆",
+          "amount": "50g"
+        },
+        {
+          "name": "烧仙草",
+          "amount": "60g"
+        },
+        {
+          "name": "椰果",
+          "amount": "50g"
+        },
+        {
+          "name": "芝士奶盖",
+          "amount": "70g"
+        },
+        {
+          "name": "黑糖糖浆",
+          "amount": "25g"
+        },
+        {
+          "name": "冰块",
+          "amount": "100g"
+        }
+      ],
+      "problem": "备料和装杯太慢，高峰期出杯风险大"
+    },
+    {
+      "section": "120 秒以上",
+      "name": "手捣热果奶昔",
+      "id": "bad_032",
+      "style": "流程拖沓",
+      "volume": "500ml",
+      "sweetness": "五分",
+      "estimatedCostYuan": 7.5,
+      "ingredients": [
+        {
+          "name": "热牛奶",
+          "amount": "180g"
+        },
+        {
+          "name": "芒果",
+          "amount": "80g"
+        },
+        {
+          "name": "草莓",
+          "amount": "60g"
+        },
+        {
+          "name": "芋泥",
+          "amount": "60g"
+        },
+        {
+          "name": "蜂蜜",
+          "amount": "15g"
+        },
+        {
+          "name": "奶盖",
+          "amount": "50g"
+        }
+      ],
+      "problem": "热饮中手捣水果易变味，流程长且卫生与稳定性风险高"
+    },
+    {
+      "section": "90 秒以内",
+      "name": "青提茉莉轻乳茶",
+      "id": "user_bad_1779686443478",
+      "style": "用户低分配方",
+      "volume": "500ml",
+      "sweetness": "中低甜",
+      "estimatedCostYuan": null,
+      "ingredients": [
+        {
+          "name": "jasmine_green_tea",
+          "amount": "150ml"
+        },
+        {
+          "name": "light_milk",
+          "amount": "40ml"
+        },
+        {
+          "name": "grape_juice",
+          "amount": "15ml"
+        },
+        {
+          "name": "jasmine_jelly",
+          "amount": "10g"
+        },
+        {
+          "name": "cane_syrup",
+          "amount": "5ml"
+        },
+        {
+          "name": "ice",
+          "amount": "150g"
+        }
+      ],
+      "description": "清爽青提果汁与茉莉绿茶汤碰撞，融入轻盈基底乳，搭配嫩滑茉莉茶冻，口感层次丰富，低负担不腻，是夏日解暑的果香奶茶首选。",
+      "steps": [
+        "在杯中加入茉莉茶汤150ml、轻乳基底40ml、青提果汁15ml、蔗糖糖浆5ml，搅拌均匀",
+        "加入冰块150g至满杯",
+        "加入茉莉茶冻10g",
+        "用封口机封口，摇匀后出品"
+      ],
+      "userRatings": [
+        5,
+        9,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "averageRating": 2.1,
+      "problem": "用户平均评分 2.1 分，低于高分入库阈值 7 分"
+    }
+  ]
+}
