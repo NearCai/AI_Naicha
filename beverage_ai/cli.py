@@ -3,7 +3,7 @@
 Usage:
     beverage-ai health <recipe.yaml>
     beverage-ai generate --request "夏季年轻女性低糖" --n 10
-    beverage-ai pipeline --request "夏季年轻女性低糖" --top-k 5
+    beverage-ai pipeline --request "夏季年轻女性低糖" --top-k 10
     beverage-ai vocab list [--category tea_base]
     beverage-ai scrape ingest --source mock --shard mock_w1 --n 200
     beverage-ai aspects extract --shard mock_w1
@@ -99,7 +99,7 @@ def generate(
 @app.command()
 def pipeline(
     request: str = typer.Option(..., "--request", "-r"),
-    top_k: int = typer.Option(5, "--top-k"),
+    top_k: int = typer.Option(10, "--top-k"),
     n_candidates: int = typer.Option(200, "--n-candidates"),
     kappa: float = typer.Option(1.0, "--kappa", help="LCB conservativeness"),
     seed: int = typer.Option(42, "--seed"),

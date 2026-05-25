@@ -61,7 +61,7 @@ class PipelineResult:
 def run_pipeline(
     user_request: str,
     *,
-    top_k: int = 5,
+    top_k: int = 10,
     n_candidates: int = 200,
     kappa: float = 1.0,
     mmr_lambda: float = 0.6,

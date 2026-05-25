@@ -85,7 +85,7 @@ demo = gr.Interface(
             lines=3,
             placeholder="例: 想为夏季年轻女性开发一款主打健康轻负担的茶饮新品, 定价 18-22 元",
         ),
-        gr.Slider(1, 10, value=5, step=1, label="Top-K"),
+        gr.Slider(1, 15, value=10, step=1, label="Top-K"),
         gr.Slider(0.0, 2.0, value=1.0, step=0.1, label="κ (LCB 保守度)"),
     ],
     outputs=[
@@ -99,9 +99,9 @@ demo = gr.Interface(
         "多目标优化 (LCB) → MMR 选 Top-K。详见技术方案书与实现方案文档。"
     ),
     examples=[
-        ["夏季年轻女性低糖轻负担, 定价 18-22 元", 5, 1.0],
-        ["冬天上班族暖身高蛋白, 接受 30 元", 5, 1.0],
-        ["无糖控碳水, 只要茶味鲜明", 5, 1.0],
+        ["夏季年轻女性低糖轻负担, 定价 18-22 元", 10, 1.0],
+        ["冬天上班族暖身高蛋白, 接受 30 元", 10, 1.0],
+        ["无糖控碳水, 只要茶味鲜明", 10, 1.0],
     ],
     flagging_mode="never",
 )
